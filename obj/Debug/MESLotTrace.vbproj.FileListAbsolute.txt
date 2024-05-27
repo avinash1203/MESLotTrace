@@ -1,0 +1,189 @@
+C:\Applications\MESLotTrace\bin\MESLotTrace.dll.config
+C:\Applications\MESLotTrace\bin\MESLotTrace.dll
+C:\Applications\MESLotTrace\bin\MESLotTrace.pdb
+C:\Applications\MESLotTrace\bin\MESLotTrace.xml
+C:\Applications\MESLotTrace\bin\roslyn\csc.exe
+C:\Applications\MESLotTrace\bin\roslyn\csc.exe.config
+C:\Applications\MESLotTrace\bin\roslyn\csc.rsp
+C:\Applications\MESLotTrace\bin\roslyn\csi.exe
+C:\Applications\MESLotTrace\bin\roslyn\csi.exe.config
+C:\Applications\MESLotTrace\bin\roslyn\csi.rsp
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Applications\MESLotTrace\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.AppContext.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Collections.Immutable.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Console.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Globalization.Calendars.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.IO.Compression.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.IO.FileSystem.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Net.Http.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Net.Sockets.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Reflection.Metadata.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.ValueTuple.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Xml.XPath.dll
+C:\Applications\MESLotTrace\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Applications\MESLotTrace\bin\roslyn\vbc.exe
+C:\Applications\MESLotTrace\bin\roslyn\vbc.exe.config
+C:\Applications\MESLotTrace\bin\roslyn\vbc.rsp
+C:\Applications\MESLotTrace\bin\roslyn\VBCSCompiler.exe
+C:\Applications\MESLotTrace\bin\roslyn\VBCSCompiler.exe.config
+C:\Applications\MESLotTrace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Applications\MESLotTrace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Applications\MESLotTrace\obj\Debug\MESLotTrace.vbproj.AssemblyReference.cache
+C:\Applications\MESLotTrace\obj\Debug\MESLotTrace.Resources.resources
+C:\Applications\MESLotTrace\obj\Debug\MESLotTrace.vbproj.GenerateResource.cache
+C:\Applications\MESLotTrace\obj\Debug\MESLotTrace.vbproj.CoreCompileInputs.cache
+C:\Applications\MESLotTrace\obj\Debug\MESLotTrace.vbproj.CopyComplete
+C:\Applications\MESLotTrace\obj\Debug\MESLotTrace.dll
+C:\Applications\MESLotTrace\obj\Debug\MESLotTrace.xml
+C:\Applications\MESLotTrace\obj\Debug\MESLotTrace.pdb
+C:\Applications\MineBea\MESLotTrace\bin\MESLotTrace.dll.config
+C:\Applications\MineBea\MESLotTrace\bin\MESLotTrace.dll
+C:\Applications\MineBea\MESLotTrace\bin\MESLotTrace.pdb
+C:\Applications\MineBea\MESLotTrace\bin\MESLotTrace.xml
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\csc.exe
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\csc.exe.config
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\csc.rsp
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\csi.exe
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\csi.exe.config
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\csi.rsp
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.AppContext.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Collections.Immutable.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Console.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Globalization.Calendars.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.IO.Compression.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.IO.FileSystem.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Net.Http.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Net.Sockets.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Reflection.Metadata.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.ValueTuple.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Xml.XPath.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\vbc.exe
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\vbc.exe.config
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\vbc.rsp
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\VBCSCompiler.exe
+C:\Applications\MineBea\MESLotTrace\bin\roslyn\VBCSCompiler.exe.config
+C:\Applications\MineBea\MESLotTrace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Applications\MineBea\MESLotTrace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Applications\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.AssemblyReference.cache
+C:\Applications\MineBea\MESLotTrace\obj\Debug\MESLotTrace.Resources.resources
+C:\Applications\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.GenerateResource.cache
+C:\Applications\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.CoreCompileInputs.cache
+C:\Applications\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.CopyComplete
+C:\Applications\MineBea\MESLotTrace\obj\Debug\MESLotTrace.dll
+C:\Applications\MineBea\MESLotTrace\obj\Debug\MESLotTrace.xml
+C:\Applications\MineBea\MESLotTrace\obj\Debug\MESLotTrace.pdb
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\MESLotTrace.dll.config
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\MESLotTrace.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\MESLotTrace.pdb
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\MESLotTrace.xml
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\csc.exe
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\csc.exe.config
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\csc.rsp
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\csi.exe
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\csi.exe.config
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\csi.rsp
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.AppContext.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Console.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.IO.Compression.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Net.Http.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Net.Sockets.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.ValueTuple.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Xml.XPath.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\vbc.exe
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\vbc.exe.config
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\vbc.rsp
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\VBCSCompiler.exe
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\obj\Debug\MESLotTrace.vbproj.AssemblyReference.cache
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\obj\Debug\MESLotTrace.Resources.resources
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\obj\Debug\MESLotTrace.vbproj.GenerateResource.cache
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\obj\Debug\MESLotTrace.vbproj.CoreCompileInputs.cache
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\obj\Debug\MESLotTrace.vbproj.CopyComplete
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\obj\Debug\MESLotTrace.dll
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\obj\Debug\MESLotTrace.xml
+C:\Users\avina\Downloads\MESLotTrace (1)\MESLotTrace\obj\Debug\MESLotTrace.pdb
