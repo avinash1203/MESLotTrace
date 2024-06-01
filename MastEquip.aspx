@@ -45,7 +45,7 @@
                             <ItemStyle Width="100px" />
                         </asp:BoundField>
 
-                        <asp:BoundField DataField="ine_id" HeaderText="Line ID" SortExpression="ine_id">
+                        <asp:BoundField DataField="Line_id" HeaderText="Line ID" SortExpression="Line_id">
                             <ItemStyle Width="100px" />
                         </asp:BoundField>
                         <asp:BoundField DataField="equip_mgnt_strt_dt_utc" HeaderText="Equipment Start Date" DataFormatString="{0:dd/MM/yyyy}" SortExpression="equip_mgnt_strt_dt_utc">
