@@ -133,6 +133,9 @@ Public Class AppMainPage
                     ' Disable the button
                     btn.Enabled = False
                     btn.ToolTip = "You dont have permission to acesses this menu"
+                    btn.BackColor = System.Drawing.Color.Gray
+                    ' Optionally, change the text color
+                    btn.ForeColor = System.Drawing.Color.White
                 End If
             Else
                 ' Enabled the button if it does not have a data-key attribute
