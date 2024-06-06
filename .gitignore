@@ -3,3 +3,6 @@ obj/Debug/MESLotTrace.dll
 *.dll
 *.dll
 *.vsidx
+.vs/MESLotTrace/v17/.suo
+*.dll
+*.pdb

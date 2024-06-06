@@ -8,6 +8,10 @@ Public Class AppMainPage
     Public connstr As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         LogonID = Request.QueryString("LogonID")
+        If LogonID Is Nothing Then
+            LogonID = Request.QueryString("LoginID")
+        End If
+
         txtLogonID.Text = LogonID
         txtLogonName.Text = GetuserName(LogonID)
         Op = Request.QueryString("Op")
