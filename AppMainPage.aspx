@@ -29,13 +29,15 @@
                 Style="z-index: 1; left: 92%; top: 66px; position: absolute; width: 50px; height: 50px;"
                 ImageUrl="~/Images/BackBlue01v1.png" />
         </div>
-        <asp:Label ID="Label6" runat="server" Style="z-index: 1; position: absolute; top: 87px; height: 20px; left: 24px; width: 151px;"
+        <asp:Label ID="Label6" runat="server" Style="z-index: 1; position: absolute; top: 87px; height: 20px; left: 24px; width: 151px; right: 1217px;"
             Text="Logged On As : " Font-Size="Small" Font-Names="Arial Rounded MT Bold" Font-Bold="True"></asp:Label>
         <asp:TextBox ID="txtLogonID" runat="server"
             Style="z-index: 1; top: 84px; height: 20px; width: 142px; border-radius: 5px; padding-left: 5px; position: absolute; left: 186px; right: 1184px;" Font-Size="Medium" ReadOnly="True"></asp:TextBox>
         <asp:TextBox ID="txtLogonName" runat="server"
             Style="z-index: 1; position: absolute; border-radius: 5px; height: 20px; top: 84px; left: 353px; width: 308px;" Font-Size="Medium" ReadOnly="True"></asp:TextBox>
 
+         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 707px; top: 84px; position: absolute; height:28px; width: 96px" Text="Logout" 
+                    Font-Size="Small" Font-Names="Arial Rounded MT Bold" Font-Bold="True"/>
         <%--    <asp:LinkButton ID="lkLogout" runat="server" Style="z-index: 99; position: absolute; width: 6%; left: 92%; top: 86px;"
             Font-Bold="True" Font-Names="Calibri" Font-Size="Large">Logout</asp:LinkButton>--%>
 
@@ -53,6 +55,7 @@
             </div>
             <div id="Main" runat="server">
                 <asp:Image ID="Image4" runat="server" Style="z-index: 1; position: absolute; left: 30%; top: 124px; width: 65%; height: 570px; border: solid 1px black;" ImageUrl="~/Images/SystemLogo3.png" />
+               
             </div>
             <div id="AdminFunc" runat="server" style="z-index: 1; position: absolute; align-content: center; left: 30%; top: 121px; border: solid 1px black; width: 65%; height: 551px; background-color: #CCFFFF;">
                 <asp:Label ID="Label1" runat="server" BackColor="#99CCFF" Font-Bold="True" Font-Names="Arial Rounded MT Bold" Font-Size="X-Large" Style="z-index: 1; left: 8px; top: 5px; text-align: center; position: absolute; width: 99%; height: 51px" Text="Administration"></asp:Label>
@@ -104,7 +107,7 @@
                 <asp:Button ID="btnMMProdCapa" data-key="Prod_Capa_shift" runat="server" Style="z-index: 1; left: 2%; top: 262px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Prod. Capa. By Shift" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
                 <asp:Button ID="btnMMProcess" data-key="Process"  runat="server" Style="z-index: 1; left: 2%; top: 325px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Process" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
                 <asp:Button ID="btnMMCompCode" data-key="Company_Code" runat="server" Style="z-index: 1; left: 2%; top: 388px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Company code" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
-                <asp:Button ID="btnMMPlantCode"  data-key="Plant_Code" runat="server" Style="z-index: 1; left: 15px; top: 451px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Plant Code" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
+                <asp:Button ID="btnMMPlantCode"  data-key="Plant_Code" runat="server" Style="z-index: 1; left: 2%; top: 451px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Plant Code" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
 
                 <asp:Button ID="btnMMStep" data-key="Step_Equipment" runat="server" Style="z-index: 1; left: 60%; top: 73px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Step" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
                 <asp:Button ID="btnMMEquip"  data-key="Equipment"  runat="server" Style="z-index: 1; left: 60%; top: 136px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Equipment" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
