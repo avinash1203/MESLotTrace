@@ -2458,18 +2458,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.UserAdmin._DropDownList1">
+<member name="F:MESLotTrace.UserAdmin._ddUserRole">
 <summary>
-DropDownList1 control.
+ddUserRole control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.UserAdmin._DropDownList2">
+<member name="F:MESLotTrace.UserAdmin._ddUserStatus">
 <summary>
-DropDownList2 control.
+ddUserStatus control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2557,9 +2557,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.UserAdmin._cb1">
+<member name="F:MESLotTrace.UserAdmin._cbAdministration">
 <summary>
-cb1 control.
+cbAdministration control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2584,9 +2584,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.UserAdmin._cb2">
+<member name="F:MESLotTrace.UserAdmin._cbMasterMaintenance">
 <summary>
-cb2 control.
+cbMasterMaintenance control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2926,9 +2926,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.UserAdmin._cb7">
+<member name="F:MESLotTrace.UserAdmin._cbExporttoSAP">
 <summary>
-cb7 control.
+cbExporttoSAP control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2962,9 +2962,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.UserAdmin._MastCompanyCodeSDA">
+<member name="F:MESLotTrace.UserAdmin._USERMasterSDA">
 <summary>
-MastCompanyCodeSDA control.
+USERMasterSDA control.
 </summary>
 <remarks>
 Auto-generated field.
