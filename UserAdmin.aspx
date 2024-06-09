@@ -50,7 +50,7 @@
                             <asp:BoundField DataField="Label Printer" HeaderText="Label Printer" SortExpression="Label Printer">
                                 <ItemStyle Width="20%" />
                             </asp:BoundField>
-                            <asp:ButtonField CommandName="Access" Text="Access">
+                            <asp:ButtonField  CommandName="Access" Text="Access">
                                 <ItemStyle Font-Names="Arial Rounded MT Bold" ForeColor="#FF99CC" />
                             </asp:ButtonField>
                         </Columns>

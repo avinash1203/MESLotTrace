@@ -203,15 +203,6 @@ Partial Public Class AppMainPage
     Protected WithEvents btnAFUserAdmin As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btnAFAccessControl control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnAFAccessControl As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''OperFunc control.
     '''</summary>
     '''<remarks>

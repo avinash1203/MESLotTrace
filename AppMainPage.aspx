@@ -60,7 +60,7 @@
             <div id="AdminFunc" runat="server" style="z-index: 1; position: absolute; align-content: center; left: 30%; top: 121px; border: solid 1px black; width: 65%; height: 551px; background-color: #CCFFFF;">
                 <asp:Label ID="Label1" runat="server" BackColor="#99CCFF" Font-Bold="True" Font-Names="Arial Rounded MT Bold" Font-Size="X-Large" Style="z-index: 1; left: 8px; top: 5px; text-align: center; position: absolute; width: 99%; height: 51px" Text="Administration"></asp:Label>
                 <asp:Button ID="btnAFUserAdmin" data-key="User_Administration" runat="server" Style="z-index: 1; top: 73px; position: absolute; width: 37%; left: 30%; height: 48px; border-radius: 10px;" Text="User Administration" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
-                <asp:Button ID="btnAFAccessControl" data-key="Access_Control" runat="server" Style="z-index: 1; left: 30%; top: 136px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Access Control" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
+               <%-- <asp:Button ID="btnAFAccessControl" data-key="Access_Control" runat="server" Style="z-index: 1; left: 30%; top: 136px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Access Control" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />--%>
             </div>
 
             <div id="OperFunc" runat="server" style="z-index: 1; position: absolute; align-content: center; left: 30%; top: 121px; border: solid 1px black; width: 65%; height: 551px; background-color: #CCFFFF;">

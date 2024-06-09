@@ -6,6 +6,7 @@ Public Class UserAdmin
     Public connstr As String
     Public LogonId As String
     Public newflg As Integer
+    Private hasAcessControlPermission As Boolean
     Dim adminDataKeys() As String = {"User_Administration", "Access_Control"}
     Dim masterMaintenanceDataKeys() As String = {"Maintenance_Line_State", "Standard_UOM", "Shift", "Prod_Capa_shift", "Line", "Process", "Company_Code", "Equipment", "Step_Equipment", "Trace_Master", "Comp_Cons_Step", "Reason_Master", "Worker_Registration", "Plant_Code"}
     Dim operationsDataKeys() As String = {"Lot_Management", "Rework", "Scrap_Item", "Print_Tag", "PLC_Data_Amend"}
@@ -14,10 +15,10 @@ Public Class UserAdmin
     Dim exportdataKeys As New List(Of String) From {"Work_Result", "Parts_Consumed", "Scrap_Informationt"}
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
-        LoginUser.Text = "User ID : " & Class1.GetuserName(LogonId)
-        connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
         LogonId = Request.QueryString("LogonID")
+        LoginUser.Text = "User ID : " & Class1.GetuserName(LogonId)
+        hasAcessControlPermission = Class1.HasPermissions(LogonId, "Access_Control")
+        connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
         If Not IsPostBack Then
             DataEntryScr.Visible = False
             AccessDataEntryScr.Visible = False
@@ -377,5 +378,16 @@ Public Class UserAdmin
     Protected Sub cb4_CheckedChanged(sender As Object, e As EventArgs) Handles cb4.CheckedChanged
         Dim dataKeys As List(Of String) = New List(Of String)(operationsDataKeys)
         CheckSpecificheckBox(GetAllCheckBoxes(Me), dataKeys, cb4.Checked)
+    End Sub
+
+    Protected Sub gvContent_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gvContent.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim button As LinkButton = CType(e.Row.Cells(e.Row.Cells.Count - 1).Controls(0), LinkButton)
+            If hasAcessControlPermission Then
+                button.Enabled = True
+            Else
+                button.Enabled = False
+            End If
+        End If
     End Sub
 End Class
