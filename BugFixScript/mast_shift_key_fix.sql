@@ -18,8 +18,10 @@ IF NOT EXISTS (
     AND object_id = OBJECT_ID('MAST_SHIFT')
 )
 BEGIN
-    ALTER TABLE MAST_SHIFT
-    ADD CONSTRAINT unique_shift_ptrn_wrk_shift_seq UNIQUE (shift_ptrn_id, wrk_shift_seq);
+    
+ CREATE UNIQUE NONCLUSTERED INDEX IX_MAST_SHIFT
+    ON MAST_SHIFT (shift_ptrn_id, wrk_shift_seq)
+    WHERE cncl_flg =0;
 END
 GO
 
@@ -43,8 +45,10 @@ IF NOT EXISTS (
     AND object_id = OBJECT_ID('MAST_SHIFT2')
 )
 BEGIN
-    ALTER TABLE MAST_SHIFT2
-    ADD CONSTRAINT unique_shift_ptrn_wrk_shift_seq2 UNIQUE (shift_ptrn_id, wrk_shift_seq);
+     
+ CREATE UNIQUE NONCLUSTERED INDEX IX_MAST_SHIFT2
+    ON MAST_SHIFT2 (shift_ptrn_id, wrk_shift_seq)
+    WHERE cncl_flg =0;
 END
 GO
 
