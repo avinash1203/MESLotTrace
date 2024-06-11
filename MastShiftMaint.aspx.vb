@@ -24,9 +24,10 @@ Public Class MastShiftMaint
         Dim cmd As SqlCommand
         Dim myconnection As New SqlConnection
         myconnection = New SqlConnection(connstr)
-        sqlstr = "SELECT COUNT(*) FROM MAST_SHIFT WHERE shift_ptrn_id = @SPID"
+        sqlstr = "SELECT COUNT(*) FROM MAST_SHIFT WHERE shift_ptrn_id = @SPID AND wrk_shift_seq = @WRK"
         cmd = New SqlCommand(sqlstr, myconnection)
         cmd.Parameters.AddWithValue("@SPID", txtSPID.Text.Trim)
+        cmd.Parameters.AddWithValue("@WRK", txtWSS.Text.Trim)
         myconnection.Open()
         Dim ANS As Integer = cmd.ExecuteScalar
         myconnection.Close()
@@ -205,16 +206,17 @@ Public Class MastShiftMaint
 
     Protected Sub gvContent_RowCommand(ByVal sender As Object, ByVal e As GridViewCommandEventArgs) Handles gvContent.RowCommand
         If e.CommandName = "Select" Then
-
-            Dim SPD As String = e.CommandArgument
+            Dim resultArray() As String = e.CommandArgument.Split("_")
+            Dim SPD As String = resultArray(0)
+            Dim WRK As String = resultArray(1)
             hfPopUpType.Value = "Edit"
             txtSPID.ReadOnly = True
-            GetSelected(SPD)
+            GetSelected(SPD, WRK)
 
         End If
     End Sub
 
-    Protected Sub GetSelected(SPD As String)
+    Protected Sub GetSelected(SPD As String, WRK As String)
         connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
         Dim sqlstr As String
         Dim sqlstr2 As String
@@ -229,7 +231,7 @@ Public Class MastShiftMaint
                   ,[shift_cd]
                   ,[shift_nm]
                   ,[cncl_flg] from MAST_SHIFT " +
-                 "WHERE shift_ptrn_id='" & Trim(SPD) & "'"
+                   "WHERE wrk_shift_seq= '" & Trim(WRK) & "' AND  shift_ptrn_id='" & Trim(SPD) & "'"
 
 
         sqlstr2 = "SELECT [cmp_cd]
@@ -241,7 +243,7 @@ Public Class MastShiftMaint
                   ,[shift_cd]
                   ,[shift_nm]
                   ,[cncl_flg] from MAST_SHIFT2 " +
-                 "WHERE shift_ptrn_id='" & Trim(SPD) & "'"
+                 "WHERE wrk_shift_seq= '" & Trim(WRK) & "' AND shift_ptrn_id='" & Trim(SPD) & "'"
 
         Dim cmd As SqlCommand
 
@@ -312,17 +314,19 @@ Public Class MastShiftMaint
         myconnection = New SqlConnection(connstr)
 
         sqlstr = "UPDATE MAST_SHIFT" +
-                            " SET CNCL_FLG = 1  WHERE shift_ptrn_id=@shift_ptrn_id"
+                            " SET CNCL_FLG = 1  WHERE shift_ptrn_id=@shift_ptrn_id AND wrk_shift_seq = @WRK"
 
         sqlstr2 = "UPDATE MAST_SHIFT2" +
-                            " SET CNCL_FLG = 1  WHERE shift_ptrn_id=@shift_ptrn_id"
+                            " SET CNCL_FLG = 1  WHERE shift_ptrn_id=@shift_ptrn_id AND wrk_shift_seq = @WRK"
         myconnection.Open()
         cmd = New SqlCommand(sqlstr, myconnection)
 
         cmd2 = New SqlCommand(sqlstr2, myconnection)
 
         cmd.Parameters.AddWithValue("@shift_ptrn_id", txtSPID.Text)
+        cmd.Parameters.AddWithValue("@WRK", txtWSS.Text)
         cmd2.Parameters.AddWithValue("@shift_ptrn_id", txtSPID.Text)
+        cmd2.Parameters.AddWithValue("@WRK", txtWSS.Text)
         Try
             cmd.ExecuteNonQuery()
             Class1.ShowMsg("Deleted Successfully", "Ok", "success")
@@ -333,7 +337,7 @@ Public Class MastShiftMaint
         End Try
     End Sub
 
-          Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-                    Response.Redirect("AppMainpage.aspx?LoginID=" & Logonid & "&Op=2")
-          End Sub
+    Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
+        Response.Redirect("AppMainpage.aspx?LoginID=" & Logonid & "&Op=2")
+    End Sub
 End Class

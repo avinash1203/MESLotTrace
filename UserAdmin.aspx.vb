@@ -17,7 +17,7 @@ Public Class UserAdmin
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         LogonId = Request.QueryString("LogonID")
         LoginUser.Text = "User ID : " & Class1.GetuserName(LogonId)
-        hasAcessControlPermission = Class1.HasPermissions(LogonId, "Access_Control")
+        'hasAcessControlPermission = Class1.HasPermissions(LogonId, "Access_Control")
         connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
         If Not IsPostBack Then
             DataEntryScr.Visible = False
@@ -384,9 +384,9 @@ Public Class UserAdmin
         If e.Row.RowType = DataControlRowType.DataRow Then
             Dim button As LinkButton = CType(e.Row.Cells(e.Row.Cells.Count - 1).Controls(0), LinkButton)
             If hasAcessControlPermission Then
-                button.Enabled = True
+                'button.Enabled = True
             Else
-                button.Enabled = False
+                'button.Enabled = False
             End If
         End If
     End Sub

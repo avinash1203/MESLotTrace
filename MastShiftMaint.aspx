@@ -30,7 +30,7 @@
         </div>
         <div id="formtitle" runat="server" style="z-index: 1; position: absolute; top: 86px; left: 1px; width: 100%; height: 50px; text-align: center; border: 1px solid black; background-color: azure;">
             <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="SHIFT MASTER MAINTENANCE" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
-                <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
+            <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
 
         </div>
         <div id="formbody" runat="server" style="z-index: 1; position: absolute; top: 140px; left: 1px; width: 100%; height: 550px; border: 1px black solid;">
@@ -45,7 +45,7 @@
                         <asp:TemplateField HeaderText="Actions">
                             <ItemStyle Width="100px" />
                             <ItemTemplate>
-                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("shift_ptrn_id") %>' Text="Select" />
+                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("shift_ptrn_id") & "_" & Eval("wrk_shift_seq") %>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
@@ -140,7 +140,7 @@
 </body>
 
 <script>
-   
+
 
     $(function () {
         // Initialize the timepicker
