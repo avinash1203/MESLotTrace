@@ -20,8 +20,8 @@
         </div>
         <div id="formtitle" runat="server" style="z-index: 1; position: absolute; top: 86px; left: 1px; width: 100%; height: 50px; text-align: center; border: 1px solid black; background-color: azure;">
             <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="Equipment  Master" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
- <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
-            </div>
+            <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
+        </div>
         <div id="formbody" runat="server" style="z-index: 1; position: absolute; top: 140px; left: 1px; width: 100%; height: 550px; border: 1px black solid;">
             <asp:Label ID="Label1" runat="server" Text="Defined Data" Style="z-index: 1; position: absolute; top: 5px; left: 1px;" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue"></asp:Label>
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
@@ -87,7 +87,9 @@
 
             <asp:Label ID="Label9" runat="server" Style="z-index: 1; left: 34px; top: 310px; position: absolute" Text="Equipment Start Date "></asp:Label>
 
-            <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 34px; top: 350px; position: absolute" Text="Remarks "></asp:Label>
+            <asp:Label ID="Label11" runat="server" Style="z-index: 1; left: 34px; top: 350px; position: absolute" Text="Display sequence"></asp:Label>
+
+            <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 34px; top: 390px; position: absolute" Text="Remarks "></asp:Label>
 
 
 
@@ -108,8 +110,8 @@
 
             <asp:TextBox ID="txtEIN" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 270px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
             <asp:TextBox ID="txtESD" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 310px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px" TextMode="Date"></asp:TextBox>
-           
-            <asp:TextBox ID="txtRe" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 350px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtDisSeq" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 350px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtRe" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 390px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
 
             <asp:Button ID="btnSave" runat="server" Style="z-index: 1; left: 36px; top: 427px; width: 99px; height: 30px; position: absolute; font-size: medium; font-weight: 600;" Text="Save" CssClass="button1" />
             <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; left: 250px; top: 427px; position: absolute; font-size: medium; font-weight: 600;" Text="Delete" Height="30px" Width="99px" CssClass="button1" />

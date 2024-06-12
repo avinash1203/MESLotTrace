@@ -58,16 +58,17 @@ Public Class MastEquip
 	                        [plnt_cd],
 	                        [equip_id],
 	                        [equip_nm],
-	                        [ine_id],
+	                        [line_id],
 	                        [equip_nm_local],
 	                        [equip_mgnt_strt_dt_utc],
 	                        [cncl_flg],
 	                        [regr_id] ,
 	                        [regr_utc] ,
-	                        [notes] )" +
+	                        [notes],
+                            [disp_seq])" +
                           "VALUES(" +
-                            "@cmp_cd,@plnt_cd,@equip_id,@equip_nm,@ine_id,@equip_nm_local,@equip_mgnt_strt_dt_utc," +
-                            "@cncl_flg,@regr_id,@regr_utc,@notes)"
+                            "@cmp_cd,@plnt_cd,@equip_id,@equip_nm,@line_id,@equip_nm_local,@equip_mgnt_strt_dt_utc," +
+                            "@cncl_flg,@regr_id,@regr_utc,@notes,@disp_seq)"
 
         myconnection.Open()
         cmd = New SqlCommand(sqlstr, myconnection)
@@ -75,13 +76,14 @@ Public Class MastEquip
         cmd.Parameters.AddWithValue("@plnt_cd", ddlPC.SelectedValue)
         cmd.Parameters.AddWithValue("@equip_id", txtEID.Text)
         cmd.Parameters.AddWithValue("@equip_nm", txtED.Text)
-        cmd.Parameters.AddWithValue("@ine_id", ddlLineId.SelectedValue)
+        cmd.Parameters.AddWithValue("@line_id", ddlLineId.SelectedValue)
         cmd.Parameters.AddWithValue("@equip_nm_local", txtEIN.Text)
         cmd.Parameters.AddWithValue("@equip_mgnt_strt_dt_utc", txtESD.Text)
         cmd.Parameters.AddWithValue("@cncl_flg", 0)
         cmd.Parameters.AddWithValue("@regr_id", Logonid)
         cmd.Parameters.AddWithValue("@regr_utc", Format(Now, "yyyy-MM-dd HH:mm:ss"))
         cmd.Parameters.AddWithValue("@notes", txtRe.Text)
+        cmd.Parameters.AddWithValue("@disp_seq", txtDisSeq.Text)
         Try
             cmd.ExecuteNonQuery()
             Class1.ShowMsg("Saved Successfully", "Ok", "success")
@@ -103,13 +105,14 @@ Public Class MastEquip
 	                        [plnt_cd]=@plnt_cd,
 	                        [equip_id]=@equip_id,
 	                        [equip_nm]=@equip_nm,
-	                        [ine_id]=@ine_id,
+	                        [line_id]=@line_id,
 	                        [equip_nm_local]=@equip_nm_local,
 	                        [equip_mgnt_strt_dt_utc]=@equip_mgnt_strt_dt_utc,
 	                        [cncl_flg]=@cncl_flg,
 	                        [upd_id]=@upd_id ,
 	                        [upd_utc] =@upd_utc,
-	                        [notes]=@notes
+	                        [notes]=@notes,
+                            [disp_seq]=@disp_seq
                             Where  equip_id = @equip_id"
 
         myconnection.Open()
@@ -118,13 +121,14 @@ Public Class MastEquip
         cmd.Parameters.AddWithValue("@plnt_cd", ddlPC.SelectedValue)
         cmd.Parameters.AddWithValue("@equip_id", txtEID.Text)
         cmd.Parameters.AddWithValue("@equip_nm", txtED.Text)
-        cmd.Parameters.AddWithValue("@ine_id", ddlLineId.SelectedValue)
+        cmd.Parameters.AddWithValue("@line_id", ddlLineId.SelectedValue)
         cmd.Parameters.AddWithValue("@equip_nm_local", txtEIN.Text)
         cmd.Parameters.AddWithValue("@equip_mgnt_strt_dt_utc", txtESD.Text)
         cmd.Parameters.AddWithValue("@cncl_flg", 0)
         cmd.Parameters.AddWithValue("@upd_id", Logonid)
         cmd.Parameters.AddWithValue("@upd_utc", Format(Now, "yyyy-MM-dd HH:mm:ss"))
         cmd.Parameters.AddWithValue("@notes", txtRe.Text)
+        cmd.Parameters.AddWithValue("@disp_seq", txtDisSeq.Text)
         Try
             cmd.ExecuteNonQuery()
             Class1.ShowMsg("Updated Successfully", "Ok", "success")
@@ -180,7 +184,7 @@ Public Class MastEquip
 
         sqlstr = "SELECT [cmp_cd],
 	                        [plnt_cd],
-                            [ine_id],
+                            [line_id],
 	                        [equip_id],
 	                        [equip_nm],
 	                        [equip_nm_local],
@@ -188,7 +192,8 @@ Public Class MastEquip
 	                        [cncl_flg],
 	                        [regr_id] ,
 	                        [regr_utc] ,
-	                        [notes]
+	                        [notes],
+                            [disp_seq]
                            from MAST_EQUIP " +
              "WHERE equip_id = @equip_id"
 
@@ -204,6 +209,7 @@ Public Class MastEquip
         da.Fill(dt)
 
         If dt.Rows.Count > 0 Then
+            Class1.ConvertDbNullToEmptyString(dt)
             fillDetails(dt)
         Else
             Class1.ShowMsg("Error during Fetching!", "Continue", "warning")
@@ -259,6 +265,7 @@ Public Class MastEquip
         DirectCast(DataEntryScr.FindControl("txtEIN"), TextBox).Text = value.Rows(0).Item(5)
         DirectCast(DataEntryScr.FindControl("txtESD"), TextBox).Text = DateTime.Parse(value.Rows(0).Item(6)).ToString("yyyy-MM-dd")
         DirectCast(DataEntryScr.FindControl("txtRe"), TextBox).Text = value.Rows(0).Item(10)
+        DirectCast(DataEntryScr.FindControl("txtDisSeq"), TextBox).Text = value.Rows(0).Item(11)
     End Sub
     Protected Sub SoftDeleteReason()
         Dim sqlstr As String
@@ -281,7 +288,7 @@ Public Class MastEquip
         End Try
     End Sub
 
-          Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-                    Response.Redirect("appMainpage.aspx?LoginID=" & Logonid & "&Op=2")
-          End Sub
+    Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
+        Response.Redirect("appMainpage.aspx?LoginID=" & Logonid & "&Op=2")
+    End Sub
 End Class

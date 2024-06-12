@@ -3178,6 +3178,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:MESLotTrace.MastEquip._Label11">
+<summary>
+Label11 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:MESLotTrace.MastEquip._Label10">
 <summary>
 Label10 control.
@@ -3244,6 +3253,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:MESLotTrace.MastEquip._txtESD">
 <summary>
 txtESD control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.MastEquip._txtDisSeq">
+<summary>
+txtDisSeq control.
 </summary>
 <remarks>
 Auto-generated field.

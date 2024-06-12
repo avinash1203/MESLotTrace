@@ -27,6 +27,16 @@ Public Class Class1
             End If
         End If
     End Sub
+
+    Public Shared Sub ConvertDbNullToEmptyString(ByRef dt As DataTable)
+        For Each row As DataRow In dt.Rows
+            For Each column As DataColumn In dt.Columns
+                If IsDBNull(row(column)) Then
+                    row(column) = String.Empty
+                End If
+            Next
+        Next
+    End Sub
     Public Shared Sub ShowMsgURL(ByVal Msg As String, msgbtn As String, msgtype As String, url As String)
         Dim sMessage As String = ShowMsgURLSetup(Msg, msgbtn, msgtype, url)
 
