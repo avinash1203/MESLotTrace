@@ -13,7 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server" style="z-index: 1; font: calibri; width: auto; height: auto;">
-        <div id="mainform" runat="server"  style="z-index: 1; font: calibri; width: auto; height: auto;">
+        <div id="mainform" runat="server" style="z-index: 1; font: calibri; width: auto; height: auto;">
             <div id="formheader" runat="server"
                 style="z-index: 1; position: absolute; top: 1px; left: 1px; border: 1px black solid; width: 100%; height: 80px; background-color: aquamarine;">
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/FormHeader01.png"
@@ -31,9 +31,12 @@
                         ShowFooter="True"
                         EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastReasonSDA" Width="100%">
                         <Columns>
-                            <asp:CommandField ShowSelectButton="True">
-                                <ItemStyle Width="15px" Wrap="False" />
-                            </asp:CommandField>
+                            <asp:TemplateField HeaderText="Actions">
+                                <ItemStyle Width="100px" />
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("RSN_CD") & "_" & Eval("RSN_DIV") & "_" & Eval("RSN_GRP_CD") %>' Text="Select" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="RSN_CD" HeaderText="Reason Code" SortExpression="RSN_CD">
                                 <ItemStyle Width="100px" />
                             </asp:BoundField>
@@ -57,7 +60,7 @@
                 <asp:Label ID="LoginUser" runat="server" Style="z-index: 1; position: absolute; font-size: small; top: 5px; left: 1px;" Text="User name"></asp:Label>
             </div>
 
-            <div id="DataEntryScr" runat="server"
+            <div id="DataEntryScr" runat="server" visible="false"
                 style="z-index: 9999; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 599px; height: 500px; border: 1px solid black; background-color: #9999FF;">
                 <asp:Label ID="Label3" runat="server" Text="REASON CODE Data Entry" Font-Bold="True"
                     Style="z-index: 1; left: 10px; top: 14px; position: absolute; width: 582px; text-align: center"></asp:Label>
@@ -95,7 +98,7 @@
                 <asp:ImageButton ID="ImageButton2" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
             </div>
         </div>
-        <asp:SqlDataSource ID="MastReasonSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [RSN_CD], [RSN_NM] FROM [MAST_REASON]  WHERE CNCL_FLG = 0 ORDER BY [RSN_CD]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="MastReasonSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [RSN_CD],RSN_DIV,RSN_GRP_CD, [RSN_NM] FROM [MAST_REASON]  WHERE CNCL_FLG = 0 ORDER BY [RSN_CD]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

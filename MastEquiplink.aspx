@@ -36,7 +36,7 @@
                         <asp:TemplateField HeaderText="Actions">
                             <ItemStyle Width="100px" />
                             <ItemTemplate>
-                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id") + "_" + Eval("line_id") + "_" + Eval("step_cd") + "_" + Eval("equip_cd")  %>' Text="Select" />
+                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id") & "_" & Eval("line_id") & "_" & Eval("step_cd") & "_" & Eval("equip_cd")  %>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 

@@ -28,6 +28,14 @@ Public Class Class1
         End If
     End Sub
 
+    Public Shared Function GetLoginId(ByVal request As HttpRequest) As String
+        Dim LogonID As String = request.QueryString("LogonID")
+        If LogonID Is Nothing Then
+            LogonID = request.QueryString("LoginID")
+        End If
+        Return LogonID
+    End Function
+
     Public Shared Sub ConvertDbNullToEmptyString(ByRef dt As DataTable)
         For Each row As DataRow In dt.Rows
             For Each column As DataColumn In dt.Columns

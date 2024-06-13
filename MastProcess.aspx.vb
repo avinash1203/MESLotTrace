@@ -7,7 +7,7 @@ Public Class MastProcess
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Logonid = Request.QueryString("LogonID")
         ' Logonid = "9900"
-        DataEntryScr.Visible = False
+        'DataEntryScr.Visible = False
 
         connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
 
