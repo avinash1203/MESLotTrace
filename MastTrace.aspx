@@ -36,7 +36,7 @@
                         <asp:TemplateField HeaderText="Actions">
                             <ItemStyle Width="100px" />
                             <ItemTemplate>
-                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id") %>' Text="Select" />
+                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id") & "_" & Eval("line_id")%>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
@@ -76,7 +76,7 @@
                   ,[spec_min],[spec_max],[units],[rep_code_flg],[col_nm_1],[data_type_1],[col_nm_2],[data_type_2],[col_nm_3]
                   ,[data_type_3],[col_nm_4],[data_type_4],[col_nm_5],[data_type_5],[col_nm_6],[data_type_6],[col_nm_7],[data_type_7],[col_nm_8]
                   ,[data_type_8],[col_nm_9],[data_type_9],[col_nm_10]
-                  ,[data_type_10],[inf_flg]
+                  ,[data_type_10],[inf_flg],[line_id]
                    FROM [dbo].[MAST_TRACE] WHERE CNCL_FLG = 0"></asp:SqlDataSource>
 
             </div>

@@ -6,8 +6,7 @@ Public Class Mast_Trace
     Public connstr As String
     Public Logonid As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Logonid = Request.QueryString("LogonID")
-        ' Logonid = "9900"
+        Logonid = Class1.GetLoginId(Request)
         DataEntryScr.Visible = False
 
         Me.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None
@@ -25,9 +24,10 @@ Public Class Mast_Trace
         Dim cmd As SqlCommand
         Dim myconnection As New SqlConnection
         myconnection = New SqlConnection(connstr)
-        sqlstr = "SELECT COUNT(*) FROM MAST_TRACE WHERE proc_flow_id = @proc_flow_id"
+        sqlstr = "SELECT COUNT(*) FROM MAST_TRACE WHERE proc_flow_id = @proc_flow_id AND line_id = @line_id"
         cmd = New SqlCommand(sqlstr, myconnection)
         cmd.Parameters.AddWithValue("@proc_flow_id", ddlProcId.SelectedValue)
+        cmd.Parameters.AddWithValue("@line_id", ddlLineId.SelectedValue)
 
         myconnection.Open()
         Dim ANS As Integer = cmd.ExecuteScalar
@@ -59,14 +59,14 @@ Public Class Mast_Trace
                            ,[data_type_1],[col_nm_2] ,[data_type_2],[col_nm_3],[data_type_3] ,[col_nm_4]
                            ,[data_type_4],[col_nm_5],[data_type_5],[col_nm_6] ,[data_type_6],[col_nm_7]
                            ,[data_type_7],[col_nm_8] ,[data_type_8] ,[col_nm_9],[data_type_9] ,[col_nm_10]
-                           ,[data_type_10],[inf_flg],[cncl_flg] ,[regr_id],[regr_utc],[notes])" +
+                           ,[data_type_10],[inf_flg],[cncl_flg] ,[regr_id],[regr_utc],[notes],[line_id])" +
                           "VALUES(" +
                             "@cmp_cd,@plnt_cd,@item_cd,@proc_flow_id,@step_cd,@equip_id,@trace_cd,@trace_name
                            ,@equip_gp,@trace_div,@spec_min ,@spec_max,@units,@rep_code_flg,@col_nm_1
                            ,@data_type_1,@col_nm_2 ,@data_type_2,@col_nm_3,@data_type_3 ,@col_nm_4
                            ,@data_type_4,@col_nm_5,@data_type_5,@col_nm_6 ,@data_type_6,@col_nm_7
                            ,@data_type_7,@col_nm_8 ,@data_type_8 ,@col_nm_9,@data_type_9 ,@col_nm_10
-                           ,@data_type_10,@inf_flg,@cncl_flg ,@regr_id,@regr_utc,@notes)"
+                           ,@data_type_10,@inf_flg,@cncl_flg ,@regr_id,@regr_utc,@notes,@line_id)"
 
         myconnection.Open()
         cmd = New SqlCommand(sqlstr, myconnection)
@@ -111,6 +111,7 @@ Public Class Mast_Trace
         cmd.Parameters.AddWithValue("@regr_utc", Format(Now, "yyyy-MM-dd HH:mm:ss"))
         cmd.Parameters.AddWithValue("@regr_id", Logonid)
         cmd.Parameters.AddWithValue("@notes", txtRe.Text)
+        cmd.Parameters.AddWithValue("@line_id", ddlLineId.SelectedValue)
         Try
             cmd.ExecuteNonQuery()
             Class1.ShowMsg("Saved Successfully", "Ok", "success")
@@ -134,7 +135,7 @@ Public Class Mast_Trace
                            ,[data_type_1]=@data_type_1,[col_nm_2]=@col_nm_2 ,[data_type_2]=@data_type_2,[col_nm_3]=@col_nm_3,[data_type_3]=@data_type_3 ,[col_nm_4]=@col_nm_4
                            ,[data_type_4]=@data_type_4,[col_nm_5]=@col_nm_5,[data_type_5]=@data_type_5,[col_nm_6]=@col_nm_6 ,[data_type_6]=@data_type_6,[col_nm_7]=@col_nm_7
                            ,[data_type_7]=@data_type_7,[col_nm_8]=@col_nm_8 ,[data_type_8]=@data_type_8 ,[col_nm_9]=@col_nm_9,[data_type_9]=@data_type_9 ,[col_nm_10]=@col_nm_10
-                           ,[data_type_10]=@data_type_10,[inf_flg]=@inf_flg,[cncl_flg]=@cncl_flg ,[upd_id]=@upd_id,[upd_utc]=@upd_utc,[notes]=@notes,[line_id]=@line_id  Where proc_flow_id = @proc_flow_id"
+                           ,[data_type_10]=@data_type_10,[inf_flg]=@inf_flg,[cncl_flg]=@cncl_flg ,[upd_id]=@upd_id,[upd_utc]=@upd_utc,[notes]=@notes,[line_id]=@line_id  Where proc_flow_id = @proc_flow_id AND line_id = @line_id"
 
         myconnection.Open()
         cmd = New SqlCommand(sqlstr, myconnection)
@@ -196,6 +197,7 @@ Public Class Mast_Trace
         ddlCC.ClearSelection()
         ddlPC.ClearSelection()
         ddlMC.ClearSelection()
+        ddlLineId.ClearSelection()
         ddlProcId.ClearSelection()
         txtSC.Text = String.Empty
         txtEC.Text = String.Empty
@@ -211,27 +213,28 @@ Public Class Mast_Trace
         txtRGF.Text = String.Empty
         txtCN1.Text = String.Empty
         txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
-        txtCN1.Text = String.Empty
-        txtDT1.Text = String.Empty
+        txtCN2.Text = String.Empty
+        txtDT2.Text = String.Empty
+        txtCN3.Text = String.Empty
+        txtDT3.Text = String.Empty
+        txtCN4.Text = String.Empty
+        txtDT4.Text = String.Empty
+        txtDT5.Text = String.Empty
+        txtCN5.Text = String.Empty
+        txtCN6.Text = String.Empty
+        txtDT6.Text = String.Empty
+        txtCN7.Text = String.Empty
+        txtDT7.Text = String.Empty
+        txtCN8.Text = String.Empty
+        txtDT8.Text = String.Empty
+        txtCN9.Text = String.Empty
+        txtDT9.Text = String.Empty
+        txtCN10.Text = String.Empty
+        txtDT10.Text = String.Empty
         chkInf.Checked = False
         hfPopUpType.Value = ""
         ddlProcId.Enabled = True
+        ddlLineId.Enabled = True
     End Sub
 
     Protected Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -254,13 +257,14 @@ Public Class Mast_Trace
         If e.CommandName = "Select" Then
             hfPopUpType.Value = "Edit"
             ddlProcId.Enabled = False
-            'Dim resultArray() As String = e.CommandArgument.Split("_")
-            GetSelected(e.CommandArgument)
+            ddlLineId.Enabled = False
+            Dim resultArray() As String = e.CommandArgument.Split("_")
+            GetSelected(resultArray(0), resultArray(1))
 
         End If
     End Sub
 
-    Protected Sub GetSelected(proc_flow_id As String)
+    Protected Sub GetSelected(proc_flow_id As String, line_id As String)
         connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
         Dim sqlstr As String
         Dim myConnection As SqlConnection
@@ -271,7 +275,7 @@ Public Class Mast_Trace
                   ,[data_type_8],[col_nm_9],[data_type_9],[col_nm_10]
                   ,[data_type_10],[inf_flg],[notes],[line_id]
                    FROM [dbo].[MAST_TRACE] " +
-                   "WHERE proc_flow_id = @proc_flow_id"
+                   "WHERE proc_flow_id = @proc_flow_id AND line_id =@line_id"
 
         Dim cmd As SqlCommand
 
@@ -279,6 +283,7 @@ Public Class Mast_Trace
         myConnection.Open()
         cmd = New SqlCommand(sqlstr, myConnection)
         cmd.Parameters.AddWithValue("@proc_flow_id", proc_flow_id)
+        cmd.Parameters.AddWithValue("@line_id", line_id)
 
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable
@@ -413,10 +418,11 @@ Public Class Mast_Trace
         myconnection = New SqlConnection(connstr)
 
         sqlstr = "UPDATE MAST_TRACE" +
-                        " SET CNCL_FLG = 1  WHERE proc_flow_id = @proc_flow_id"
+                        " SET CNCL_FLG = 1  WHERE proc_flow_id = @proc_flow_id AND line_id =@line_id"
         myconnection.Open()
         cmd = New SqlCommand(sqlstr, myconnection)
         cmd.Parameters.AddWithValue("@proc_flow_id", ddlProcId.SelectedValue)
+        cmd.Parameters.AddWithValue("@line_id", ddlLineId.SelectedValue)
 
         Try
             cmd.ExecuteNonQuery()
@@ -428,7 +434,7 @@ Public Class Mast_Trace
         End Try
     End Sub
 
-          Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-                    Response.Redirect("appMainpage.aspx?LoginID=" & Logonid & "Op=2")
-          End Sub
+    Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
+        Response.Redirect("appMainpage.aspx?LoginID=" & Logonid & "Op=2")
+    End Sub
 End Class
