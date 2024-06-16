@@ -235,7 +235,7 @@ Public Class AppMainPage
         Response.Redirect("MastLineMaint.aspx?LogonID=" & LogonID)
     End Sub
     Protected Sub btnMMStdUOM_Click(sender As Object, e As EventArgs) Handles btnMMStdUOM.Click
-        'Response.Redirect("MastVendUOM.aspx?LogonID=" & LogonID)
+        Response.Redirect("MastUOM.aspx?LogonID=" & LogonID)
     End Sub
     Protected Sub btnMMShift_Click(sender As Object, e As EventArgs) Handles btnMMShift.Click
         Response.Redirect("MastShiftMaint.aspx?LogonID=" & LogonID)
