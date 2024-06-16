@@ -96,11 +96,11 @@ Public Class MastProdCapacity
         Try
             cmd.ExecuteNonQuery()
             Class1.ShowMsg("Saved Successfully", "Ok", "success")
-            DataEntryScr.Visible = False
+
         Catch ex As Exception
             Class1.ShowMsg("Error during Save!", "Continue", "warning")
-            Exit Sub
         End Try
+        DataEntryScr.Visible = False
     End Sub
     Protected Sub UpdateProdCap()
 
@@ -390,7 +390,7 @@ Public Class MastProdCapacity
         DataEntryScr.Visible = False
     End Sub
 
-          Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-                    Response.Redirect("appMainpage.aspx?LoginID=" & Logonid & "&Op=2")
-          End Sub
+    Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
+        Response.Redirect("appMainpage.aspx?LoginID=" & Logonid & "&Op=2")
+    End Sub
 End Class
