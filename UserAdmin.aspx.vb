@@ -51,8 +51,8 @@ Public Class UserAdmin
             Exit Sub
         End If
 
-
-        If ANS > 0 Then
+                    ' checking for githu
+                    If ANS > 0 Then
             Call UpdateUserMaster()
         Else
             Call InsertUserMaster()
