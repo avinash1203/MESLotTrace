@@ -6,3 +6,4 @@ obj/Debug/MESLotTrace.dll
 .vs/MESLotTrace/v17/.suo
 *.dll
 *.pdb
+/bin

@@ -265,11 +265,13 @@ Public Class MastProdCapacity
 
 
 
-        If value.Rows(0).Item(0) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
-        End If
+        'If value.Rows(0).Item(0) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlCC", value.Rows(0).Item(0))
+
         If value.Rows(0).Item(1) Is String.Empty Then
             DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedIndex = 0
         Else
@@ -283,12 +285,8 @@ Public Class MastProdCapacity
             DirectCast(DataEntryScr.FindControl("ddlIC"), DropDownList).SelectedValue = value.Rows(0).Item(2)
         End If
 
-        If value.Rows(0).Item(3) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedValue = value.Rows(0).Item(3)
-        End If
 
+        Class1.SetDropDownVale(DataEntryScr, "ddlLineId", value.Rows(0).Item(3))
 
 
         Dim ddlPFIDId = DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).Items(0)
@@ -298,12 +296,8 @@ Public Class MastProdCapacity
 
 
 
-        If value.Rows(0).Item(4) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).SelectedValue = value.Rows(0).Item(4)
-        End If
 
+        Class1.SetDropDownVale(DataEntryScr, "ddlPFID", value.Rows(0).Item(4))
 
         DirectCast(DataEntryScr.FindControl("txtNS"), TextBox).Text = value.Rows(0).Item(5)
         DirectCast(DataEntryScr.FindControl("txtProdCap"), TextBox).Text = value.Rows(0).Item(6)

@@ -28,6 +28,32 @@ Public Class Class1
         End If
     End Sub
 
+
+    Public Shared Function DropDownHasVale(ByVal ddl As DropDownList, ByVal value As String) As Boolean
+        Dim valueExists As Boolean = ddl.Items.Cast(Of ListItem)().Any(Function(item) item.Value = value)
+        Return valueExists
+    End Function
+
+    Public Shared Sub SetDropDownVale(ByVal htmlgen As HtmlGenericControl, ByVal ddlId As String, ByVal value As Object)
+        Dim ddl = DirectCast(htmlgen.FindControl(ddlId), DropDownList)
+        ddl.ClearSelection()
+        If value Is String.Empty Or value Is DBNull.Value Then
+            ddl.SelectedIndex = 0
+            Return
+        Else
+            If DropDownHasVale(ddl, value) Then
+                ddl.SelectedValue = value
+            Else
+                'ddl.Enabled = True
+                ddl.SelectedIndex = 0
+            End If
+            Return
+        End If
+    End Sub
+
+
+
+
     Public Shared Function GetLoginId(ByVal request As HttpRequest) As String
         Dim LogonID As String = request.QueryString("LogonID")
         If LogonID Is Nothing Then

@@ -14,12 +14,14 @@ GO
 IF NOT EXISTS (
     SELECT * 
     FROM sys.indexes 
-    WHERE name = 'unique_MAST_TRACE' 
+    WHERE name = 'Unique_MAST_TRACE' 
     AND object_id = OBJECT_ID('MAST_TRACE')
 )
 BEGIN   
- CREATE UNIQUE NONCLUSTERED INDEX IX_MAST_TRACE
+ CREATE UNIQUE NONCLUSTERED INDEX Unique_MAST_TRACE
     ON MAST_TRACE (line_id,proc_flow_id)
     WHERE cncl_flg =0;
 END
 GO
+
+

@@ -284,11 +284,15 @@ Public Class MastShiftMaint
         DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).Items.Clear()
         DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).Items.Add(firstPC)
         DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).DataBind()
-        If value.Rows(0).Item(0) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
-        End If
+
+        Class1.SetDropDownVale(DataEntryScr, ddlCC.ID, value.Rows(0).Item(0))
+
+        'If value.Rows(0).Item(0) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
+        'End If
+
         If value.Rows(0).Item(1) Is String.Empty Then
             DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedIndex = 0
         Else

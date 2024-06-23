@@ -309,6 +309,9 @@ Public Class Mast_Trace
         DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).DataBind()
 
 
+
+
+
         Dim firstPC = DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).Items(0)
         DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).Items.Clear()
         DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).Items.Add(firstPC)
@@ -327,29 +330,33 @@ Public Class Mast_Trace
 
 
 
-        If value.Rows(0).Item(0) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
-        End If
-        If value.Rows(0).Item(1) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedValue = value.Rows(0).Item(1)
-        End If
+        'If value.Rows(0).Item(0) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlCC", value.Rows(0).Item(0))
 
-        If value.Rows(0).Item(2) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlMC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlMC"), DropDownList).SelectedValue = value.Rows(0).Item(2)
-        End If
+        'If value.Rows(0).Item(1) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedValue = value.Rows(0).Item(1)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlPC", value.Rows(0).Item(1))
 
-        If value.Rows(0).Item(3) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlProcId"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlProcId"), DropDownList).SelectedValue = value.Rows(0).Item(3)
-        End If
+        'If value.Rows(0).Item(2) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlMC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlMC"), DropDownList).SelectedValue = value.Rows(0).Item(2)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlMC", value.Rows(0).Item(2))
 
+        'If value.Rows(0).Item(3) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlProcId"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlProcId"), DropDownList).SelectedValue = value.Rows(0).Item(3)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlProcId", value.Rows(0).Item(3))
 
         DirectCast(DataEntryScr.FindControl("txtSC"), TextBox).Text = value.Rows(0).Item(4)
         DirectCast(DataEntryScr.FindControl("txtEC"), TextBox).Text = value.Rows(0).Item(5)
@@ -403,11 +410,13 @@ Public Class Mast_Trace
         DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).Items.Add(lineId)
         DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).DataBind()
 
-        If value.Rows(0).Item(36) Is String.Empty Or value.Rows(0).Item(36) Is DBNull.Value Then
-            DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedValue = value.Rows(0).Item(36)
-        End If
+        'If value.Rows(0).Item(36) Is String.Empty Or value.Rows(0).Item(36) Is DBNull.Value Then
+        '    DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedValue = value.Rows(0).Item(36)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlLineId", value.Rows(0).Item(36))
+
 
 
     End Sub

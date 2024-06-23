@@ -14,7 +14,7 @@ GO
 IF NOT EXISTS (
     SELECT * 
     FROM sys.indexes 
-    WHERE name = 'unique_shift_ptrn_wrk_shift_seq' 
+    WHERE name = 'IX_MAST_SHIFT' 
     AND object_id = OBJECT_ID('MAST_SHIFT')
 )
 BEGIN
@@ -34,14 +34,14 @@ IF EXISTS (
 )
 BEGIN
    ALTER TABLE [dbo].[MAST_SHIFT2] DROP CONSTRAINT [PK_MAST_SHIFT2] WITH ( ONLINE = OFF )
-   ALTER TABLE [dbo].[MAST_SHIFT2] DROP CONSTRAINT [unique_shift_ptrn_wrk_shift_seq2]
+   --ALTER TABLE [dbo].[MAST_SHIFT2] DROP CONSTRAINT [unique_shift_ptrn_wrk_shift_seq2]
 END
 GO
 
 IF NOT EXISTS (
     SELECT * 
     FROM sys.indexes 
-    WHERE name = 'unique_shift_ptrn_wrk_shift_seq' 
+    WHERE name = 'IX_MAST_SHIFT2' 
     AND object_id = OBJECT_ID('MAST_SHIFT2')
 )
 BEGIN
