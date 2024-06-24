@@ -20,7 +20,7 @@ IF NOT EXISTS (
 BEGIN   
  CREATE UNIQUE NONCLUSTERED INDEX Unique_MAST_TRACE
     ON MAST_TRACE (line_id,proc_flow_id)
-    WHERE cncl_flg =0;
+    WHERE cncl_flg =CAST(0 AS INT);
 END
 GO
 
