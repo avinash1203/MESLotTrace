@@ -1,10 +1,10 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MastUOM.aspx.vb" Inherits="MESLotTrace.MastUOM" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MastEquip.aspx.vb" Inherits="MESLotTrace.MastEquip" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Master Unit of Measure</title>
+    <title>Master Equipment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="~/images/favicon.ico">
     <link href="Scripts/dndod-popup.min.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
                 Style="z-index: 1; border-image-repeat: stretch; padding: 5px 5px 2px 2px; width: 100%; height: 100%;" />
         </div>
         <div id="formtitle" runat="server" style="z-index: 1; position: absolute; top: 86px; left: 1px; width: 100%; height: 50px; text-align: center; border: 1px solid black; background-color: azure;">
-            <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="Unit of Measure Master" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+            <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="Equipment  Master" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
             <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
         </div>
         <div id="formbody" runat="server" style="z-index: 1; position: absolute; top: 140px; left: 1px; width: 100%; height: 550px; border: 1px black solid;">
@@ -29,23 +29,26 @@
                 <asp:GridView ID="gvContent" runat="server"
                     Font-Size="Medium"
                     ShowFooter="True" OnRowCommand="gvContent_RowCommand"
-                    EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastUOMSDA" Width="100%">
+                    EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastEquipSDA" Width="100%">
                     <Columns>
                         <asp:TemplateField HeaderText="Actions">
                             <ItemStyle Width="100px" />
                             <ItemTemplate>
-                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("uom_cd") %>' Text="Select" />
+                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("equip_id") %>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:BoundField DataField="uom_cd" HeaderText="UOM Code" SortExpression="uom_cd">
+                        <asp:BoundField DataField="equip_id" HeaderText="Equip Id" SortExpression="equip_id">
                             <ItemStyle Width="200px" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="uom_nm" HeaderText="UOM Name" SortExpression="uom_nm">
+                        <asp:BoundField DataField="equip_nm" HeaderText="Eqiupment Description" SortExpression="equip_nm">
                             <ItemStyle Width="100px" />
                         </asp:BoundField>
 
-                        <asp:BoundField DataField="conv_unit_bf_cd" HeaderText="Conversion Unit Code" SortExpression="conv_unit_bf_cd">
+                        <asp:BoundField DataField="Line_id" HeaderText="Line ID" SortExpression="Line_id">
+                            <ItemStyle Width="100px" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="equip_mgnt_strt_dt_utc" HeaderText="Equipment Start Date" DataFormatString="{0:dd/MM/yyyy}" SortExpression="equip_mgnt_strt_dt_utc">
                             <ItemStyle Width="100px" />
                         </asp:BoundField>
                     </Columns>
@@ -59,7 +62,9 @@
                     <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
                 </asp:GridView>
 
-                <asp:SqlDataSource ID="MastUOMSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [uom_cd],[uom_nm],[conv_unit_bf_cd] FROM [MAST_UOM] WHERE CNCL_FLG = 0 ORDER BY [uom_nm]"></asp:SqlDataSource>
+
+
+                <asp:SqlDataSource ID="MastEquipSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [equip_id],[equip_nm],[line_id],[equip_nm_local],[equip_mgnt_strt_dt_utc]  FROM [MAST_EQUIP] WHERE CNCL_FLG = 0 ORDER BY [equip_nm]"></asp:SqlDataSource>
 
             </div>
         </div>
@@ -70,24 +75,59 @@
 
         <div id="DataEntryScr" runat="server"
             style="z-index: 9999; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 599px; height: 480px; border: 1px solid black; background-color: azure;">
-            <asp:Label ID="Label3" runat="server" Text="Unit of Measure Data Entry" Font-Bold="True"
+            <asp:Label ID="Label3" runat="server" Text="Equipment Data Entry" Font-Bold="True"
                 Style="z-index: 1; left: 10px; top: 24px; position: absolute; width: 582px; text-align: center"></asp:Label>
             <asp:HiddenField ID="hfPopUpType" Value="" runat="server" />
-            <asp:Label ID="Label4" runat="server" Style="z-index: 1; left: 34px; top: 70px; position: absolute" Text="UOM Code "></asp:Label>
-            <asp:Label ID="Label5" runat="server" Style="z-index: 1; left: 34px; top: 110px; position: absolute" Text="UOM Name "></asp:Label>
-            <asp:Label ID="Label2" runat="server" Style="z-index: 1; left: 34px; top: 150px; position: absolute" Text="Conversion Unit Code "></asp:Label>
+            <asp:Label ID="Label4" runat="server" Style="z-index: 1; left: 34px; top: 70px; position: absolute" Text="Company Code "></asp:Label>
+            <asp:Label ID="Label5" runat="server" Style="z-index: 1; left: 34px; top: 110px; position: absolute" Text="Plant Code "></asp:Label>
+            <asp:Label ID="Label2" runat="server" Style="z-index: 1; left: 34px; top: 150px; position: absolute" Text="Equipment ID "></asp:Label>
+            <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 34px; top: 190px; position: absolute" Text="Eqiupment Description "></asp:Label>
+            <asp:Label ID="Label8" runat="server" Style="z-index: 1; left: 34px; top: 230px; position: absolute" Text="Line ID "></asp:Label>
+            <asp:Label ID="Label7" runat="server" Style="z-index: 1; left: 34px; top: 270px; position: absolute" Text="Equipment Name "></asp:Label>
 
-            <asp:TextBox ID="txtUOMCode" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 70px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
-            <asp:TextBox ID="txtUOMName" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 110px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
-            <asp:TextBox ID="txtConvUnitCode" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 150px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
-            <asp:Button ID="btnSave" runat="server" Style="z-index: 1; left: 36px; top: 190px; width: 99px; height: 30px; position: absolute; font-size: medium; font-weight: 600;" Text="Save" CssClass="button1" />
-            <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; left: 250px; top: 190px; position: absolute; font-size: medium; font-weight: 600;" Text="Delete" Height="30px" Width="99px" CssClass="button1" />
-            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1; left: 450px; top: 190px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" Height="30px" Width="99px" CssClass="button1" />
+            <asp:Label ID="Label9" runat="server" Style="z-index: 1; left: 34px; top: 310px; position: absolute" Text="Equipment Start Date "></asp:Label>
+
+            <asp:Label ID="Label11" runat="server" Style="z-index: 1; left: 34px; top: 350px; position: absolute" Text="Display sequence"></asp:Label>
+
+            <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 34px; top: 390px; position: absolute" Text="Remarks "></asp:Label>
+
+
+
+            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 70px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_nm" DataValueField="cmp_cd">
+                <asp:ListItem Text="-- Select Option --" Value="" />
+            </asp:DropDownList>
+
+
+            <asp:DropDownList ID="ddlPC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 110px; width: 168px; height: 25px; position: absolute;" DataSourceID="ddlPCSDA" DataTextField="pltn_nm" DataValueField="pltn_cd">
+                <asp:ListItem Text="-- Select Option --" Value="" />
+            </asp:DropDownList>
+
+            <asp:TextBox ID="txtEID" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 150px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtED" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 190px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+            <asp:DropDownList ID="ddlLineId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 230px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlLINESDA" DataTextField="line_nm" DataValueField="line_id">
+                <asp:ListItem Text="-- Select Option --" Value="" />
+            </asp:DropDownList>
+
+            <asp:TextBox ID="txtEIN" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 270px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtESD" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 310px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px" TextMode="Date"></asp:TextBox>
+            <asp:TextBox ID="txtDisSeq" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 350px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtRe" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 390px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+
+            <asp:Button ID="btnSave" runat="server" Style="z-index: 1; left: 36px; top: 427px; width: 99px; height: 30px; position: absolute; font-size: medium; font-weight: 600;" Text="Save" CssClass="button1" />
+            <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; left: 250px; top: 427px; position: absolute; font-size: medium; font-weight: 600;" Text="Delete" Height="30px" Width="99px" CssClass="button1" />
+            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1; left: 450px; top: 427px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" Height="30px" Width="99px" CssClass="button1" />
             <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
 
+
         </div>
-        <asp:SqlDataSource ID="ddlConvUnitSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [conv_unit_bf_cd],[conv_unit_bf_nm] FROM [MAST_CONVUNIT] WHERE CNCL_FLG = 0 ORDER BY [conv_unit_bf_nm]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="ddlCCSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [cmp_nm],[cmp_cd], [REGR_ID] FROM [MAST_COMPANYCODE] WHERE CNCL_FLG = 0 ORDER BY [cmp_nm]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="ddlPCSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [pltn_nm],[pltn_cd], [REGR_ID] FROM [MAST_PLANTCODE] WHERE CNCL_FLG = 0 ORDER BY [pltn_nm]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="ddlLINESDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [lproc_id],[line_id], [line_nm] FROM [MAST_LINE] WHERE CNCL_FLG = 0 ORDER BY [line_nm]"></asp:SqlDataSource>
+
 
     </form>
+
 </body>
+
+
 </html>
