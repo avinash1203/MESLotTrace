@@ -54,7 +54,7 @@
                 <asp:Button ID="btnExpSAP" runat="server" Style="z-index: 1; left: 9px; top: 467px; position: absolute; width: 91%; height: 61px; border-radius: 10px;" Text="Export To SAP" Font-Names="Arial Rounded MT Bold" Font-Size="25px" BackColor="#0000FF" ForeColor="#FFFFFF" />
             </div>
             <div id="Main" runat="server">
-                <asp:Image ID="Image4" runat="server" Style="z-index: 1; position: absolute; left: 30%; top: 124px; width: 65%; height: 570px; border: solid 1px black;" ImageUrl="~/Images/SystemLogo3.png" />
+                <asp:Image ID="Image4" runat="server" Style="z-index: 1; position: absolute; left: 30%; top: 124px; width: 65%; height: 570px; border: solid 1px black;" ImageUrl="~/Images/SystemLogo3.png" Visible="False" />
                
             </div>
             <div id="AdminFunc" runat="server" style="z-index: 1; position: absolute; align-content: center; left: 30%; top: 121px; border: solid 1px black; width: 65%; height: 551px; background-color: #CCFFFF;">
@@ -115,7 +115,7 @@
                 <asp:Button ID="BtnMMTraceMast" data-key="Trace_Master" runat="server" Style="z-index: 1; left: 60%; top: 262px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Trace Master" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
                 <asp:Button ID="btnMMConspStep" data-key="Comp_Cons_Step" runat="server" Style="z-index: 1; left: 60%; top: 325px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Comp. Cons by Step" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
                 <asp:Button ID="btnMMReason" data-key="Reason_Master" runat="server" Style="z-index: 1; left: 60%; top: 388px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Reason Master" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
-                <asp:Button ID="btnMMWorkerReg" data-key="Worker_Registration" runat="server" Style="z-index: 1; left: 60%; top: 451px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Worker Registration" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
+                <asp:Button ID="btnMMWorkerReg" Visible="false" data-key="Worker_Registration" runat="server" Style="z-index: 1; left: 60%; top: 451px; position: absolute; width: 37%; height: 48px; border-radius: 10px;" Text="Worker Registration" Font-Names="Arial Rounded MT Bold" Font-Size="20px" BackColor="#0000FF" ForeColor="#FFFFFF" />
             </div>
 
         </div>
