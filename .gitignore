@@ -7,3 +7,5 @@ obj/Debug/MESLotTrace.dll
 *.dll
 *.pdb
 /bin
+/obj
+/obj
