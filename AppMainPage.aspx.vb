@@ -277,4 +277,5 @@ Public Class AppMainPage
     Protected Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Response.Redirect("AppLogin.aspx")
     End Sub
+
 End Class

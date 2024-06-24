@@ -4,17 +4,17 @@ Imports System.Data.SqlClient
 Public Class MastPlantCodeMaint
           Inherits System.Web.UI.Page
           Public connstr As String
-          Public LoginId As String
+          Public LogonId As String
           Public newflg As Integer
           Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-                    LoginId = Request.QueryString("LoginID")
+                    LogonId = Request.QueryString("LogonID")
 
                     DataEntryScr.Visible = False
                     ConfirmDelete.Visible = False
                     connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
                     gvContent.DataBind()
-                    LoginUser.Text = "User ID : " & Class1.GetuserName(LoginId)
+                    LoginUser.Text = "User ID : " & Class1.GetuserName(LogonId)
 
 
 
@@ -65,7 +65,7 @@ Public Class MastPlantCodeMaint
                     cmd = New SqlCommand(sqlstr, myconnection)
                     cmd.Parameters.AddWithValue("@PLTNCD", txtPlantCd.Text.Trim)
                     cmd.Parameters.AddWithValue("@PLTNNM", txtPlantNm.Text.Trim)
-                    cmd.Parameters.AddWithValue("@REGR_ID", LoginId)
+                    cmd.Parameters.AddWithValue("@REGR_ID", LogonId)
                     cmd.Parameters.AddWithValue("@REGR_DATE", Format(Now, "yyyy-MM-dd HH:mm:ss"))
                     cmd.Parameters.AddWithValue("@CNCL_FLG", 0)
                     cmd.Parameters.AddWithValue("@UPD_ID", "")
@@ -100,7 +100,7 @@ Public Class MastPlantCodeMaint
                     cmd = New SqlCommand(sqlstr, myconnection)
                     cmd.Parameters.AddWithValue("@PLTNCD", txtPlantCd.Text.Trim)
                     cmd.Parameters.AddWithValue("@PLTNNM", txtPlantNm.Text.Trim)
-                    cmd.Parameters.AddWithValue("@UPD_ID", LoginId)
+                    cmd.Parameters.AddWithValue("@UPD_ID", LogonId)
                     cmd.Parameters.AddWithValue("@UPD_DATE", Format(Now, "yyyy-MM-dd HH:mm:ss"))
                     Try
                               cmd.ExecuteNonQuery()
@@ -179,7 +179,7 @@ Public Class MastPlantCodeMaint
                     Dim myconnection As New SqlConnection
                     myconnection = New SqlConnection(connstr)
                     Dim updt As String = Format(Now, "yyyy-MM-dd HH:mm")
-                    sqlstr = "UPDATE MAST_PLANTCODE SET CNCL_FLG = 9,UPD_DATE='" & updt & "',UPD_ID='" & LoginId & "' " +
+                    sqlstr = "UPDATE MAST_PLANTCODE SET CNCL_FLG = 9,UPD_DATE='" & updt & "',UPD_ID='" & LogonId & "' " +
                                    "WHERE PLTN_CD = '" & txtPlantCd.Text & "'"
                     myconnection.Open()
                     cmd = New SqlCommand(sqlstr, myconnection)
@@ -200,6 +200,6 @@ Public Class MastPlantCodeMaint
           End Sub
 
           Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-                    Response.Redirect("APPMainpage.aspx?LoginID=" & LoginId & "Op=2")
+                    Response.Redirect("APPMainpage.aspx?LogonID=" & LogonId & "&Op=2")
           End Sub
 End Class

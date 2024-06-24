@@ -6,10 +6,10 @@ Public Class MastProcess
     Public Logonid As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Logonid = Request.QueryString("LogonID")
-        ' Logonid = "9900"
-        'DataEntryScr.Visible = False
+                    ' Logonid = "9900"
+                    DataEntryScr.Visible = False
 
-        connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
+                    connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
 
 
     End Sub
@@ -310,6 +310,6 @@ Public Class MastProcess
     End Sub
 
     Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-        Response.Redirect("AppMainpage.aspx?LoginID=" & Logonid & "Op=2")
-    End Sub
+                    Response.Redirect("AppMainpage.aspx?LogonID=" & Logonid & "&Op=2")
+          End Sub
 End Class

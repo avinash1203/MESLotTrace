@@ -200,6 +200,6 @@ Public Class MastCompanyCodeMaint
           End Sub
 
           Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-                    Response.Redirect("appMainpage.aspx?LoginID=" & LogonId & "Op=2")
+                    Response.Redirect("appMainpage.aspx?LogonID=" & LogonId & "&Op=2")
           End Sub
 End Class
