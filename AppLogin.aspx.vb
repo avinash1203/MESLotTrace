@@ -34,9 +34,9 @@ Public Class AppLogin
           Protected Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
                     ValidateLogin()
                     If usrname <> "" Then
-                              Response.Redirect("AppMainPage.aspx?LogonID=" & txtLogonID.Text)
-                              'Response.Redirect("MainPage.aspx?LoginID=" & txtLogonID.Text.Trim)
-                    End If
+            Response.Redirect("AppMainPage.aspx?LogonID=" & txtLogonID.Text)
+            'Response.Redirect("MainPage.aspx?LoginID=" & txtLogonID.Text.Trim)
+        End If
           End Sub
           Protected Sub ValidateLogin()
                     connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString

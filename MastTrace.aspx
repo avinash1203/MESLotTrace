@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MastTrace.aspx.vb" Inherits="MESLotTrace.Mast_Trace" %>
 
-
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
