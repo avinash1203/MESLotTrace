@@ -216,17 +216,23 @@ Public Class MastProd3
 
 
 
-        If value.Rows(0).Item(0) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedValue = value.Rows(0).Item(0)
-        End If
+        'If value.Rows(0).Item(0) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedValue = value.Rows(0).Item(0)
+        'End If
 
-        If value.Rows(0).Item(1) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlIC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlIC"), DropDownList).SelectedValue = value.Rows(0).Item(1)
-        End If
+
+        Class1.SetDropDownVale(DataEntryScr, "ddlLineId", value.Rows(0).Item(0))
+
+
+        'If value.Rows(0).Item(1) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlIC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlIC"), DropDownList).SelectedValue = value.Rows(0).Item(1)
+        'End If
+
+        Class1.SetDropDownVale(DataEntryScr, "ddlIC", value.Rows(0).Item(1))
 
 
         DirectCast(DataEntryScr.FindControl("txtPFID"), TextBox).Text = value.Rows(0).Item(2)

@@ -37,6 +37,13 @@ Public Class Class1
     Public Shared Sub SetDropDownVale(ByVal htmlgen As HtmlGenericControl, ByVal ddlId As String, ByVal value As Object)
         Dim ddl = DirectCast(htmlgen.FindControl(ddlId), DropDownList)
         ddl.ClearSelection()
+        If ddl Is Nothing Then
+            Return
+        End If
+        If ddl.Items.Count == 0 Then
+            Return
+        End If
+
         If value Is String.Empty Or value Is DBNull.Value Then
             ddl.SelectedIndex = 0
             Return
