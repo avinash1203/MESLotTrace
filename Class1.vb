@@ -40,7 +40,7 @@ Public Class Class1
         If ddl Is Nothing Then
             Return
         End If
-        If ddl.Items.Count == 0 Then
+        If ddl.Items.Count = 0 Then
             Return
         End If
 
