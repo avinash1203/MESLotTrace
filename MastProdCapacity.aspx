@@ -43,14 +43,17 @@
                         <asp:TemplateField HeaderText="Actions">
                             <ItemStyle Width="100px" />
                             <ItemTemplate>
-                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id")  %>' Text="Select" />
+                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument="<%# Container.DataItemIndex %>"  Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:BoundField DataField="proc_flow_id" HeaderText="Production Flow Id" SortExpression="proc_flow_id">
+                        <asp:BoundField DataField="item_cd" HeaderText="Item Code" ReadOnly="True" SortExpression="item_cd" />
+                        <asp:BoundField DataField="line_id" HeaderText="Line ID" ReadOnly="True" SortExpression="line_id" />
+
+                        <asp:BoundField DataField="proc_flow_id" HeaderText="Process Flow Id" SortExpression="proc_flow_id">
                             <ItemStyle Width="200px" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="shift_nm" HeaderText="No. of Shift" SortExpression="shift_nm">
+                        <asp:BoundField DataField="shift_num" HeaderText="No. of Shift" SortExpression="shift_num">
                             <ItemStyle Width="100px" />
                         </asp:BoundField>
 
@@ -77,7 +80,7 @@
 
 
 
-                <asp:SqlDataSource ID="MastSetupSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [cmp_cd],[plnt_cd],[item_cd],[proc_flow_id],[shift_nm],[production_capacity],[proc_seq],[priority_order],[line_sym],[proc_sym] FROM [dbo].[MAST_PROD_CAPACITY] WHERE CNCL_FLG = 0"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="MastSetupSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [cmp_cd],[plnt_cd],[item_cd],[line_id],[proc_flow_id],[shift_num],[production_capacity],[proc_seq],[priority_order],[line_sym],[proc_sym] FROM [dbo].[MAST_PROD_CAPACITY] WHERE CNCL_FLG = 0"></asp:SqlDataSource>
 
             </div>
         </div>
@@ -112,10 +115,11 @@
             <asp:DropDownList ID="ddlPC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 317px; top: 110px; width: 168px; height: 25px; position: absolute;" DataSourceID="ddlPCSDA" DataTextField="pltn_nm" DataValueField="pltn_cd">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
+            
 
             <div style="z-index: 1; left: 317px; top: 150px; width: 388px; height: 25px; position: absolute;">
-                <asp:DropDownList ID="ddlIC" ClientIDMode="Static" type="text" runat="server" Style="width: 168px; display: inline-block;" Height="25px" DataTextField="item_nm" DataValueField="item_cd"></asp:DropDownList>
-                <asp:ImageButton ID="imgSearchIC" runat="server" Height="15px" ImageUrl="~/Images/search.png" Width="15px" />
+<asp:TextBox ID="txtIC" runat="server"></asp:TextBox>
+                <asp:ImageButton ID="imgSearchIC" runat="server" Height="24px" ImageUrl="~/Images/search.png" Width="25px" style="z-index: 1; left: 181px; top: 0px; position: absolute" />
 
             </div>
 

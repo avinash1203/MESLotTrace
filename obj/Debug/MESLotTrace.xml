@@ -5356,9 +5356,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProdCapacity._ddlIC">
+<member name="F:MESLotTrace.MastProdCapacity._txtIC">
 <summary>
-ddlIC control.
+txtIC control.
 </summary>
 <remarks>
 Auto-generated field.

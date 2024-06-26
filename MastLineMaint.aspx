@@ -36,23 +36,24 @@
                             <ItemTemplate>
                                 <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("line_id") %>' Text="Select" />
                             </ItemTemplate>
+                            <ItemStyle Width="10%" />
                         </asp:TemplateField>
 
                         <asp:BoundField DataField="line_id" HeaderText="Line Id" SortExpression="line_id">
-                            <ItemStyle Width="200px" />
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="line_nm" HeaderText="Line Description" SortExpression="line_nm">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="20%" />
                         </asp:BoundField>
 
-                        <asp:BoundField DataField="shift_ptrn_id" HeaderText="Shift Id" SortExpression="shift_ptrn_id">
-                            <ItemStyle Width="200px" />
+                        <asp:BoundField DataField="shiftid" HeaderText="Shift Id" SortExpression="shiftid">
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="cost_center" HeaderText="Cost Center" SortExpression="cost_center">
-                            <ItemStyle Width="200px" />
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="str_location" HeaderText="Storage Location" SortExpression="str_location">
-                            <ItemStyle Width="200px" />
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
 
                     </Columns>
@@ -68,9 +69,11 @@
 
 
 
-                <asp:SqlDataSource ID="MastLineSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [cmp_cd]
-                       ,[plnt_cd],[line_id],[line_nm],[lproc_id],[line_nm_local],[shift_ptrn_id],[cost_center] ,[str_location],[REGR_ID],[REGR_DATE],[UPD_ID] ,[UPD_DATE]
-                       ,[CNCL_FLG] FROM [MAST_LINE] WHERE CNCL_FLG = 0 ORDER BY [line_id]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="MastLineSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT 
+a.cmp_cd,a.plnt_cd,a.line_id,a.line_nm,a.lproc_id,a.shiftid,b.cost_center,b.str_location 
+FROM [MAST_LINE] a
+left join mast_line2 b on a.line_id = b.line_id
+WHERE a.CNCL_FLG = 0 ORDER BY [line_id]"></asp:SqlDataSource>
 
             </div>
         </div>
@@ -80,7 +83,7 @@
         </div>
 
         <div id="DataEntryScr" runat="server"
-            style="z-index: 9999; position: absolute; top: 60%; left: 50%; transform: translate(-50%,-50%); width: 599px; height: 600px; border: 1px solid black; background-color: azure;">
+            style="z-index: 9999; position: absolute; top: 29%; left: 39%;  width: 599px; height: 600px; border: 1px solid black; background-color: azure;">
             <asp:HiddenField ID="hfPopUpType" Value="" runat="server" />
 
             <asp:Label ID="Label3" runat="server" Text="Line Information Data Entry" Font-Bold="True"
@@ -129,7 +132,7 @@
         </div>
         <asp:SqlDataSource ID="ddlCCSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [cmp_nm], [cmp_cd],[REGR_ID] FROM [MAST_COMPANYCODE] WHERE CNCL_FLG = 0 ORDER BY [cmp_nm]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="ddlPCSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [pltn_nm],[pltn_cd], [REGR_ID] FROM [MAST_PLANTCODE] WHERE CNCL_FLG = 0 ORDER BY [pltn_nm]"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="ddlShiftSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [shift_ptrn_id] FROM MAST_SHIFT WHERE CNCL_FLG = 0 ORDER BY [shift_ptrn_id]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="ddlShiftSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT DISTINCT [shift_ptrn_id] FROM MAST_SHIFT WHERE CNCL_FLG = 0 ORDER BY [shift_ptrn_id]"></asp:SqlDataSource>
 
 
     </form>

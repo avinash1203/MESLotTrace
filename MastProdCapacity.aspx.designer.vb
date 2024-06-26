@@ -284,13 +284,13 @@ Partial Public Class MastProdCapacity
           Protected WithEvents ddlPC As Global.System.Web.UI.WebControls.DropDownList
 
           '''<summary>
-          '''ddlIC control.
+          '''txtIC control.
           '''</summary>
           '''<remarks>
           '''Auto-generated field.
           '''To modify move field declaration from designer file to code-behind file.
           '''</remarks>
-          Protected WithEvents ddlIC As Global.System.Web.UI.WebControls.DropDownList
+          Protected WithEvents txtIC As Global.System.Web.UI.WebControls.TextBox
 
           '''<summary>
           '''imgSearchIC control.
