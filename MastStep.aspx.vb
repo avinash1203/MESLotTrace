@@ -6,7 +6,7 @@ Public Class MastStep
     Public connstr As String
     Public Logonid As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Logonid = Request.QueryString("LogonID")
+        Logonid = Class1.GetLoginId(Request)
         ' Logonid = "9900"
         DataEntryScr.Visible = False
 
@@ -258,7 +258,7 @@ Public Class MastStep
 
         Dim firstLprocId = DirectCast(DataEntryScr.FindControl("ddlLprocId"), DropDownList).Items(0)
         DirectCast(DataEntryScr.FindControl("ddlLprocId"), DropDownList).Items.Clear()
-        DirectCast(DataEntryScr.FindControl("ddlLprocId"), DropDownList).Items.Add(firstLineId)
+        DirectCast(DataEntryScr.FindControl("ddlLprocId"), DropDownList).Items.Add(firstLprocId)
         DirectCast(DataEntryScr.FindControl("ddlLprocId"), DropDownList).DataBind()
 
 
