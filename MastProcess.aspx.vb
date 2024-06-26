@@ -5,11 +5,11 @@ Public Class MastProcess
     Public connstr As String
     Public Logonid As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Logonid = Request.QueryString("LogonID")
-                    ' Logonid = "9900"
-                    DataEntryScr.Visible = False
+        Logonid = Class1.GetLoginId(Request)
 
-                    connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
+        DataEntryScr.Visible = False
+
+        connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
 
 
     End Sub
@@ -249,29 +249,34 @@ Public Class MastProcess
         DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).Items.Add(firstPC)
         DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).DataBind()
 
-        If value.Rows(0).Item(0) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
-        End If
-        If value.Rows(0).Item(1) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedValue = value.Rows(0).Item(1)
-        End If
+        'If value.Rows(0).Item(0) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
+        'End If
 
+        Class1.SetDropDownVale(DataEntryScr, "ddlCC", value.Rows(0).Item(0))
+
+        'If value.Rows(0).Item(1) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedValue = value.Rows(0).Item(1)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlPC", value.Rows(0).Item(1))
 
         Dim firstPFID = DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).Items(0)
         DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).Items.Clear()
-        DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).Items.Add(firstCC)
+        DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).Items.Add(firstPFID)
         DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).DataBind()
 
 
-        If value.Rows(0).Item(2) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).SelectedValue = value.Rows(0).Item(2)
-        End If
+        'If value.Rows(0).Item(2) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlPFID"), DropDownList).SelectedValue = value.Rows(0).Item(2)
+        'End If
+
+        Class1.SetDropDownVale(DataEntryScr, "ddlPFID", value.Rows(0).Item(2))
 
 
         DirectCast(DataEntryScr.FindControl("txtPGID"), TextBox).Text = value.Rows(0).Item(3)
@@ -310,6 +315,6 @@ Public Class MastProcess
     End Sub
 
     Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-                    Response.Redirect("AppMainpage.aspx?LogonID=" & Logonid & "&Op=2")
-          End Sub
+        Response.Redirect("AppMainpage.aspx?LogonID=" & Logonid & "&Op=2")
+    End Sub
 End Class
