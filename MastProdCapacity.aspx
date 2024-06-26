@@ -29,8 +29,8 @@
         </div>
         <div id="formtitle" runat="server" style="z-index: 1; position: absolute; top: 86px; left: 1px; width: 100%; height: 50px; text-align: center; border: 1px solid black; background-color: azure;">
             <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="Master Production Capacity" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
-   <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
-            </div>
+            <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
+        </div>
         <div id="formbody" runat="server" style="z-index: 1; position: absolute; top: 140px; left: 1px; width: 100%; height: 550px; border: 1px black solid;">
             <asp:Label ID="Label1" runat="server" Text="Defined Data" Style="z-index: 1; position: absolute; top: 5px; left: 1px;" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue"></asp:Label>
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
@@ -43,7 +43,7 @@
                         <asp:TemplateField HeaderText="Actions">
                             <ItemStyle Width="100px" />
                             <ItemTemplate>
-                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument="<%# Container.DataItemIndex %>"  Text="Select" />
+                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument="<%# Container.DataItemIndex %>" Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
@@ -115,11 +115,11 @@
             <asp:DropDownList ID="ddlPC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 317px; top: 110px; width: 168px; height: 25px; position: absolute;" DataSourceID="ddlPCSDA" DataTextField="pltn_nm" DataValueField="pltn_cd">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
-            
+
 
             <div style="z-index: 1; left: 317px; top: 150px; width: 388px; height: 25px; position: absolute;">
-<asp:TextBox ID="txtIC" runat="server"></asp:TextBox>
-                <asp:ImageButton ID="imgSearchIC" runat="server" Height="24px" ImageUrl="~/Images/search.png" Width="25px" style="z-index: 1; left: 181px; top: 0px; position: absolute" />
+                <asp:TextBox ID="txtIC" runat="server"></asp:TextBox>
+                <asp:ImageButton Visible="false" ID="imgSearchIC" runat="server" Height="24px" ImageUrl="~/Images/search.png" Width="25px" Style="z-index: 1; left: 181px; top: 0px; position: absolute" />
 
             </div>
 
