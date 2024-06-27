@@ -22,15 +22,15 @@
         </div>
         <div id="formtitle" runat="server" style="z-index: 1; position: absolute; top: 86px; left: 1px; width: 100%; height: 50px; text-align: center; border: 1px solid black; background-color: azure;">
             <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="Component Consumption By Step" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
-      <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
-            </div>
+            <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
+        </div>
         <div id="formbody" runat="server" style="z-index: 1; position: absolute; top: 140px; left: 1px; width: 100%; height: 550px; border: 1px black solid;">
             <asp:Label ID="Label1" runat="server" Text="Defined Data" Style="z-index: 1; position: absolute; top: 5px; left: 1px;" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue"></asp:Label>
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
-                <asp:GridView ID="gvContent" runat="server"
+                <asp:GridView ID="gvContent" runat="server" AllowPaging="true" PageSize="20" OnPageIndexChanging="gvContent_OnPageIndexChanging"   
                     Font-Size="Medium"
-                    ShowFooter="True" OnRowCommand="gvContent_RowCommand"
+                    ShowFooter="True" OnRowCommand="gvContent_RowCommand"  
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastSetupSDA" Width="100%">
                     <Columns>
                         <asp:TemplateField HeaderText="Actions">

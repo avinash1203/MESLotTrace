@@ -27,7 +27,7 @@
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 460px; border: 1px black solid; top: 55px; left: 4px;">
                 <asp:GridView ID="gvContent" runat="server"
                     Font-Size="Medium"
-                    ShowFooter="true"
+                    ShowFooter="true" AllowPaging="true" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
                     ShowHeader="true"
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True">
                     <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />

@@ -6,6 +6,6 @@
           End Sub
 
           Protected Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-                    Response.Redirect("AppMainpage.aspx?LogonID=" & LogonID & "Op=3")
-          End Sub
+        Response.Redirect("AppMainpage.aspx?LogonID=" & LogonID & "&Op=3")
+    End Sub
 End Class

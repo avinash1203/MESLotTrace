@@ -8,7 +8,7 @@
     <link href="dndod-popup.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="dndod-popup.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
- </head>
+</head>
 <body>
     <form id="form1" runat="server" style="font-family: Calibri;">
 
@@ -39,24 +39,24 @@
 
 
         <div id="mainpage" runat="server" style="z-index: 1; width: 99%; height: auto;">
-        
-                        <div id="mainmenu" runat="server" style="z-index: 1; position: absolute; left: 10px; top: 121px; height: 570px; width: 25%; left: 23px; background-color: aqua; border: solid 1px blue">
-                            <asp:ImageButton ID="ImageButton1" runat="server" Style="z-index: 1; left: 36px; top: 15px; width: 80%; position: absolute" ImageUrl="~/Images/button_administration.png"  />
-                            <asp:ImageButton ID="ImageButton2" runat="server" Style="z-index: 1; left: 36px; top:110px; width: 80%; position: absolute" ImageUrl="~/Images/button_master-maintenance.png" />
-                            <asp:ImageButton ID="ImageButton3" runat="server" Style="z-index: 1; left: 35px; top: 205px; width: 80%; position: absolute" ImageUrl="~/Images/button_operations.png" ImageAlign="Middle" />
-                            <asp:ImageButton ID="ImageButton4" runat="server" Style="z-index: 1; left: 35px; top: 300px; width: 80%; position: absolute" ImageUrl="~/Images/button_reporting.png" ImageAlign="Middle" />
-                            <asp:ImageButton ID="ImageButton5" runat="server" Style="z-index: 1; left: 35px; top: 395px; width: 80%; position: absolute" ImageUrl="~/Images/button_import-from-sap.png" ImageAlign="Middle" />
-                            <asp:ImageButton ID="ImageButton6" runat="server" Style="z-index: 1; left: 35px; top: 490px; width: 80%; position: absolute" ImageUrl="~/Images/button_export-to-sap.png" ImageAlign="Middle" />
-                     </div>
-                        <div id="centerscr" runat="server" style="z-index:1; position:absolute; left: 30%;top:121px;border: solid 1px black;width:65%;height:570px; background-color: #CCFFFF;">
-                            <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Names="Arial Rounded MT Bold" style="z-index: 1; left: 4px; top: 7px; position: absolute; text-align:center; width: 938px; height: 34px" Text="Operations" Font-Size="Larger"></asp:Label>
-                            <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/Images/button_lot-management.png" style="z-index: 1; left: 298px; top: 60px; position: absolute" />
-                            <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/Images/button_rework.png" style="z-index: 1; left: 298px; top: 153px; position: absolute" />
-                            <asp:ImageButton ID="ImageButton9" runat="server" ImageUrl="~/Images/button_scrap-item.png" style="z-index: 1; left: 298px; top: 252px; position: absolute" />
-                            <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/Images/button_print-tag.png" style="z-index: 1; left: 298px; top: 351px; position: absolute" />
-                            <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/Images/button_plc-trace-data-amendment.png" style="z-index: 1; left: 298px; top: 451px; position: absolute" />
-                        </div>
-     
+
+            <div id="mainmenu" runat="server" style="z-index: 1; position: absolute; left: 10px; top: 121px; height: 570px; width: 25%; left: 23px; background-color: aqua; border: solid 1px blue">
+                <asp:ImageButton ID="ImageButton1" runat="server" Style="z-index: 1; left: 36px; top: 15px; width: 80%; position: absolute" ImageUrl="~/Images/button_administration.png" />
+                <asp:ImageButton ID="ImageButton2" runat="server" Style="z-index: 1; left: 36px; top: 110px; width: 80%; position: absolute" ImageUrl="~/Images/button_master-maintenance.png" />
+                <asp:ImageButton ID="ImageButton3" runat="server" Style="z-index: 1; left: 35px; top: 205px; width: 80%; position: absolute" ImageUrl="~/Images/button_operations.png" ImageAlign="Middle" />
+                <asp:ImageButton ID="ImageButton4" runat="server" Style="z-index: 1; left: 35px; top: 300px; width: 80%; position: absolute" ImageUrl="~/Images/button_reporting.png" ImageAlign="Middle" />
+                <asp:ImageButton ID="ImageButton5" runat="server" Style="z-index: 1; left: 35px; top: 395px; width: 80%; position: absolute" ImageUrl="~/Images/button_import-from-sap.png" ImageAlign="Middle" />
+                <asp:ImageButton ID="ImageButton6" runat="server" Style="z-index: 1; left: 35px; top: 490px; width: 80%; position: absolute" ImageUrl="~/Images/button_export-to-sap.png" ImageAlign="Middle" />
+            </div>
+            <div id="centerscr" runat="server" style="z-index: 1; position: absolute; left: 30%; top: 121px; border: solid 1px black; width: 65%; height: 570px; background-color: #CCFFFF;">
+                <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Names="Arial Rounded MT Bold" Style="z-index: 1; left: 4px; top: 7px; position: absolute; text-align: center; width: 938px; height: 34px" Text="Operations" Font-Size="Larger"></asp:Label>
+                <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/Images/button_lot-management.png" Style="z-index: 1; left: 298px; top: 60px; position: absolute" />
+                <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/Images/button_rework.png" Style="z-index: 1; left: 298px; top: 153px; position: absolute" />
+                <asp:ImageButton ID="ImageButton9" runat="server" ImageUrl="~/Images/button_scrap-item.png" Style="z-index: 1; left: 298px; top: 252px; position: absolute" />
+                <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/Images/button_print-tag.png" Style="z-index: 1; left: 298px; top: 351px; position: absolute" />
+                <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/Images/button_plc-trace-data-amendment.png" Style="z-index: 1; left: 298px; top: 451px; position: absolute" />
+            </div>
+
         </div>
 
         <asp:HiddenField ID="hflogonid" runat="server" />

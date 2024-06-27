@@ -28,7 +28,7 @@
                 <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                     <asp:GridView ID="gvContent" runat="server"
                         Font-Size="Large"
-                        ShowFooter="True"
+                        ShowFooter="True" AllowPaging="true" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
                         EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastReasonSDA" Width="100%">
                         <Columns>
                             <asp:TemplateField HeaderText="Actions">

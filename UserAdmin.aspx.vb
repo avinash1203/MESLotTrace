@@ -390,4 +390,9 @@ Public Class UserAdmin
             End If
         End If
     End Sub
+
+    Protected Sub gvContent_PageIndexChanging(sender As Object, e As GridViewPageEventArgs)
+        gvContent.PageIndex = e.NewPageIndex
+        gvContent.DataBind()
+    End Sub
 End Class

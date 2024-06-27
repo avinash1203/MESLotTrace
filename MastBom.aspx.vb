@@ -345,7 +345,12 @@ Public Class Mast_Bom
         End Try
     End Sub
 
-          Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-                    Response.Redirect("appMainpage.aspx?LoginID=" & Logonid & "&Op=2")
-          End Sub
+    Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
+        Response.Redirect("appMainpage.aspx?LoginID=" & Logonid & "&Op=2")
+    End Sub
+
+    Protected Sub gvContent_OnPageIndexChanging(sender As Object, e As GridViewPageEventArgs)
+        gvContent.PageIndex = e.NewPageIndex
+        gvContent.DataBind()
+    End Sub
 End Class

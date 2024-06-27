@@ -202,4 +202,9 @@ Public Class MastCompanyCodeMaint
           Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
                     Response.Redirect("appMainpage.aspx?LogonID=" & LogonId & "&Op=2")
           End Sub
+
+    Protected Sub gvContent_PageIndexChanging(sender As Object, e As GridViewPageEventArgs)
+        gvContent.PageIndex = e.NewPageIndex
+        gvContent.DataBind()
+    End Sub
 End Class

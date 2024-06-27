@@ -28,7 +28,7 @@
                 <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                     <asp:HiddenField ID="hfNewFlg" runat="server" />
                     <asp:GridView ID="gvContent" runat="server"
-                        Font-Size="Large"
+                        Font-Size="Large" AllowPaging="true" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
                         ShowFooter="True" top="550px" left="30px"
                         EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="USERMasterSDA" Width="100%">
                         <Columns>
