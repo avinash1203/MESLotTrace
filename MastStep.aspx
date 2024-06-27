@@ -28,7 +28,7 @@
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                 <asp:GridView ID="gvContent" runat="server"
-                    Font-Size="Medium" AllowPaging="true" PageSize="10" OnPageIndexChanging="gvContent_PageIndexChanging"
+                    Font-Size="Medium" AllowPaging="true" PageSize="13" OnPageIndexChanging="gvContent_PageIndexChanging"
                     ShowFooter="True" OnRowCommand="gvContent_RowCommand"
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastSetupSDA" Width="100%">
                     <Columns>
