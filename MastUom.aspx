@@ -27,7 +27,7 @@
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                 <asp:GridView ID="gvContent" runat="server"
-                    Font-Size="Medium" AllowPaging="true" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
+                    Font-Size="Medium" AllowPaging="True" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
                     ShowFooter="True" OnRowCommand="gvContent_RowCommand"
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastUOMSDA" Width="100%">
                     <Columns>
@@ -44,8 +44,11 @@
                         <asp:BoundField DataField="conv_unit_aft_cd" HeaderText="Units (To)" SortExpression="conv_unit_aft_cd">
                             <ItemStyle Width="200px" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="conv_nmrt" HeaderText="Conversion nmrt" SortExpression="conv_nmrt">
+                        <asp:BoundField DataField="conv_nmrt" HeaderText="Conversion Numerator" SortExpression="conv_nmrt">
                             <ItemStyle Width="150px" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="conv_dnmn" HeaderText="Conversion Denominator">
+                        <ItemStyle Width="150px" />
                         </asp:BoundField>
                     </Columns>
                     <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />
@@ -76,16 +79,16 @@
             <asp:HiddenField ID="hfPopUpType" Value="" runat="server" />
             <asp:Label ID="Label4" runat="server" Style="z-index: 1; left: 34px; top: 70px; position: absolute" Text="Units (from)"></asp:Label>
             <asp:Label ID="Label5" runat="server" Style="z-index: 1; left: 34px; top: 110px; position: absolute" Text="Units (to)"></asp:Label>
-            <asp:Label ID="Label2" runat="server" Style="z-index: 1; left: 34px; top: 150px; position: absolute" Text="Conv_nmrt"></asp:Label>
-            <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 34px; top: 190px; position: absolute" Text="conv_dnmn"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Style="z-index: 1; left: 34px; top: 150px; position: absolute" Text="Unit Conversion Factor (numerator)"></asp:Label>
+            <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 34px; top: 190px; position: absolute" Text="Unit Conversion Factore (denominator)"></asp:Label>
             <asp:Label ID="Label7" runat="server" Style="z-index: 1; left: 34px; top: 230px; position: absolute" Text="Admin notes"></asp:Label>
 
 
-            <asp:TextBox ID="txtUF" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 70px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
-            <asp:TextBox ID="txtUT" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 110px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
-            <asp:TextBox ID="txtCN" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 150px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
-            <asp:TextBox ID="txtCD" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 190px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
-            <asp:TextBox ID="txtNotes" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 230px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtUF" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 354px; top: 70px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtUT" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 354px; top: 110px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtCN" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 354px; top: 150px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtCD" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 354px; top: 190px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtNotes" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 354px; top: 230px; width: 168px; height: 25px; position: absolute;" Height="25px"></asp:TextBox>
 
             <asp:Button ID="btnSave" runat="server" Style="z-index: 1; left: 36px; top: 290px; width: 99px; height: 30px; position: absolute; font-size: medium; font-weight: 600;" Text="Save" CssClass="button1" />
             <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; left: 250px; top: 290px; position: absolute; font-size: medium; font-weight: 600;" Text="Delete" Height="30px" Width="99px" CssClass="button1" />

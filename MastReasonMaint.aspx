@@ -32,16 +32,16 @@
                         EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastReasonSDA" Width="100%">
                         <Columns>
                             <asp:TemplateField HeaderText="Actions">
-                                <ItemStyle Width="100px" />
+                                <ItemStyle Width="10%" />
                                 <ItemTemplate>
                                     <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("RSN_CD") & "_" & Eval("RSN_DIV") & "_" & Eval("RSN_GRP_CD") %>' Text="Select" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="RSN_CD" HeaderText="Reason Code" SortExpression="RSN_CD">
-                                <ItemStyle Width="100px" />
+                                <ItemStyle Width="20%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="RSN_NM" HeaderText="Reason Description" SortExpression="RSN_NM">
-                                <ItemStyle Width="500px" />
+                                <ItemStyle Width="70%" />
                             </asp:BoundField>
                         </Columns>
                         <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />
