@@ -38,6 +38,7 @@
             <asp:CheckBox ID="CheckBox32" runat="server" Style="z-index: 1; left: 272px; top: 290px; position: absolute" Text="Prod. Capa. By shift" />
             <asp:CheckBox ID="CheckBox33" runat="server" Style="z-index: 1; left: 272px; top: 320px; position: absolute" Text="Line" />
             <asp:CheckBox ID="CheckBox34" runat="server" Style="z-index: 1; left: 272px; top: 350px; position: absolute" Text="Process" />
+             <asp:CheckBox ID="CheckBox46" runat="server" Style="z-index: 1; left: 272px; top: 350px; position: absolute" Text="Process 3" />
             <asp:CheckBox ID="CheckBox35" runat="server" Style="z-index: 1; left: 272px; top: 380px; position: absolute" Text="Company Code" />
             <asp:CheckBox ID="CheckBox36" runat="server" Style="z-index: 1; left: 272px; top: 410px; position: absolute" Text="Equipment" />
             <asp:CheckBox ID="CheckBox37" runat="server" Style="z-index: 1; left: 272px; top: 440px; position: absolute" Text="Step & Equipment " />

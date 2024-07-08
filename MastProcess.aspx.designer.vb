@@ -293,15 +293,6 @@ Partial Public Class MastProcess
           Protected WithEvents ddlPC As Global.System.Web.UI.WebControls.DropDownList
 
           '''<summary>
-          '''ddlPFID control.
-          '''</summary>
-          '''<remarks>
-          '''Auto-generated field.
-          '''To modify move field declaration from designer file to code-behind file.
-          '''</remarks>
-          Protected WithEvents ddlPFID As Global.System.Web.UI.WebControls.DropDownList
-
-          '''<summary>
           '''txtPGID control.
           '''</summary>
           '''<remarks>
@@ -417,6 +408,15 @@ Partial Public Class MastProcess
           '''To modify move field declaration from designer file to code-behind file.
           '''</remarks>
           Protected WithEvents ImageButton1 As Global.System.Web.UI.WebControls.ImageButton
+
+          '''<summary>
+          '''txtPflowID control.
+          '''</summary>
+          '''<remarks>
+          '''Auto-generated field.
+          '''To modify move field declaration from designer file to code-behind file.
+          '''</remarks>
+          Protected WithEvents txtPflowID As Global.System.Web.UI.WebControls.TextBox
 
           '''<summary>
           '''ddlCCSDA control.

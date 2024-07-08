@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MastProd3.aspx.vb" Inherits="MESLotTrace.MastProd3" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MastProc3.aspx.vb" Inherits="MESLotTrace.MastProc3" %>
 
 
 
@@ -21,7 +21,7 @@
                 Style="z-index: 1; border-image-repeat: stretch; padding: 5px 5px 2px 2px; width: 100%; height: 100%;" />
         </div>
         <div id="formtitle" runat="server" style="z-index: 1; position: absolute; top: 86px; left: 1px; width: 100%; height: 50px; text-align: center; border: 1px solid black; background-color: azure;">
-            <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="Master Production(Proc 3)" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+            <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="Master Process(Proc 3)" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
   <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
             </div>
         <div id="formbody" runat="server" style="z-index: 1; position: absolute; top: 140px; left: 1px; width: 100%; height: 550px; border: 1px black solid;">
@@ -94,7 +94,7 @@
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
-            <asp:DropDownList ID="ddlIC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 110px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlICSDA" DataTextField="item_nm" DataValueField="item_nm">
+            <asp:DropDownList ID="ddlIC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 110px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlICSDA" DataTextField="ITEM_CD" DataValueField="ITEM_CD">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
             <asp:TextBox ID="txtPFID" runat="server" Style="z-index: 1; left: 267px; top: 150px; width: 168px; height: 25px; position: absolute"></asp:TextBox>
@@ -112,7 +112,7 @@
 
         </div>
         <asp:SqlDataSource ID="ddlLINESDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [lproc_id],[line_id], [line_nm] FROM [MAST_LINE] WHERE CNCL_FLG = 0 ORDER BY [line_nm]"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="ddlICSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT item_nm FROM [MAST_ITEM] WHERE CNCL_FLG = 0 ORDER BY [item_nm]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="ddlICSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT item_CD FROM [MAST_ITEM] WHERE CNCL_FLG = 0 ORDER BY [item_nm]"></asp:SqlDataSource>
 
 
     </form>

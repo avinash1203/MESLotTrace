@@ -305,7 +305,6 @@ C:\Applications\Github\MineBea\MESLotTrace\bin\roslyn\VBCSCompiler.exe
 C:\Applications\Github\MineBea\MESLotTrace\bin\roslyn\VBCSCompiler.exe.config
 C:\Applications\Github\MineBea\MESLotTrace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Applications\Github\MineBea\MESLotTrace\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.AssemblyReference.cache
 C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.Resources.resources
 C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.GenerateResource.cache
 C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.CoreCompileInputs.cache
@@ -313,3 +312,4 @@ C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.CopyComp
 C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.dll
 C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.xml
 C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.pdb
+C:\Applications\Github\MineBea\MESLotTrace\obj\Debug\MESLotTrace.vbproj.AssemblyReference.cache

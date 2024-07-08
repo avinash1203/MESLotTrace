@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class MastProd3
+Partial Public Class MastProc3
 
           '''<summary>
           '''form1 control.

@@ -32,29 +32,33 @@
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastSetupSDA" Width="100%" AllowSorting="True">
                     <Columns>
                         <asp:TemplateField HeaderText="Actions">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="5%" />
                             <ItemTemplate>
                                 <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id") & "_" & Eval("line_id")%>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
+                        <asp:BoundField DataField="item_cd" HeaderText="Item Code" SortExpression="item_cd">
+                        <ItemStyle Width="10%" />
+                        </asp:BoundField>
+
                         <asp:BoundField DataField="proc_flow_id" HeaderText="Process Flow ID" SortExpression="proc_flow_id">
-                            <ItemStyle Width="200px" />
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
 
 
                         <asp:BoundField DataField="step_cd" HeaderText="Step code" SortExpression="step_cd">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
 
                         <asp:BoundField DataField="equip_id" HeaderText="Equipment Code" SortExpression="equip_id">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="trace_name" HeaderText="Trace Name" SortExpression="trace_name">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="40%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="trace_div" HeaderText="Trace Division" SortExpression="trace_div">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
 
                     </Columns>

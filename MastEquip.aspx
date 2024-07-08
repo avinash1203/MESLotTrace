@@ -27,29 +27,29 @@
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                 <asp:GridView ID="gvContent" runat="server"
-                    Font-Size="Medium" AllowPaging="true" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging" 
+                    Font-Size="Medium" AllowPaging="True" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging" 
                     ShowFooter="True" OnRowCommand="gvContent_RowCommand"
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastEquipSDA" Width="100%">
                     <Columns>
                         <asp:TemplateField HeaderText="Actions">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="10%" />
                             <ItemTemplate>
                                 <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("equip_id") %>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
                         <asp:BoundField DataField="equip_id" HeaderText="Equip Id" SortExpression="equip_id">
-                            <ItemStyle Width="200px" />
+                            <ItemStyle Width="15%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="equip_nm" HeaderText="Eqiupment Description" SortExpression="equip_nm">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="50%" />
                         </asp:BoundField>
 
                         <asp:BoundField DataField="Line_id" HeaderText="Line ID" SortExpression="Line_id">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="10%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="equip_mgnt_strt_dt_utc" HeaderText="Equipment Start Date" DataFormatString="{0:dd/MM/yyyy}" SortExpression="equip_mgnt_strt_dt_utc">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="15%" />
                         </asp:BoundField>
                     </Columns>
                     <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />

@@ -112,7 +112,7 @@
 
         </div>
         <div id="AccessDataEntryScr" runat="server"
-            style="z-index: 9999; position: absolute; top: 20%; left: 20%; transform: translate(-5%,-20%); width: 1262px; height: 694px; border: 1px solid black; background-color: azure;">
+            style="z-index: 9999; position: absolute; top: 20%; left: 20%; transform: translate(-5%,-20%); width: 1262px; height: 724px; border: 1px solid black; background-color: azure;">
             <asp:Label ID="Label2" runat="server" Text="USER Access Rights" Font-Bold="True"
                 Style="z-index: 1; left: 10px; top: 7px; position: absolute; vertical-align: middle; width: 1245px; text-align: center; height: 33px;" Font-Size="24px" BackColor="#6699FF"></asp:Label>
             <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 35px; top: 70px; position: absolute; width: auto;"
@@ -125,29 +125,31 @@
             <asp:TextBox ID="txtEmpNameAcc" runat="server" Style="z-index: 1; left: 218px; top: 109px; position: absolute; width: 318px"></asp:TextBox>
 
 
-            <asp:Button ID="btnSaveAccess" runat="server" Style="z-index: 1; left: 261px; top: 646px; width: 99px; height: 30px; position: absolute" Text="Save" CssClass="button1" />
-            <asp:Button ID="Button2" runat="server" Style="z-index: 1; left: 740px; top: 642px; position: absolute" Text="Cancel" Height="30px" Width="99px" CssClass="button1" />
+            <asp:Button ID="btnSaveAccess" runat="server" Style="z-index: 1; left: 267px; top: 677px; width: 99px; height: 30px; position: absolute" Text="Save" CssClass="button1" />
+            <asp:Button ID="Button2" runat="server" Style="z-index: 1; left: 740px; top: 677px; position: absolute" Text="Cancel" Height="30px" Width="99px" CssClass="button1" />
 
 
-            <asp:CheckBox ID="cbAdministration" AutoPostBack="true" Checked="false" runat="server" Style="z-index: 1; left: 34px; top: 170px; position: absolute; right: 1084px;" Text="Administration" OnCheckedChanged="cbAdministration_CheckedChanged" Font-Bold="True" Font-Size="12pt" />
+            <asp:CheckBox ID="cbAdministration" AutoPostBack="true" Checked="false" runat="server" Style="z-index: 1; left: 34px; top: 170px; position: absolute; right: 1028px;" Text="Administration" OnCheckedChanged="cbAdministration_CheckedChanged" Font-Bold="True" Font-Size="12pt" />
             <asp:CheckBox ID="cb11" runat="server" Style="z-index: 1; left: 51px; top: 200px; position: absolute" Text="User Administration" data-key="User_Administration" />
             <asp:CheckBox ID="cb12" runat="server" Style="z-index: 1; left: 51px; top: 230px; position: absolute" Text="Access Control" data-key="Access_Control" />
 
-            <asp:CheckBox ID="cbMasterMaintenance" AutoPostBack="true" Checked="false" runat="server" Style="z-index: 1; left: 252px; top: 170px; position: absolute; right: 815px;" Text="Master Maintenance" Font-Bold="True" OnCheckedChanged="cbMasterMaintenance_CheckedChanged" Font-Size="12pt" />
+            <asp:CheckBox ID="cbMasterMaintenance" AutoPostBack="true" Checked="false" runat="server" Style="z-index: 1; left: 252px; top: 170px; position: absolute; right: 774px;" Text="Master Maint." Font-Bold="True" OnCheckedChanged="cbMasterMaintenance_CheckedChanged" Font-Size="12pt" />
             <asp:CheckBox ID="cb21" runat="server" Style="z-index: 1; left: 272px; top: 200px; position: absolute" Text="Line State" data-key="Maintenance_Line_State" />
             <asp:CheckBox ID="cb22" runat="server" Style="z-index: 1; left: 272px; top: 230px; position: absolute" Text="Standard UOM" data-key="Standard_UOM" />
             <asp:CheckBox ID="cb23" runat="server" Style="z-index: 1; left: 272px; top: 260px; position: absolute" Text="Shift" data-key="Shift" />
             <asp:CheckBox ID="cb24" runat="server" Style="z-index: 1; left: 272px; top: 290px; position: absolute" Text="Prod. Capa. By shift" data-key="Prod_Capa_shift" />
             <asp:CheckBox ID="cb25" runat="server" Style="z-index: 1; left: 272px; top: 320px; position: absolute" Text="Line" data-key="Line" />
             <asp:CheckBox ID="cb26" runat="server" Style="z-index: 1; left: 272px; top: 350px; position: absolute" Text="Process" data-key="Process" />
-            <asp:CheckBox ID="cb27" runat="server" Style="z-index: 1; left: 272px; top: 380px; position: absolute" Text="Company Code" data-key="Company_Code" />
-            <asp:CheckBox ID="cb28" runat="server" Style="z-index: 1; left: 272px; top: 410px; position: absolute" Text="Equipment" data-key="Equipment" />
-            <asp:CheckBox ID="cb29" runat="server" Style="z-index: 1; left: 272px; top: 440px; position: absolute" Text="Step & Equipment " data-key="Step_Equipment" />
-            <asp:CheckBox ID="cb30" runat="server" Style="z-index: 1; left: 272px; top: 470px; position: absolute" Text="Trace Master" data-key="Trace_Master" />
-            <asp:CheckBox ID="cb31" runat="server" Style="z-index: 1; left: 272px; top: 501px; position: absolute" Text="Comp. Cons. by Step" data-key="Comp_Cons_Step" />
-            <asp:CheckBox ID="cb32" runat="server" Style="z-index: 1; left: 272px; top: 530px; position: absolute" Text="Reason Master" data-key="Reason_Master" />
-            <asp:CheckBox ID="cb33" runat="server" Style="z-index: 1; left: 272px; top: 560px; position: absolute" Text="Worker Registration" data-key="Worker_Registration" />
-            <asp:CheckBox ID="cb34" runat="server" Style="z-index: 1; left: 272px; top: 590px; position: absolute" Text="Plant Code" data-key="Plant_Code" />
+             <asp:CheckBox ID="cb35" runat="server" Style="z-index: 1; left: 272px; top: 380px; position: absolute" Text="Process 3" data-key="Process3" />
+
+            <asp:CheckBox ID="cb27" runat="server" Style="z-index: 1; left: 272px; top: 410px; position: absolute" Text="Company Code" data-key="Company_Code" />
+            <asp:CheckBox ID="cb28" runat="server" Style="z-index: 1; left: 272px; top: 440px; position: absolute" Text="Equipment" data-key="Equipment" />
+            <asp:CheckBox ID="cb29" runat="server" Style="z-index: 1; left: 272px; top: 470px; position: absolute" Text="Step & Equipment " data-key="Step_Equipment" />
+            <asp:CheckBox ID="cb30" runat="server" Style="z-index: 1; left: 272px; top: 500px; position: absolute" Text="Trace Master" data-key="Trace_Master" />
+            <asp:CheckBox ID="cb31" runat="server" Style="z-index: 1; left: 272px; top: 530px; position: absolute" Text="Comp. Cons. by Step" data-key="Comp_Cons_Step" />
+            <asp:CheckBox ID="cb32" runat="server" Style="z-index: 1; left: 272px; top: 560px; position: absolute" Text="Reason Master" data-key="Reason_Master" />
+            <asp:CheckBox ID="cb33" runat="server" Style="z-index: 1; left: 272px; top: 590px; position: absolute" Text="Worker Registration" data-key="Worker_Registration" />
+            <asp:CheckBox ID="cb34" runat="server" Style="z-index: 1; left: 272px; top: 620px; position: absolute" Text="Plant Code" data-key="Plant_Code" />
 
 
             <asp:CheckBox ID="cb4" runat="server" AutoPostBack="true" Checked="false" Style="z-index: 1; left: 452px; top: 170px; position: absolute" Text="Operations" Font-Bold="True" Font-Size="12pt" />

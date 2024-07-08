@@ -28,18 +28,18 @@
                 <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                     <asp:HiddenField ID="hfNewFlg" runat="server" />
                     <asp:GridView ID="gvContent" runat="server"
-                        Font-Size="Large"  AllowPaging="true" PageSize="20"  OnPageIndexChanging="gvContent_PageIndexChanging" 
+                        Font-Size="Large"  AllowPaging="True" PageSize="20"  OnPageIndexChanging="gvContent_PageIndexChanging" 
                         ShowFooter="True"
                         EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastCompanyCodeSDA" Width="100%">
                         <Columns>
                             <asp:CommandField ShowSelectButton="True">
-                            <ItemStyle Width="20%" />
+                            <ItemStyle Width="10%" />
                             </asp:CommandField>
                             <asp:BoundField DataField="CMP_Cd" HeaderText="Company code" ReadOnly="True" SortExpression="CompCd">
-                            <ItemStyle Width="30%" />
+                            <ItemStyle Width="20%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="CMP_Nm" HeaderText="Company Name" ReadOnly="True" SortExpression="CompNm">
-                            <ItemStyle Width="60%" />
+                            <ItemStyle Width="70%" />
                             </asp:BoundField>
                         </Columns>
                         <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />

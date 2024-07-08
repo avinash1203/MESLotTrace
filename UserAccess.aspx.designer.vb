@@ -185,6 +185,15 @@ Partial Public Class UserAccess
           Protected WithEvents CheckBox34 As Global.System.Web.UI.WebControls.CheckBox
 
           '''<summary>
+          '''CheckBox46 control.
+          '''</summary>
+          '''<remarks>
+          '''Auto-generated field.
+          '''To modify move field declaration from designer file to code-behind file.
+          '''</remarks>
+          Protected WithEvents CheckBox46 As Global.System.Web.UI.WebControls.CheckBox
+
+          '''<summary>
           '''CheckBox35 control.
           '''</summary>
           '''<remarks>

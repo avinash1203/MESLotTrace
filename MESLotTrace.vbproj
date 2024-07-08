@@ -127,7 +127,7 @@
     <Content Include="MastEquiplink.aspx" />
     <Content Include="MastLineMaint.aspx" />
     <Content Include="MastProcess.aspx" />
-    <Content Include="MastProd3.aspx" />
+    <Content Include="MastProc3.aspx" />
     <Content Include="MastProdCapacity.aspx" />
     <Content Include="MastStep.aspx" />
     <Content Include="MastShiftMaint.aspx" />
@@ -374,11 +374,11 @@
       <DependentUpon>MastProcess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MastProd3.aspx.designer.vb">
-      <DependentUpon>MastProd3.aspx</DependentUpon>
+    <Compile Include="MastProc3.aspx.designer.vb">
+      <DependentUpon>MastProc3.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MastProd3.aspx.vb">
-      <DependentUpon>MastProd3.aspx</DependentUpon>
+    <Compile Include="MastProc3.aspx.vb">
+      <DependentUpon>MastProc3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MastProdCapacity.aspx.designer.vb">

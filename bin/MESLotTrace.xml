@@ -991,6 +991,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:MESLotTrace.AppMainPage._btnMMProcess3">
+<summary>
+btnMMProcess3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:MESLotTrace.AppMainPage._btnMMCompCode">
 <summary>
 btnMMCompCode control.
@@ -2917,6 +2926,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:MESLotTrace.UserAdmin._cb35">
+<summary>
+cb35 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:MESLotTrace.UserAdmin._cb27">
 <summary>
 cb27 control.
@@ -4636,15 +4654,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProcess._ddlPFID">
-<summary>
-ddlPFID control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:MESLotTrace.MastProcess._txtPGID">
 <summary>
 txtPGID control.
@@ -4762,6 +4771,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:MESLotTrace.MastProcess._txtPflowID">
+<summary>
+txtPflowID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:MESLotTrace.MastProcess._ddlCCSDA">
 <summary>
 ddlCCSDA control.
@@ -4789,7 +4807,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._form1">
+<member name="F:MESLotTrace.MastProc3._form1">
 <summary>
 form1 control.
 </summary>
@@ -4798,7 +4816,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._formheader">
+<member name="F:MESLotTrace.MastProc3._formheader">
 <summary>
 formheader control.
 </summary>
@@ -4807,7 +4825,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Image1">
+<member name="F:MESLotTrace.MastProc3._Image1">
 <summary>
 Image1 control.
 </summary>
@@ -4816,7 +4834,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._formtitle">
+<member name="F:MESLotTrace.MastProc3._formtitle">
 <summary>
 formtitle control.
 </summary>
@@ -4825,7 +4843,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._frmtitle">
+<member name="F:MESLotTrace.MastProc3._frmtitle">
 <summary>
 frmtitle control.
 </summary>
@@ -4834,7 +4852,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._ImageButton3">
+<member name="F:MESLotTrace.MastProc3._ImageButton3">
 <summary>
 ImageButton3 control.
 </summary>
@@ -4843,7 +4861,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._formbody">
+<member name="F:MESLotTrace.MastProc3._formbody">
 <summary>
 formbody control.
 </summary>
@@ -4852,7 +4870,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Label1">
+<member name="F:MESLotTrace.MastProc3._Label1">
 <summary>
 Label1 control.
 </summary>
@@ -4861,7 +4879,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._btnNew">
+<member name="F:MESLotTrace.MastProc3._btnNew">
 <summary>
 btnNew control.
 </summary>
@@ -4870,7 +4888,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._formcontent">
+<member name="F:MESLotTrace.MastProc3._formcontent">
 <summary>
 formcontent control.
 </summary>
@@ -4879,7 +4897,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._gvContent">
+<member name="F:MESLotTrace.MastProc3._gvContent">
 <summary>
 gvContent control.
 </summary>
@@ -4888,7 +4906,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._MastSetupSDA">
+<member name="F:MESLotTrace.MastProc3._MastSetupSDA">
 <summary>
 MastSetupSDA control.
 </summary>
@@ -4897,7 +4915,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._User">
+<member name="F:MESLotTrace.MastProc3._User">
 <summary>
 User control.
 </summary>
@@ -4906,7 +4924,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Version">
+<member name="F:MESLotTrace.MastProc3._Version">
 <summary>
 Version control.
 </summary>
@@ -4915,7 +4933,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._DataEntryScr">
+<member name="F:MESLotTrace.MastProc3._DataEntryScr">
 <summary>
 DataEntryScr control.
 </summary>
@@ -4924,7 +4942,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Label3">
+<member name="F:MESLotTrace.MastProc3._Label3">
 <summary>
 Label3 control.
 </summary>
@@ -4933,7 +4951,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._hfPopUpType">
+<member name="F:MESLotTrace.MastProc3._hfPopUpType">
 <summary>
 hfPopUpType control.
 </summary>
@@ -4942,7 +4960,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Label4">
+<member name="F:MESLotTrace.MastProc3._Label4">
 <summary>
 Label4 control.
 </summary>
@@ -4951,7 +4969,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Label5">
+<member name="F:MESLotTrace.MastProc3._Label5">
 <summary>
 Label5 control.
 </summary>
@@ -4960,7 +4978,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Label8">
+<member name="F:MESLotTrace.MastProc3._Label8">
 <summary>
 Label8 control.
 </summary>
@@ -4969,7 +4987,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Label9">
+<member name="F:MESLotTrace.MastProc3._Label9">
 <summary>
 Label9 control.
 </summary>
@@ -4978,7 +4996,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._Label6">
+<member name="F:MESLotTrace.MastProc3._Label6">
 <summary>
 Label6 control.
 </summary>
@@ -4987,7 +5005,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._ddlLineId">
+<member name="F:MESLotTrace.MastProc3._ddlLineId">
 <summary>
 ddlLineId control.
 </summary>
@@ -4996,7 +5014,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._ddlIC">
+<member name="F:MESLotTrace.MastProc3._ddlIC">
 <summary>
 ddlIC control.
 </summary>
@@ -5005,7 +5023,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._txtPFID">
+<member name="F:MESLotTrace.MastProc3._txtPFID">
 <summary>
 txtPFID control.
 </summary>
@@ -5014,7 +5032,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._txtAFID">
+<member name="F:MESLotTrace.MastProc3._txtAFID">
 <summary>
 txtAFID control.
 </summary>
@@ -5023,7 +5041,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._txtRe">
+<member name="F:MESLotTrace.MastProc3._txtRe">
 <summary>
 txtRe control.
 </summary>
@@ -5032,7 +5050,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._btnSave">
+<member name="F:MESLotTrace.MastProc3._btnSave">
 <summary>
 btnSave control.
 </summary>
@@ -5041,7 +5059,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._btnDelete">
+<member name="F:MESLotTrace.MastProc3._btnDelete">
 <summary>
 btnDelete control.
 </summary>
@@ -5050,7 +5068,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._btnCancel">
+<member name="F:MESLotTrace.MastProc3._btnCancel">
 <summary>
 btnCancel control.
 </summary>
@@ -5059,7 +5077,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._ImageButton1">
+<member name="F:MESLotTrace.MastProc3._ImageButton1">
 <summary>
 ImageButton1 control.
 </summary>
@@ -5068,7 +5086,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._ddlLINESDA">
+<member name="F:MESLotTrace.MastProc3._ddlLINESDA">
 <summary>
 ddlLINESDA control.
 </summary>
@@ -5077,7 +5095,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MastProd3._ddlICSDA">
+<member name="F:MESLotTrace.MastProc3._ddlICSDA">
 <summary>
 ddlICSDA control.
 </summary>
@@ -10750,6 +10768,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:MESLotTrace.UserAccess._CheckBox34">
 <summary>
 CheckBox34 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.UserAccess._CheckBox46">
+<summary>
+CheckBox46 control.
 </summary>
 <remarks>
 Auto-generated field.

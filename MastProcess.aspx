@@ -28,32 +28,22 @@
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                 <asp:GridView ID="gvContent" runat="server"
-                    Font-Size="Medium" AllowPaging="true" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging" 
+                    Font-Size="Medium" AllowPaging="True" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging" 
                     ShowFooter="True" OnRowCommand="gvContent_RowCommand"
-                    EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastSetupSDA" Width="100%">
+                    EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastSetupSDA" Width="100%" DataKeyNames="proc_flow_id">
                     <Columns>
-                        <asp:TemplateField HeaderText="Actions">
+                         <asp:TemplateField HeaderText="Actions">
                             <ItemStyle Width="100px" />
                             <ItemTemplate>
-                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id") %>' Text="Select" />
+                                <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id")  %>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
-
-                        <asp:BoundField DataField="lproc_id" HeaderText="Process Group ID" SortExpression="lproc_id">
-                            <ItemStyle Width="200px" />
+                        <asp:BoundField DataField="proc_flow_id" HeaderText="Process Flow ID" SortExpression="proc_flow_id" ReadOnly="True">
                         </asp:BoundField>
-                        <asp:BoundField DataField="proc_flow_id" HeaderText="Process ID" SortExpression="proc_flow_id">
-                            <ItemStyle Width="100px" />
+                        <asp:BoundField DataField="lproc_id" HeaderText="Line Process ID" SortExpression="lproc_id">
                         </asp:BoundField>
 
-                        <asp:BoundField DataField="proc_seq" HeaderText="Process Sequence No" SortExpression="proc_seq">
-                            <ItemStyle Width="100px" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="unit_qty" HeaderText="Unit Quantity" SortExpression="unit_qty">
-                            <ItemStyle Width="100px" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="manu_batch_cd" HeaderText="Manufacturing Batch Code" SortExpression="manu_batch_cd">
-                            <ItemStyle Width="100px" />
+                        <asp:BoundField DataField="proc_flow_nm" HeaderText="Process Flow Name" SortExpression="proc_flow_nm">
                         </asp:BoundField>
 
                     </Columns>
@@ -69,7 +59,7 @@
 
 
 
-                <asp:SqlDataSource ID="MastSetupSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [cmp_cd],[plnt_cd],[proc_flow_id],[lproc_id],[proc_flow_nm],[proc_seq],[proc_yield_rate],[unit_qty],[manu_batch_cd],[equip_grp_id] ,[Parts_bind] FROM [dbo].[MAST_PROC] WHERE CNCL_FLG = 0"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="MastSetupSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [proc_flow_id],[lproc_id],[proc_flow_nm] FROM [dbo].[MAST_PROC] WHERE CNCL_FLG = 0"></asp:SqlDataSource>
 
             </div>
         </div>
@@ -87,14 +77,14 @@
             <asp:Label ID="Label5" runat="server" Style="z-index: 1; left: 34px; top: 110px; position: absolute" Text="Plant Code "></asp:Label>
 
             <asp:Label ID="Label8" runat="server" Style="z-index: 1; left: 34px; top: 150px; position: absolute" Text="Process Flow ID"></asp:Label>
-            <asp:Label ID="Label9" runat="server" Style="z-index: 1; left: 34px; top: 190px; position: absolute" Text="Process Group ID "></asp:Label>
+            <asp:Label ID="Label9" runat="server" Style="z-index: 1; left: 34px; top: 190px; position: absolute" Text="Line Process ID "></asp:Label>
             <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 34px; top: 230px; position: absolute" Text="Process Flow name"></asp:Label>
             <asp:Label ID="Label7" runat="server" Style="z-index: 1; left: 34px; top: 270px; position: absolute" Text="Process Sequence No "></asp:Label>
             <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 34px; top: 310px; position: absolute" Text="Process Yield Rate"></asp:Label>
             <asp:Label ID="Label11" runat="server" Style="z-index: 1; left: 34px; top: 350px; position: absolute" Text="Unit Quantity"></asp:Label>
             <asp:Label ID="Label2" runat="server" Style="z-index: 1; left: 34px; top: 390px; position: absolute;" Text="Manufacturing Batch Code "></asp:Label>
             <asp:Label ID="Label12" runat="server" Style="z-index: 1; left: 34px; top: 430px; position: absolute" Text="Equip Group ID "></asp:Label>
-            <asp:Label ID="Label13" runat="server" Style="z-index: 1; left: 34px; top: 470px; position: absolute" Text="Parts Traceability Indicator "></asp:Label>
+            <asp:Label ID="Label13" runat="server" Style="z-index: 1; left: 34px; top: 470px; position: absolute" Text="Parts Binding Indicator "></asp:Label>
             <asp:Label ID="Label14" runat="server" Style="z-index: 1; left: 34px; top: 510px; position: absolute" Text="Remarks "></asp:Label>
 
             <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 250px; top: 70px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_nm" DataValueField="cmp_cd">
@@ -107,11 +97,6 @@
             </asp:DropDownList>
 
 
-            <asp:DropDownList ID="ddlPFID" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 250px; top: 150px; width: 168px; height: 25px; position: absolute;" DataSourceID="ddlPFIDSDA" DataTextField="proc_flow_id" DataValueField="proc_flow_id">
-                <asp:ListItem Text="-- Select Option --" Value="" />
-            </asp:DropDownList>
-
-          
             <asp:TextBox ID="txtPGID" type="text" runat="server" Style="z-index: 1; left: 250px; top: 190px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
 
             <asp:TextBox ID="txtPFN" runat="server" Style="z-index: 1; left: 250px; top: 230px; width: 168px; height: 25px; position: absolute"></asp:TextBox>
@@ -127,6 +112,9 @@
             <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; left: 250px; top: 567px; position: absolute; font-size: medium; font-weight: 600;" Text="Delete" Height="30px" Width="99px" CssClass="button1" />
             <asp:Button ID="btnCancel" runat="server" Style="z-index: 1; left: 450px; top: 567px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" Height="30px" Width="99px" CssClass="button1" />
             <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
+
+
+            <asp:TextBox ID="txtPflowID" runat="server" BorderStyle="Solid" height="25px" style="z-index: 1; left: 250px; top: 149px; position: absolute" width="168px"></asp:TextBox>
 
 
         </div>

@@ -28,7 +28,7 @@
                 <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                     <asp:GridView ID="gvContent" runat="server"
                         Font-Size="Large"
-                        ShowFooter="True" AllowPaging="true" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
+                        ShowFooter="True" AllowPaging="True" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
                         EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastReasonSDA" Width="100%">
                         <Columns>
                             <asp:TemplateField HeaderText="Actions">
@@ -37,11 +37,17 @@
                                     <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("RSN_CD") & "_" & Eval("RSN_DIV") & "_" & Eval("RSN_GRP_CD") %>' Text="Select" />
                                 </ItemTemplate>
                             </asp:TemplateField>
+                            <asp:BoundField DataField="RSN_DIV" HeaderText="Reason Div">
+                            <ItemStyle Width="60%" />
+                            <ItemStyle Width="10%" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="rsn_grp_cd" HeaderText="Reason Grp Cd">
+                            <ItemStyle Width="10%" />
+                            </asp:BoundField>
                             <asp:BoundField DataField="RSN_CD" HeaderText="Reason Code" SortExpression="RSN_CD">
-                                <ItemStyle Width="20%" />
+                                <ItemStyle Width="10%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="RSN_NM" HeaderText="Reason Description" SortExpression="RSN_NM">
-                                <ItemStyle Width="70%" />
                             </asp:BoundField>
                         </Columns>
                         <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />

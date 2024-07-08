@@ -29,26 +29,26 @@
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                 <asp:GridView ID="gvContent" runat="server"
-                    Font-Size="Medium" AllowPaging="true" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging" 
+                    Font-Size="Medium" AllowPaging="True" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging" 
                     ShowFooter="True" OnRowCommand="gvContent_RowCommand"
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastEquipSetupSDA" Width="100%">
                     <Columns>
                         <asp:TemplateField HeaderText="Actions">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="10%" />
                             <ItemTemplate>
                                 <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id") & "_" & Eval("line_id") & "_" & Eval("step_cd") & "_" & Eval("equip_cd")  %>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:BoundField DataField="proc_flow_id" HeaderText="Process flow ID" SortExpression="proc_flow_id">
-                            <ItemStyle Width="200px" />
+                        <asp:BoundField DataField="proc_flow_id" HeaderText="Process Flow ID" SortExpression="proc_flow_id">
+                            <ItemStyle Width="20%" />
                         </asp:BoundField>
                         <asp:BoundField DataField="step_cd" HeaderText="Step Code" SortExpression="step_cd">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="30%" />
                         </asp:BoundField>
 
                         <asp:BoundField DataField="equip_cd" HeaderText="Equipment ID" SortExpression="equip_cd">
-                            <ItemStyle Width="100px" />
+                            <ItemStyle Width="30%" />
                         </asp:BoundField>
 
                     </Columns>

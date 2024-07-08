@@ -278,4 +278,7 @@ Public Class AppMainPage
         Response.Redirect("AppLogin.aspx")
     End Sub
 
+          Protected Sub btnMMProcess3_Click(sender As Object, e As EventArgs) Handles btnMMProcess3.Click
+                    Response.Redirect("MastProc3.aspx?LogonID=" & LogonID)
+          End Sub
 End Class
