@@ -12,6 +12,8 @@ Imports System.Web.UI.HtmlControls
 Imports System.Data
 Imports System.Drawing
 Imports System.IO
+Imports System.Data.Common
+
 Public Class Class1
     Public Shared cp As Class1
     Public Shared Sub ShowMsg(ByVal Msg As String, msgbtn As String, msgtype As String)
@@ -28,6 +30,25 @@ Public Class Class1
         End If
     End Sub
 
+
+    Public Shared Sub GetDeletedRecord(ByVal dropdown As DropDownList, ByVal text As String, ByVal value As String)
+        Dim first = dropdown.Items(0)
+        dropdown.Items.Clear()
+        dropdown.DataBind()
+        dropdown.Items.Add(first)
+        ' Check if the previously selected value is not already in the dropdown
+        Dim valueExists As Boolean = dropdown.Items.Cast(Of ListItem)().Any(Function(item) item.Value = value)
+
+        ' Add the previously selected value to the dropdown if it doesn't exist
+        If Not valueExists Then
+            dropdown.Items.Add(New ListItem(text & " (Deleted)", value))
+        End If
+
+        ' Set the previously selected value as selected
+        dropdown.SelectedValue = value
+        'dropdown.DataBind()
+
+    End Sub
 
     Public Shared Function DropDownHasVale(ByVal ddl As DropDownList, ByVal value As String) As Boolean
         Dim valueExists As Boolean = ddl.Items.Cast(Of ListItem)().Any(Function(item) item.Value = value)

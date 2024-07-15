@@ -262,7 +262,6 @@ Public Class MastLineMaint
                                       WHERE a.line_id='" & Trim(LID) & "'"
 
         Dim cmd As SqlCommand
-
         myConnection = New SqlConnection(connstr)
         myConnection.Open()
         cmd = New SqlCommand(sqlstr, myConnection)
@@ -274,7 +273,6 @@ Public Class MastLineMaint
             fillDetails(dt)
         Else
             Class1.ShowMsg("Error during Fetching!", "Continue", "warning")
-
         End If
         myConnection.Close()
 
@@ -309,9 +307,12 @@ Public Class MastLineMaint
         DirectCast(DataEntryScr.FindControl("txtLprocId"), TextBox).Text = value.Rows(0).Item(4)
         DirectCast(DataEntryScr.FindControl("txtLNL"), TextBox).Text = value.Rows(0).Item(5)
 
-        DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).Items.Clear()
-        DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).DataBind()
-        DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).SelectedValue = value.Rows(0).Item(6)
+        Dim ddlShiftData = DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList)
+        Class1.GetDeletedRecord(ddlShiftData, value.Rows(0).Item(6), value.Rows(0).Item(6))
+
+        'DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).Items.Clear()
+        'DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).DataBind()
+        'DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).SelectedValue = value.Rows(0).Item(6)
 
         DirectCast(DataEntryScr.FindControl("txtNotes"), TextBox).Text = value.Rows(0).Item(7)
 
