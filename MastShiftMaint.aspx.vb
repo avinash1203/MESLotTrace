@@ -74,8 +74,8 @@ Public Class MastShiftMaint
         cmd.Parameters.AddWithValue("@plnt_cd", ddlPC.SelectedValue)
         cmd.Parameters.AddWithValue("@shift_ptrn_id", txtSPID.Text.Trim)
         cmd.Parameters.AddWithValue("@wrk_shift_seq", txtWSS.Text.Trim)
-        cmd.Parameters.AddWithValue("@strt_time_utc", txtST.Text.Trim)
-        cmd.Parameters.AddWithValue("@end_time_utc", txtET.Text)
+                    cmd.Parameters.AddWithValue("@strt_time_utc", Format(CDate(txtST.Text.Trim), "HHmmss"))
+                    cmd.Parameters.AddWithValue("@end_time_utc", txtET.Text)
         cmd.Parameters.AddWithValue("@shift_cd", txtSC.Text)
         cmd.Parameters.AddWithValue("@shift_nm", txtSDN.Text)
         cmd.Parameters.AddWithValue("@CNCL_FLG", 0)
@@ -163,9 +163,9 @@ Public Class MastShiftMaint
         cmd.Parameters.AddWithValue("@plnt_cd", ddlPC.SelectedValue)
         cmd.Parameters.AddWithValue("@shift_ptrn_id", txtSPID.Text.Trim)
         cmd.Parameters.AddWithValue("@wrk_shift_seq", txtWSS.Text.Trim)
-        cmd.Parameters.AddWithValue("@strt_time_utc", txtST.Text.Trim)
-        cmd.Parameters.AddWithValue("@end_time_utc", txtET.Text)
-        cmd.Parameters.AddWithValue("@CNCL_FLG", 0)
+                    cmd.Parameters.AddWithValue("@strt_time_utc", Format(CDate(txtST.Text.Trim), "HHmmss"))
+                    cmd.Parameters.AddWithValue("@end_time_utc", Format(CDate(txtET.Text.Trim), "HHmmss"))
+                    cmd.Parameters.AddWithValue("@CNCL_FLG", 0)
 
         cmd2 = New SqlCommand(sqlstr2, myconnection)
         cmd2.Parameters.AddWithValue("@cmp_cd", ddlCC.SelectedValue)
@@ -335,4 +335,5 @@ Public Class MastShiftMaint
         gvContent.PageIndex = e.NewPageIndex
         gvContent.DataBind()
     End Sub
+
 End Class

@@ -24,47 +24,56 @@
         <div id="formbody" runat="server" style="z-index: 1; position: absolute; top: 140px; left: 1px; width: 100%; height: 550px; border: 1px black solid;">
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 493px; border: 1px black solid; top: 20px; left: 4px;">
                 <div id="formdetail" runat="server" style="z-index: 1; position: absolute; width: 98%; top: 3px; left: 13px; height: 475px; border: 1px red solid;">
-                    <asp:Label ID="Label1" runat="server" Style="position: absolute; z-index: 1; left: 165px; top: 10px" Text="Manufactuing Lot No." Font-Size="X-Large"></asp:Label>
-                    <asp:Label ID="Label2" runat="server" Style="position: absolute; z-index: 1; left: 165px; top: 50px" Text="Model No." Font-Size="X-Large"></asp:Label>
-                    <asp:Label ID="Label3" runat="server" Style="position: absolute; z-index: 1; left: 165px; top: 88px" Text="Production Scheduled Quantity" Font-Size="X-Large"></asp:Label>
-                    <asp:Label ID="Label4" runat="server" Style="position: absolute; z-index: 1; left: 165px; top: 128px" Text="Pass Quantity" Font-Size="X-Large"></asp:Label>
-                    <asp:Label ID="Label5" runat="server" Style="position: absolute; z-index: 1; left: 165px; top: 168px" Text="NG Quantity" Font-Size="X-Large"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Style="position: absolute; z-index: 1; left: 73px; top: 10px" Text="Manufactuing Lot No." Font-Size="X-Large"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Style="position: absolute; z-index: 1; left: 73px; top: 50px" Text="Model No." Font-Size="X-Large"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Style="position: absolute; z-index: 1; left: 73px; top: 88px" Text="Production Scheduled Quantity" Font-Size="X-Large"></asp:Label>
+                    <asp:Label ID="Label4" runat="server" Style="position: absolute; z-index: 1; left: 73px; top: 128px" Text="Pass Quantity" Font-Size="X-Large"></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Style="position: absolute; z-index: 1; left: 73px; top: 167px" Text="NG Quantity" Font-Size="X-Large"></asp:Label>
                     <asp:Label ID="Label6" runat="server" Style="position: absolute; z-index: 1; left: 830px; top: 10px" Text="Process" Font-Size="X-Large"></asp:Label>
                     <asp:Label ID="Label8" runat="server" Style="position: absolute; z-index: 1; left: 830px; top: 49px" Text="Work Status" Font-Size="X-Large"></asp:Label>
                     <asp:Label ID="Label9" runat="server" Style="position: absolute; z-index: 1; left: 830px; top: 88px" Text="Parts Consump ?" Font-Size="X-Large"></asp:Label>
                     <asp:Label ID="Label10" runat="server" Style="position: absolute; z-index: 1; left: 831px; top: 128px" Text="Abnormal Pass (Skip)" Font-Size="X-Large"></asp:Label>
                     <asp:Label ID="Label11" runat="server" Style="position: absolute; z-index: 1; left: 830px; top: 168px" Text="Abrnormal Pass (NG)" Font-Size="X-Large"></asp:Label>
-                    <asp:Label ID="Label7" runat="server" Style="position: absolute; z-index: 1; left: 168px; top: 210px" Text="Comment" Font-Size="X-Large"></asp:Label>
-                    <asp:Label ID="Label12" runat="server" Style="position: absolute; z-index: 1; left: 166px; top: 300px" Text="Production Date" Font-Size="X-Large"></asp:Label>
-                    <asp:Label ID="Label14" runat="server" Style="position: absolute; z-index: 1; left: 164px; top: 340px" Text="MAMM Lot" Font-Size="X-Large"></asp:Label>
-                    <asp:Label ID="Label13" runat="server" Style="position: absolute; z-index: 1; left: 833px; top: 300px; right: 391px;" Text="Shift" Font-Size="X-Large"></asp:Label>
-                    <asp:TextBox ID="txtMfgLotNo" runat="server" Style="z-index: 1; left: 505px; top: 6px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:TextBox ID="txtModelNo" runat="server" Style="z-index: 1; left: 505px; top: 45px; position: absolute; width: 254px; height: 30px; right: 599px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:TextBox ID="txtProdSchQty" runat="server" Style="z-index: 1; left: 505px; top: 84px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:TextBox ID="txtPassQty" runat="server" Style="z-index: 1; left: 505px; top: 124px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:TextBox ID="NGQty" runat="server" Style="z-index: 1; left: 505px; top: 164px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:TextBox ID="txtProcess" runat="server" Style="z-index: 1; left: 1061px; top: 6px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:Label ID="Label7" runat="server" Style="position: absolute; z-index: 1; left: 73px; top: 210px" Text="Comment" Font-Size="X-Large"></asp:Label>
+                    <asp:Label ID="Label12" runat="server" Style="position: absolute; z-index: 1; left: 73px; top: 300px" Text="Production Date" Font-Size="X-Large"></asp:Label>
+                    <asp:Label ID="Label14" runat="server" Style="position: absolute; z-index: 1; left: 73px; top: 340px" Text="MAMM Lot" Font-Size="X-Large"></asp:Label>
+                    <asp:DropDownList ID="Ddlshift" runat="server" DataSourceID="DSddlShift" DataTextField="shift_nm" DataValueField="mainkey" Font-Size="Medium"
+                        Style="z-index: 1; left: 1065px; top: 298px; position: absolute; height: 40px; width: 252px">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="DSddlShift" runat="server" ConnectionString="<%$ ConnectionStrings:MyDatabase %>" SelectCommand="SELECT [shift_nm], concat(shift_ptrn_id, '#',wrk_shift_seq, '#',strt_time_utc,'#',end_time_utc) as mainkey  FROM [MAST_SHIFT]"></asp:SqlDataSource>
+                    <asp:Label ID="Label13" runat="server" Style="position: absolute; z-index: 1; left: 963px; top: 297px; right: 464px;" Text="Shift" Font-Size="X-Large"></asp:Label>
+                    <asp:TextBox ID="txtMfgLotNo" runat="server" Style="z-index: 1; left: 386px; top: 6px; position: absolute; width: 254px; height: 30px; right: 668px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:TextBox ID="txtModelNo" runat="server" Style="z-index: 1; left: 386px; top: 45px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:TextBox ID="txtProdSchQty" runat="server" Style="z-index: 1; left: 386px; top: 84px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:TextBox ID="txtPassQty" runat="server" Style="z-index: 1; left: 386px; top: 124px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:TextBox ID="NGQty" runat="server" Style="z-index: 1; left: 386px; top: 164px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:TextBox ID="txtProcFlowID" runat="server" Style="z-index: 1; left: 1061px; top: 6px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
                     <asp:TextBox ID="txtWorkSt" runat="server" Style="z-index: 1; left: 1061px; top: 45px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:TextBox ID="txtPartCon" runat="server" Style="z-index: 1; left: 1061px; top: 84px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
                     <asp:TextBox ID="txtAbPassSkip" runat="server" Style="z-index: 1; left: 1061px; top: 124px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
                     <asp:TextBox ID="txtAbPassNG" runat="server" Style="z-index: 1; left: 1061px; top: 164px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:TextBox ID="txtRem" runat="server" Style="z-index: 1; left: 386px; top: 204px; position: absolute; width: 930px; height: 82px;" BorderStyle="Solid" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="txtProdDt" runat="server" Style="z-index: 1; left: 386px; top: 296px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:Calendar ID="CalProdDt" runat="server" Style="z-index: 99; left: 677px; top: 183px; position: absolute; height: 213px; width: 309px" BackColor="#99FFCC"></asp:Calendar>
+                    <asp:Button ID="btnCal" runat="server"
+                        Style="z-index: 1; left: 674px; top: 296px; width: 50px; height: 36px; border-radius: 10px; position: absolute" Text="Cal." BackColor="#CCFFFF" />
 
 
 
-                    <asp:TextBox ID="txtRem" runat="server" Style="z-index: 1; left: 505px; top: 204px; position: absolute; width: 814px; height: 82px;" BorderStyle="Solid" TextMode="MultiLine"></asp:TextBox>
-                    <asp:TextBox ID="TextBox1" runat="server" Style="z-index: 1; left: 505px; top: 296px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:TextBox ID="TextBox8" runat="server" Style="z-index: 1; left: 1061px; top: 296px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-
-
-
-                    <asp:TextBox ID="txtMAMMLot" runat="server" Style="z-index: 1; left: 505px; top: 336px; position: absolute; width: 254px; height: 30px; right: 552px;" BorderStyle="Solid"></asp:TextBox>
+                    <asp:TextBox ID="txtMAMMLot" runat="server" Style="z-index: 1; left: 386px; top: 336px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
 
                     <asp:Button ID="btnStartLot" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 250px; top: 401px; position: absolute; width: 230px; height: 50px" Text="START LOT" />
                     <asp:Button ID="btnSuspendLot" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 550px; top: 403px; position: absolute; width: 230px; height: 50px" Text="SUSPEND LOT" />
                     <asp:Button ID="btnCloseLot" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 850px; top: 401px; position: absolute; width: 230px; height: 50px" Text="CLOSE LOT" />
                     <asp:Button ID="btnExit" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 1150px; top: 401px; position: absolute; width: 230px; height: 50px" Text="EXIT" />
 
-                    <asp:Button ID="Button1" runat="server" BackColor="#CCCCCC" Font-Size="X-Large" Style="z-index: 1; left: 776px; top: 336px; position: absolute; width: 160px" Text="Generate Lot" />
+                    <asp:Button ID="btnGenLot" runat="server" BackColor="#CCCCCC" Font-Size="Large" Style="z-index: 1; left: 671px; top: 336px; position: absolute; width: 229px; height: 34px;" Text="Generate Lot" />
+
+                    <asp:RadioButton ID="rb1" runat="server" GroupName="cb" Style="z-index: 1; left: 1059px; top: 92px; position: absolute" Text="Yes" />
+                    <asp:RadioButton ID="rb2" runat="server" GroupName="cb" Style="z-index: 1; left: 1133px; top: 93px; position: absolute" Text="No" Checked="True" />
+
+                    <asp:Button ID="btnSelect" runat="server" Style="z-index: 1; left: 662px; top: 9px; position: absolute" Text="SELECT" />
+
+                    <asp:HiddenField ID="hfLineID" runat="server" />
 
                 </div>
 
