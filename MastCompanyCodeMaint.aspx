@@ -11,6 +11,16 @@
     <script src="Scripts/dndod-popup.min.js"></script>
     <link href="Styles/StyleSheet.css" rel="stylesheet" />
 </head>
+
+<%--<script type="text/javascript">
+    function handleKeyPress(event) {
+        if (event.keyCode === 112) { // F1 key code is 112
+            __doPostBack('<%= btnF1.ClientID %>', '');
+            return false; // Prevent default browser behavior for F1 key
+        }
+    }
+    </script>--%>
+<%-- onkeydown="return handleKeyPress(event)"--%>
 <body>
     <form id="form1" runat="server" style="z-index: 1; font: calibri; width: auto; height: auto;">
         <div id="mainform" runat="server" style="z-index: 1; font: calibri; width: auto; height: auto;">
@@ -27,19 +37,21 @@
                 <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
                 <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                     <asp:HiddenField ID="hfNewFlg" runat="server" />
+
+                    <%--<asp:Button ID="btnF1" runat="server" style="display:none;" OnClick="btnF1_Click" />--%>
                     <asp:GridView ID="gvContent" runat="server"
-                        Font-Size="Large"  AllowPaging="True" PageSize="20"  OnPageIndexChanging="gvContent_PageIndexChanging" 
+                        Font-Size="Large" AllowPaging="True" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging"
                         ShowFooter="True"
                         EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastCompanyCodeSDA" Width="100%">
                         <Columns>
                             <asp:CommandField ShowSelectButton="True">
-                            <ItemStyle Width="10%" />
+                                <ItemStyle Width="10%" />
                             </asp:CommandField>
                             <asp:BoundField DataField="CMP_Cd" HeaderText="Company code" ReadOnly="True" SortExpression="CompCd">
-                            <ItemStyle Width="20%" />
+                                <ItemStyle Width="20%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="CMP_Nm" HeaderText="Company Name" ReadOnly="True" SortExpression="CompNm">
-                            <ItemStyle Width="70%" />
+                                <ItemStyle Width="70%" />
                             </asp:BoundField>
                         </Columns>
                         <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />
@@ -76,17 +88,17 @@
 
             </div>
 
-        <div id="ConfirmDelete" runat="server"
-            style="z-index: 9999; position: absolute; top: 50%; left: 886px; transform: translate(-50%,-50%); width: 599px; height: 353px; border: 1px solid black; background-color: #FFCC00;">
-            <asp:Label ID="Label2" runat="server" Text="Delete confirmation" Font-Bold="True"
-                Style="z-index: 1; left: 10px; top: 14px; position: absolute; width: 582px; text-align: center"></asp:Label>
-            <asp:Label ID="Label12" runat="server" Style="z-index: 1; left: 154px; top: 122px; position: absolute" Text="Please confirm Deletion" Font-Size="X-Large"></asp:Label>
-            <asp:Button ID="btnConfirmDelete" runat="server" Style="z-index: 1; left: 77px; top: 248px; width: 201px; height: 60px; position: absolute; font-size: medium; font-weight: 600;" Text="Confirm" CssClass="button1" />
-            <asp:Button ID="btnCanceldelete" runat="server" Style="z-index: 1; left: 356px; top: 256px; width: 201px; height: 60px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" CssClass="button1" />
-            <asp:ImageButton ID="ImageButton2" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
+            <div id="ConfirmDelete" runat="server"
+                style="z-index: 9999; position: absolute; top: 50%; left: 886px; transform: translate(-50%,-50%); width: 599px; height: 353px; border: 1px solid black; background-color: #FFCC00;">
+                <asp:Label ID="Label2" runat="server" Text="Delete confirmation" Font-Bold="True"
+                    Style="z-index: 1; left: 10px; top: 14px; position: absolute; width: 582px; text-align: center"></asp:Label>
+                <asp:Label ID="Label12" runat="server" Style="z-index: 1; left: 154px; top: 122px; position: absolute" Text="Please confirm Deletion" Font-Size="X-Large"></asp:Label>
+                <asp:Button ID="btnConfirmDelete" runat="server" Style="z-index: 1; left: 77px; top: 248px; width: 201px; height: 60px; position: absolute; font-size: medium; font-weight: 600;" Text="Confirm" CssClass="button1" />
+                <asp:Button ID="btnCanceldelete" runat="server" Style="z-index: 1; left: 356px; top: 256px; width: 201px; height: 60px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" CssClass="button1" />
+                <asp:ImageButton ID="ImageButton2" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
+            </div>
         </div>
-        </div>
-        <asp:SqlDataSource ID="MastCompanyCodeSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [CMP_Cd], [CMP_Nm] FROM [MAST_COMPANYCODE]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="MastCompanyCodeSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [CMP_Cd], [CMP_Nm] FROM [MAST_COMPANYCODE] Where CNCL_FLG = 0"></asp:SqlDataSource>
     </form>
 </body>
 </html>

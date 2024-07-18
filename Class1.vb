@@ -16,6 +16,8 @@ Imports System.Data.Common
 
 Public Class Class1
     Public Shared cp As Class1
+
+    Public Shared connectionString As String = String.Empty
     Public Shared Sub ShowMsg(ByVal Msg As String, msgbtn As String, msgtype As String)
         Dim sMessage As String = ShowMsgSetup(Msg, msgbtn, msgtype)
 
@@ -30,7 +32,33 @@ Public Class Class1
         End If
     End Sub
 
+    Public Shared Function ValuesExistInTables(tablesColumnsValues As List(Of (String, String, String)), value As String) As List(Of (String, Boolean))
+        Dim results As New List(Of (String, Boolean))
 
+        Using connection As New SqlConnection(connectionString)
+            connection.Open()
+            For Each tableColumnValue In tablesColumnsValues
+                Try
+                    Dim tableName As String = tableColumnValue.Item1
+                    Dim columnName As String = tableColumnValue.Item2
+                    'Dim value As String = tableColumnValue.Item3
+                    Dim formName As String = tableColumnValue.Item3
+                    If results.Any(Function(result) result.Item1 = formName) Then Continue For
+                    Dim query As String = $"SELECT COUNT(*) FROM {tableName} WHERE {columnName} = @value AND cncl_flg = 0"
+                    Using command As New SqlCommand(query, connection)
+                        command.Parameters.AddWithValue("@value", value)
+                        Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                        results.Add((formName, count > 0))
+                    End Using
+                Catch ex As Exception
+
+                End Try
+
+            Next
+        End Using
+
+        Return results
+    End Function
     Public Shared Sub GetDeletedRecord(ByVal dropdown As DropDownList, ByVal text As String, ByVal value As String)
         Dim first = dropdown.Items(0)
         dropdown.Items.Clear()
