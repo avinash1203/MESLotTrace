@@ -208,7 +208,7 @@ Public Class MastPlantCodeMaint
         If result IsNot Nothing AndAlso result.Count > 0 Then
             For Each kvp In result
                 If kvp.Item2 Then
-                    output += kvp.Item1 & ","
+                    output += kvp.Item1 & " , "
                 End If
             Next
         End If

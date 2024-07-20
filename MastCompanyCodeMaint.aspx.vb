@@ -37,7 +37,7 @@ Public Class MastCompanyCodeMaint
         connstr = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
         gvContent.DataBind()
         LoginUser.Text = "User ID : " & Class1.GetuserName(LogonId)
-        Class1.connectionString = connstr
+
 
 
     End Sub
@@ -212,12 +212,12 @@ Public Class MastCompanyCodeMaint
                        "WHERE CMP_CD = '" & txtCompCd.Text & "'"
 
 
-        Dim result = Class1.ValuesExistInTables(deleteChecking, txtCompNm.Text)
-        Dim output As String = "Comany " & txtCompNm.Text & " is getting used in forms :"
+        Dim result = Class1.ValuesExistInTables(deleteChecking, txtCompCd.Text)
+        Dim output As String = "Comany " & txtCompCd.Text & " is getting used in forms :"
         If result IsNot Nothing AndAlso result.Count > 0 Then
             For Each kvp In result
                 If kvp.Item2 Then
-                    output += kvp.Item1 & ","
+                    output += kvp.Item1 & " , "
                 End If
             Next
         End If

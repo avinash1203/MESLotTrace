@@ -251,22 +251,30 @@ Public Class MastEquip
 
 
 
-        If value.Rows(0).Item(0) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
-        End If
-        If value.Rows(0).Item(1) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedValue = value.Rows(0).Item(1)
-        End If
+        'If value.Rows(0).Item(0) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).SelectedValue = value.Rows(0).Item(0)
+        'End If
 
-        If value.Rows(0).Item(2) Is String.Empty Then
-            DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedIndex = 0
-        Else
-            DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedValue = value.Rows(0).Item(2)
-        End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlCC", value.Rows(0).Item(0))
+
+
+        'If value.Rows(0).Item(1) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).SelectedValue = value.Rows(0).Item(1)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlPC", value.Rows(0).Item(1))
+
+
+        'If value.Rows(0).Item(2) Is String.Empty Then
+        '    DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedIndex = 0
+        'Else
+        '    DirectCast(DataEntryScr.FindControl("ddlLineId"), DropDownList).SelectedValue = value.Rows(0).Item(2)
+        'End If
+        Class1.SetDropDownVale(DataEntryScr, "ddlLineId", value.Rows(0).Item(2))
+
 
         DirectCast(DataEntryScr.FindControl("txtEID"), TextBox).Text = value.Rows(0).Item(3)
         DirectCast(DataEntryScr.FindControl("txtED"), TextBox).Text = value.Rows(0).Item(4)
@@ -289,7 +297,7 @@ Public Class MastEquip
         If result IsNot Nothing AndAlso result.Count > 0 Then
             For Each kvp In result
                 If kvp.Item2 Then
-                    output += kvp.Item1 & ","
+                    output += kvp.Item1 & " , "
                 End If
             Next
         End If

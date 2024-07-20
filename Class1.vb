@@ -3,7 +3,7 @@
 Public Class Class1
     Public Shared cp As Class1
 
-    Public Shared connectionString As String = String.Empty
+    Public Shared conString As String = String.Empty
     Public Shared Sub ShowMsg(ByVal Msg As String, msgbtn As String, msgtype As String)
         Dim sMessage As String = ShowMsgSetup(Msg, msgbtn, msgtype)
 
@@ -17,6 +17,14 @@ Public Class Class1
             End If
         End If
     End Sub
+
+    Shared Sub New()
+        conString = System.Configuration.ConfigurationManager.ConnectionStrings("MESLotTraceConnectionString").ConnectionString
+    End Sub
+
+    'Public Sub New()
+    '    conString = System.Configuration.ConfigurationManager.ConnectionStrings("MESLotTraceConnectionString").ConnectionString
+    'End Sub
 
 
     Public Shared Function GetMenuNameByTable(tabelName As String) As String
@@ -39,7 +47,8 @@ Public Class Class1
         ("MAST_STEP", "Master Step"),
         ("MAST_STEP_EQUIPLINK", "Master Step Equipment Link"),
         ("MAST_TRACE", "Master Trace"),
-        ("MAST_VEND_UOM", "Master Uom")
+        ("MAST_VEND_UOM", "Master Uom"),
+        ("MAST_PROC3", "Master Production")
     }
         Dim rec = tabelWithMenu.FirstOrDefault(Function(record) record.Item1 = tabelName)
 
@@ -52,7 +61,7 @@ Public Class Class1
     Public Shared Function ValuesExistInTables(tablesColumnsValues As List(Of (String, String)), value As String) As List(Of (String, Boolean))
         Dim results As New List(Of (String, Boolean))
 
-        Using connection As New SqlConnection(connectionString)
+        Using connection As New SqlConnection(conString)
             connection.Open()
             For Each tableColumnValue In tablesColumnsValues
                 Try
@@ -60,6 +69,7 @@ Public Class Class1
                     Dim columnName As String = tableColumnValue.Item2
                     Dim formName As String = GetMenuNameByTable(tableName)
                     If results.Any(Function(result) result.Item1 = formName) Then Continue For
+
                     Dim query As String = $"SELECT COUNT(*) FROM {tableName} WHERE {columnName} = @value AND cncl_flg = 0"
                     Using command As New SqlCommand(query, connection)
                         command.Parameters.AddWithValue("@value", value)

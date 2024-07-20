@@ -14,7 +14,6 @@ Public Class MastLineMaint
             ("MAST_LINE01", "line_id"),
             ("MAST_LINE2", "line_id"),
             ("MAST_PROC3", "line_id"),
-            ("MAST_PROC32", "line_id"),
             ("MAST_PROD_CAPACITY", "line_id"),
             ("MAST_STEP", "line_id"),
             ("MAST_STEP_EQUIPLINK", "line_id"),
@@ -326,11 +325,11 @@ Public Class MastLineMaint
         Dim ddlShiftData = DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList)
         ' Class1.GetDeletedRecord(ddlShiftData, value.Rows(0).Item(6), value.Rows(0).Item(6))
 
+        Dim firstddlShift = DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).Items(0)
+        DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).Items.Clear()
+        DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).Items.Add(firstddlShift)
+        DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).DataBind()
         Class1.SetDropDownVale(DataEntryScr, "ddlShift", value.Rows(0).Item(6))
-
-        'DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).Items.Clear()
-        'DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).DataBind()
-        'DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).SelectedValue = value.Rows(0).Item(6)
 
         DirectCast(DataEntryScr.FindControl("txtNotes"), TextBox).Text = value.Rows(0).Item(7)
 
@@ -351,7 +350,7 @@ Public Class MastLineMaint
         If result IsNot Nothing AndAlso result.Count > 0 Then
             For Each kvp In result
                 If kvp.Item2 Then
-                    output += kvp.Item1 & ","
+                    output += kvp.Item1 & " , "
                 End If
             Next
         End If

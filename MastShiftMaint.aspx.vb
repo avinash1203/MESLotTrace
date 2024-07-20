@@ -7,9 +7,7 @@ Public Class MastShiftMaint
     Public Logonid As String
 
     Dim deleteChecking As New List(Of (String, String)) From {
-    ("MAST_LINE01", "shift_ptrn_id"),
-    ("MAST_MFGLOT2", "shift_ptrn_id")
-}
+    ("MAST_LINE", "shiftid")}
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Logonid = Request.QueryString("LogonID")
@@ -316,7 +314,7 @@ Public Class MastShiftMaint
         If result IsNot Nothing AndAlso result.Count > 0 Then
             For Each kvp In result
                 If kvp.Item2 Then
-                    output += kvp.Item1 & ","
+                    output += kvp.Item1 & " , "
                 End If
             Next
         End If
