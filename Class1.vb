@@ -1,18 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System.Data.SqlClient
-Imports System
-Imports System.Web
-Imports System.Configuration
-Imports System.Collections.Generic
-Imports System.Linq
-Imports System.Web.UI
-Imports System.Web.UI.WebControls
-Imports System.Web.UI.WebControls.WebParts
-Imports System.Web.UI.HtmlControls
-Imports System.Data
-Imports System.Drawing
-Imports System.IO
-Imports System.Data.Common
+﻿Imports System.Data.SqlClient
 
 Public Class Class1
     Public Shared cp As Class1
@@ -32,7 +18,38 @@ Public Class Class1
         End If
     End Sub
 
-    Public Shared Function ValuesExistInTables(tablesColumnsValues As List(Of (String, String, String)), value As String) As List(Of (String, Boolean))
+
+    Public Shared Function GetMenuNameByTable(tabelName As String) As String
+        Dim result As String = String.Empty
+        Dim tabelWithMenu As New List(Of (String, String)) From {
+        ("MAST_BOM", "Component Consumption By Step"),
+        ("MAST_EQUIP", "Master Equipment"),
+        ("MAST_ITEM", "Master Item"),
+        ("MAST_LINE", "Master Line"),
+        ("MAST_LINE01", "Master Line"),
+        ("MAST_LINE2", "Master Line"),
+        ("MAST_MFGLOT", "Master Lot"),
+        ("MAST_MFGLOT_BOM", "Master Lot"),
+        ("MAST_MFGLOT2", "Master Lot"),
+        ("MAST_PROC", "Master Lot"),
+        ("MAST_PROC2", "Master Process"),
+        ("MAST_PROD_CAPACITY", "Master Process Capacity"),
+        ("MAST_SHIFT", "Master Shift"),
+        ("MAST_SHIFT2", "Master Shift"),
+        ("MAST_STEP", "Master Step"),
+        ("MAST_STEP_EQUIPLINK", "Master Step Equipment Link"),
+        ("MAST_TRACE", "Master Trace"),
+        ("MAST_VEND_UOM", "Master Uom")
+    }
+        Dim rec = tabelWithMenu.FirstOrDefault(Function(record) record.Item1 = tabelName)
+
+        If rec.Equals(Nothing) Then
+            Return String.Empty
+        End If
+        Return rec.Item2
+    End Function
+
+    Public Shared Function ValuesExistInTables(tablesColumnsValues As List(Of (String, String)), value As String) As List(Of (String, Boolean))
         Dim results As New List(Of (String, Boolean))
 
         Using connection As New SqlConnection(connectionString)
@@ -41,8 +58,7 @@ Public Class Class1
                 Try
                     Dim tableName As String = tableColumnValue.Item1
                     Dim columnName As String = tableColumnValue.Item2
-                    'Dim value As String = tableColumnValue.Item3
-                    Dim formName As String = tableColumnValue.Item3
+                    Dim formName As String = GetMenuNameByTable(tableName)
                     If results.Any(Function(result) result.Item1 = formName) Then Continue For
                     Dim query As String = $"SELECT COUNT(*) FROM {tableName} WHERE {columnName} = @value AND cncl_flg = 0"
                     Using command As New SqlCommand(query, connection)

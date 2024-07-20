@@ -6,6 +6,29 @@ Public Class MastPlantCodeMaint
     Public connstr As String
     Public LogonId As String
     Public newflg As Integer
+
+    Dim deleteChecking As New List(Of (String, String)) From {
+    ("MAST_BOM", "plnt_cd"),
+    ("MAST_EQUIP", "plnt_cd"),
+    ("MAST_ITEM", "plnt_cd"),
+    ("MAST_LINE", "plnt_cd"),
+    ("MAST_LINE01", "plnt_cd"),
+    ("MAST_LINE2", "plnt_cd"),
+    ("MAST_MFGLOT", "plnt_cd"),
+    ("MAST_MFGLOT_BOM", "plnt_cd"),
+    ("MAST_MFGLOT2", "plnt_cd"),
+    ("MAST_PROC", "plnt_cd"),
+    ("MAST_PROC2", "plnt_cd"),
+    ("MAST_PROD_CAPACITY", "plnt_cd"),
+    ("MAST_SHIFT", "plnt_cd"),
+    ("MAST_SHIFT2", "plnt_cd"),
+    ("MAST_STEP", "plnt_cd"),
+    ("MAST_STEP_EQUIPLINK", "plnt_cd"),
+    ("MAST_TRACE", "plnt_cd"),
+    ("MAST_VEND_UOM", "plnt_cd")
+}
+
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         LogonId = Request.QueryString("LogonID")
@@ -177,6 +200,27 @@ Public Class MastPlantCodeMaint
         Dim sqlstr As String
         Dim cmd As SqlCommand
         Dim myconnection As New SqlConnection
+
+
+
+        Dim result = Class1.ValuesExistInTables(deleteChecking, txtPlantCd.Text)
+        Dim output As String = "Plant " & txtPlantCd.Text & " is getting used in forms :"
+        If result IsNot Nothing AndAlso result.Count > 0 Then
+            For Each kvp In result
+                If kvp.Item2 Then
+                    output += kvp.Item1 & ","
+                End If
+            Next
+        End If
+        If result.Any(Function(x) x.Item2) Then
+            Class1.ShowMsg(output, "Continue", "warning")
+            Exit Sub
+        End If
+
+
+
+
+
         myconnection = New SqlConnection(connstr)
         Dim updt As String = Format(Now, "yyyy-MM-dd HH:mm")
         sqlstr = "UPDATE MAST_PLANTCODE SET CNCL_FLG = 9,UPD_DATE='" & updt & "',UPD_ID='" & LogonId & "' " +

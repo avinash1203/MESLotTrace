@@ -5,6 +5,12 @@ Public Class MastShiftMaint
 
     Public connstr As String
     Public Logonid As String
+
+    Dim deleteChecking As New List(Of (String, String)) From {
+    ("MAST_LINE01", "shift_ptrn_id"),
+    ("MAST_MFGLOT2", "shift_ptrn_id")
+}
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Logonid = Request.QueryString("LogonID")
         ' Logonid = "9900"
@@ -301,6 +307,28 @@ Public Class MastShiftMaint
         Dim cmd As SqlCommand
         Dim cmd2 As SqlCommand
         Dim myconnection As New SqlConnection
+
+
+
+
+        Dim result = Class1.ValuesExistInTables(deleteChecking, txtSPID.Text)
+        Dim output As String = "Shift " & txtSPID.Text & " is getting used in forms :"
+        If result IsNot Nothing AndAlso result.Count > 0 Then
+            For Each kvp In result
+                If kvp.Item2 Then
+                    output += kvp.Item1 & ","
+                End If
+            Next
+        End If
+        If result.Any(Function(x) x.Item2) Then
+            Class1.ShowMsg(output, "Continue", "warning")
+            Exit Sub
+        End If
+
+
+
+
+
         myconnection = New SqlConnection(connstr)
 
         sqlstr = "UPDATE MAST_SHIFT" +

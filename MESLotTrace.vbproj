@@ -122,6 +122,7 @@
     <Content Include="MastBom.aspx" />
     <Content Include="MastUom.aspx" />
     <Content Include="ReportDiv.aspx" />
+    <Content Include="ScanByProcess.aspx" />
     <Content Include="UserAdmin.aspx" />
     <Content Include="MastEquip.aspx" />
     <Content Include="MastEquiplink.aspx" />
@@ -338,6 +339,13 @@
     <Compile Include="ReportDiv.aspx.vb">
       <DependentUpon>ReportDiv.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ScanByProcess.aspx.designer.vb">
+      <DependentUpon>ScanByProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScanByProcess.aspx.vb">
+      <DependentUpon>ScanByProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserAdmin.aspx.designer.vb">
       <DependentUpon>UserAdmin.aspx</DependentUpon>

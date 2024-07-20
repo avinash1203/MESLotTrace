@@ -7,25 +7,25 @@ Public Class MastCompanyCodeMaint
     Public LogonId As String
     Public newflg As Integer
 
-    Dim deleteChecking As New List(Of (String, String, String)) From {
-            ("MAST_BOM", "CMP_CD", "Component Consumption By Step"),
-            ("MAST_EQUIP", "CMP_CD", "Master Equipment"),
-            ("MAST_ITEM", "CMP_CD", "Master Item"),
-            ("MAST_LINE", "CMP_CD", "Master Line"),
-            ("MAST_LINE01", "CMP_CD", "Master Line"),
-            ("MAST_LINE2", "CMP_CD", "Master Line"),
-            ("MAST_MFGLOT", "CMP_CD", "Master Lot"),
-            ("MAST_MFGLOT_BOM", "CMP_CD", "Master Lot"),
-            ("MAST_MFGLOT2", "CMP_CD", "Master Lot"),
-            ("MAST_PROC", "CMP_CD", "Master Lot"),
-            ("MAST_PROC2", "CMP_CD", "Master Process"),
-            ("MAST_PROD_CAPACITY", "CMP_CD", "Master Process Capacity"),
-            ("MAST_SHIFT", "CMP_CD", "Master Shift"),
-            ("MAST_SHIFT2", "CMP_CD", "Master Shift"),
-            ("MAST_STEP", "CMP_CD", "Master Step"),
-            ("MAST_STEP_EQUIPLINK", "CMP_CD", "Master Step Equipment Link"),
-            ("MAST_TRACE", "CMP_CD", "Master Trace"),
-            ("MAST_VEND_UOM", "CMP_CD", "Master Uom")
+    Dim deleteChecking As New List(Of (String, String)) From {
+            ("MAST_BOM", "CMP_CD"),
+            ("MAST_EQUIP", "CMP_CD"),
+            ("MAST_ITEM", "CMP_CD"),
+            ("MAST_LINE", "CMP_CD"),
+            ("MAST_LINE01", "CMP_CD"),
+            ("MAST_LINE2", "CMP_CD"),
+            ("MAST_MFGLOT", "CMP_CD"),
+            ("MAST_MFGLOT_BOM", "CMP_CD"),
+            ("MAST_MFGLOT2", "CMP_CD"),
+            ("MAST_PROC", "CMP_CD"),
+            ("MAST_PROC2", "CMP_CD"),
+            ("MAST_PROD_CAPACITY", "CMP_CD"),
+            ("MAST_SHIFT", "CMP_CD"),
+            ("MAST_SHIFT2", "CMP_CD"),
+            ("MAST_STEP", "CMP_CD"),
+            ("MAST_STEP_EQUIPLINK", "CMP_CD"),
+            ("MAST_TRACE", "CMP_CD"),
+            ("MAST_VEND_UOM", "CMP_CD")
         }
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -73,12 +73,12 @@ Public Class MastCompanyCodeMaint
         End If
     End Sub
 
-    'Protected Sub btnF1_Click(sender As Object, e As EventArgs)
-    '    ' Handle server-side logic when F1 is pressed
-    '    ' You can put your server-side code here
-    '    ' For example:
-    '    Response.Write("<script>alert('F1 key pressed!');</script>")
-    'End Sub
+    Protected Sub btnF1_Click(sender As Object, e As EventArgs)
+        ' Handle server-side logic when F1 is pressed
+        ' You can put your server-side code here
+        ' For example:
+        Response.Write("<script>alert('F1 key pressed!');</script>")
+    End Sub
     Private Sub InsertMastCompCd()
         Dim sqlstr As String
         Dim cmd As SqlCommand
@@ -210,6 +210,8 @@ Public Class MastCompanyCodeMaint
         Dim updt As String = Format(Now, "yyyy-MM-dd HH:mm")
         sqlstr = "UPDATE MAST_COMPANYCODE SET CNCL_FLG = 9,UPD_DATE='" & updt & "',UPD_ID='" & LogonId & "' " +
                        "WHERE CMP_CD = '" & txtCompCd.Text & "'"
+
+
         Dim result = Class1.ValuesExistInTables(deleteChecking, txtCompNm.Text)
         Dim output As String = "Comany " & txtCompNm.Text & " is getting used in forms :"
         If result IsNot Nothing AndAlso result.Count > 0 Then
@@ -223,6 +225,8 @@ Public Class MastCompanyCodeMaint
             Class1.ShowMsg(output, "Continue", "warning")
             Exit Sub
         End If
+
+
 
         myconnection.Open()
         cmd = New SqlCommand(sqlstr, myconnection)

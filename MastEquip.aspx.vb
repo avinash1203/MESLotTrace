@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Drawing
 
 Public Class MastEquip
     Inherits System.Web.UI.Page
@@ -6,6 +7,13 @@ Public Class MastEquip
 
     Public connstr As String
     Public Logonid As String
+
+    Dim deleteChecking As New List(Of (String, String)) From {
+    ("MAST_EQUIP", "equip_id"),
+    ("MAST_MFGLOT2", "equip_id"),
+    ("MAST_TRACE", "equip_id"),
+    ("TRX_TRACE_DATA", "equip_id")}
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Logonid = Request.QueryString("LogonID")
         ''Logonid = "9900"
@@ -272,6 +280,26 @@ Public Class MastEquip
         Dim cmd As SqlCommand
         Dim myconnection As New SqlConnection
         myconnection = New SqlConnection(connstr)
+
+
+
+
+        Dim result = Class1.ValuesExistInTables(deleteChecking, txtEID.Text)
+        Dim output As String = "Equipment " & txtEID.Text & " is getting used in forms :"
+        If result IsNot Nothing AndAlso result.Count > 0 Then
+            For Each kvp In result
+                If kvp.Item2 Then
+                    output += kvp.Item1 & ","
+                End If
+            Next
+        End If
+        If result.Any(Function(x) x.Item2) Then
+            Class1.ShowMsg(output, "Continue", "warning")
+            Exit Sub
+        End If
+
+
+
 
         sqlstr = "UPDATE MAST_EQUIP" +
                         " SET CNCL_FLG = 1  WHERE equip_id = @equip_id"

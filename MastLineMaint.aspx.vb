@@ -6,6 +6,22 @@ Public Class MastLineMaint
     Public connstr As String
     Public Logonid As String
     Public Op As Integer
+
+    Dim deleteChecking As New List(Of (String, String)) From {
+            ("MAST_BOM", "line_id"),
+            ("MAST_EQUIP", "line_id"),
+            ("MAST_LINE", "line_id"),
+            ("MAST_LINE01", "line_id"),
+            ("MAST_LINE2", "line_id"),
+            ("MAST_PROC3", "line_id"),
+            ("MAST_PROC32", "line_id"),
+            ("MAST_PROD_CAPACITY", "line_id"),
+            ("MAST_STEP", "line_id"),
+            ("MAST_STEP_EQUIPLINK", "line_id"),
+            ("MAST_TRACE", "line_id")}
+
+
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Logonid = Request.QueryString("LogonID")
         Op = Request.QueryString("Op")
@@ -308,7 +324,9 @@ Public Class MastLineMaint
         DirectCast(DataEntryScr.FindControl("txtLNL"), TextBox).Text = value.Rows(0).Item(5)
 
         Dim ddlShiftData = DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList)
-        Class1.GetDeletedRecord(ddlShiftData, value.Rows(0).Item(6), value.Rows(0).Item(6))
+        ' Class1.GetDeletedRecord(ddlShiftData, value.Rows(0).Item(6), value.Rows(0).Item(6))
+
+        Class1.SetDropDownVale(DataEntryScr, "ddlShift", value.Rows(0).Item(6))
 
         'DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).Items.Clear()
         'DirectCast(DataEntryScr.FindControl("ddlShift"), DropDownList).DataBind()
@@ -326,6 +344,24 @@ Public Class MastLineMaint
         Dim sqlstr2 As String
         Dim cmd2 As SqlCommand
         Dim myconnection As New SqlConnection
+
+
+        Dim result = Class1.ValuesExistInTables(deleteChecking, txtLID.Text)
+        Dim output As String = "Line id " & txtLID.Text & " is getting used in forms :"
+        If result IsNot Nothing AndAlso result.Count > 0 Then
+            For Each kvp In result
+                If kvp.Item2 Then
+                    output += kvp.Item1 & ","
+                End If
+            Next
+        End If
+        If result.Any(Function(x) x.Item2) Then
+            Class1.ShowMsg(output, "Continue", "warning")
+            Exit Sub
+        End If
+
+
+
         myconnection = New SqlConnection(connstr)
 
         sqlstr = "UPDATE [MAST_LINE]" +

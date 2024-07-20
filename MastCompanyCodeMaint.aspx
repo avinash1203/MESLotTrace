@@ -12,16 +12,16 @@
     <link href="Styles/StyleSheet.css" rel="stylesheet" />
 </head>
 
-<%--<script type="text/javascript">
+<script type="text/javascript">
     function handleKeyPress(event) {
         if (event.keyCode === 112) { // F1 key code is 112
             __doPostBack('<%= btnF1.ClientID %>', '');
             return false; // Prevent default browser behavior for F1 key
         }
     }
-    </script>--%>
+    </script>
 <%-- onkeydown="return handleKeyPress(event)"--%>
-<body>
+<body onkeydown="return handleKeyPress(event)">
     <form id="form1" runat="server" style="z-index: 1; font: calibri; width: auto; height: auto;">
         <div id="mainform" runat="server" style="z-index: 1; font: calibri; width: auto; height: auto;">
             <div id="formheader" runat="server"
@@ -38,7 +38,7 @@
                 <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                     <asp:HiddenField ID="hfNewFlg" runat="server" />
 
-                    <%--<asp:Button ID="btnF1" runat="server" style="display:none;" OnClick="btnF1_Click" />--%>
+                    <asp:Button ID="btnF1" runat="server" Style="display: none;" OnClick="btnF1_Click" />
                     <asp:GridView ID="gvContent" runat="server"
                         Font-Size="Large" AllowPaging="True" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging"
                         ShowFooter="True"
