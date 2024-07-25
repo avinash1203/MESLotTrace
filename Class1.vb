@@ -1,5 +1,32 @@
 ﻿Imports System.Data.SqlClient
+Public Class DatabaseHelper
+    Private connectionString As String = String.Empty
+    Sub New()
+        connectionString = System.Configuration.ConfigurationManager.ConnectionStrings("MESLotTraceConnectionString").ConnectionString
+    End Sub
+    Public Function GetData(sqlQuery As String, parameters As Dictionary(Of String, Object)) As DataTable
+        Dim dataTable As New DataTable()
+        Try
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(sqlQuery, connection)
+                    connection.Open()
 
+                    ' Add parameters to the command
+                    For Each param In parameters
+                        command.Parameters.AddWithValue(param.Key, param.Value)
+                    Next
+
+                    Using adapter As New SqlDataAdapter(command)
+                        adapter.Fill(dataTable)
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            Class1.ShowMsg(ex.Message, "Continue", "warning")
+        End Try
+        Return dataTable
+    End Function
+End Class
 Public Class Class1
     Public Shared cp As Class1
 
@@ -133,6 +160,40 @@ Public Class Class1
         End If
     End Sub
 
+    Public Shared Function GeneratePartAdjSqlQuery(lineId As String, procFlowId As String, stepCd As String, equipId As String, itemCd As String, vendorCd As String, isZeroQty As Boolean) As String
+        Dim query As String = "SELECT tag_seq,line_id, proc_flow_id, step_cd, equip_id, item_cd, vendor_cd, input_date, input_qty, current_qty FROM TRX_PART_INPUT"
+        Dim parameters As New List(Of String)()
+
+        If Not String.IsNullOrEmpty(lineId) Then
+            parameters.Add("line_id = @lineId")
+        End If
+        If Not String.IsNullOrEmpty(procFlowId) Then
+            parameters.Add("proc_flow_id = @procFlowId")
+        End If
+        If Not String.IsNullOrEmpty(stepCd) Then
+            parameters.Add("step_cd = @stepCd")
+        End If
+        If Not String.IsNullOrEmpty(equipId) Then
+            parameters.Add("equip_id = @equipId")
+        End If
+        If Not String.IsNullOrEmpty(itemCd) Then
+            parameters.Add("item_cd = @itemCd")
+        End If
+        If Not String.IsNullOrEmpty(vendorCd) Then
+            parameters.Add("vendor_cd = @vendorCd")
+        End If
+
+        ' Add condition for current_qty based on isZeroQty
+        If isZeroQty Then
+            parameters.Add("current_qty = 0")
+        End If
+
+        If parameters.Count > 0 Then
+            query &= " WHERE " & String.Join(" AND ", parameters)
+        End If
+
+        Return query
+    End Function
 
 
 
