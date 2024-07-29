@@ -30,15 +30,14 @@ namespace Printing
                             var propertyType = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
                             var value = row[prop.Name];
 
-                            // If the property is a string, we just assign the value directly as string
                             if (propertyType == typeof(string))
                             {
-                                prop.SetValue(obj, value.ToString());
+                                prop.SetValue(obj, value.ToString(), null);
                             }
                             else
                             {
-                                var safeValue = Convert.ChangeType(value, propertyType);
-                                prop.SetValue(obj, safeValue);
+                                var safeValue = (value == DBNull.Value) ? null : Convert.ChangeType(value, propertyType);
+                                prop.SetValue(obj, safeValue, null);
                             }
                         }
                         catch (Exception ex)
@@ -53,6 +52,7 @@ namespace Printing
 
             return list;
         }
+
     }
 
     public class TrxLabelTag
@@ -103,30 +103,29 @@ namespace Printing
         }
 
 
-        public List<TrxLabelTag> GetLabels()
-        {
-            string sqlstr = @"SELECT * from TRX_LABEL_TAG Where proc_status = 0";
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
-            {
-                myConnection.Open();
-                using (SqlCommand cmd = new SqlCommand(sqlstr, myConnection))
-                {
-                    // cmd.Parameters.AddWithValue("@equip_id", EID);
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        return dt.ToList<TrxLabelTag>();
+        //public List<TrxLabelTag> GetLabels()
+        //{
+        //    string sqlstr = @"SELECT * from TRX_LABEL_TAG Where proc_status = 0";
+        //    using (SqlConnection myConnection = new SqlConnection(connectionString))
+        //    {
+        //        myConnection.Open();
+        //        using (SqlCommand cmd = new SqlCommand(sqlstr, myConnection))
+        //        {
+        //            using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+        //            {
+        //                DataTable dt = new DataTable();
+        //                da.Fill(dt);
+        //                return dt.ToList<TrxLabelTag>();
 
-                    }
+        //            }
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
         public List<TrxLabelTag> UpdateLabel(string code)
         {
-            string sqlstr = @"Update TRX_LABEL_TAG Set proc_status = 1  Where vendor_cd = '" + code + "'";
+            string sqlstr = @"Update TRX_LABEL_TAG Set proc_status = 1  Where vendor_lot_no = vendor_cd = '" + code + "'";
             using (SqlConnection myConnection = new SqlConnection(connectionString))
             {
                 myConnection.Open();
@@ -146,23 +145,49 @@ namespace Printing
         }
 
 
-        public List<TrxLabelTag> GetLabels(string code)
+        public List<TrxLabelTag> GetLabels(bool isRadAllChecked, string code, string lotNumber)
         {
-            string sqlstr = @"SELECT * from TRX_LABEL_TAG where proc_status = 0 AND vendor_cd = '" + code + "'";
+            string proc_status = isRadAllChecked ? "1" : "0";
+            // Base SQL query
+            string sqlstr = "SELECT * FROM TRX_LABEL_TAG WHERE 1=1";
+
+            // List to hold parameters
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            // Add proc_status condition if it's not null or empty
+            if (!string.IsNullOrEmpty(proc_status))
+            {
+                sqlstr += " AND proc_status = @proc_status";
+                parameters.Add(new SqlParameter("@proc_status", proc_status));
+            }
+
+            // Dynamically add conditions and parameters
+            if (!string.IsNullOrEmpty(lotNumber))
+            {
+                sqlstr += " AND lotNumber = @lotNumber";
+                parameters.Add(new SqlParameter("@lotNumber", lotNumber));
+            }
+
+            if (!string.IsNullOrEmpty(code))
+            {
+                sqlstr += " AND vendor_cd = @code";
+                parameters.Add(new SqlParameter("@code", code));
+            }
+
             using (SqlConnection myConnection = new SqlConnection(connectionString))
             {
                 myConnection.Open();
                 using (SqlCommand cmd = new SqlCommand(sqlstr, myConnection))
                 {
+                    // Add parameters to the command
+                    cmd.Parameters.AddRange(parameters.ToArray());
 
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         return dt.ToList<TrxLabelTag>();
-
                     }
-
                 }
             }
         }

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -19,14 +20,20 @@ namespace Printing
         Printer SATOPrinter = null;
         Driver SATODriver = null;
         private string label = @"[ESC]A[ESC]H60[ESC]V10 [ESC]X22,IDENTIFICATION CARD[ESC]H70[ESC]V48 [ESC]X22,ITEM [ESC]H350[ESC]V48 [ESC]X22,[Item_ToReplace][ESC]H70[ESC]V86 [ESC]X22,ITEM NAME [ESC]H350[ESC]V86 [ESC]X22,[Item_Name_ToReplace][ESC]H70[ESC]V189 [ESC]X22,PLANT CODE [ESC]H350[ESC]V189 [ESC]X22,[Plant_Code_ToReplace][ESC]H70[ESC]V227 [ESC]X22,STORAGE LOCATION [ESC]H350[ESC]V227 [ESC]X22,[Storage_Location_ToReplace][ESC]H70[ESC]V266 [ESC]X22,VENDOR CODE [ESC]H350[ESC]V266 [ESC]X22,[Vendor_Code_ToReplace][ESC]H70[ESC]V304 [ESC]X22,VENDOR LOT NO [ESC]H350[ESC]V304 [ESC]X22,[Vendor_Lot_Number_ToReplace][ESC]H70[ESC]V343 [ESC]X22,MAMM LOT NO [ESC]H350[ESC]V343[ESC]X22,[Mamm_Lot_No_ToReplace][ESC]H70[ESC]V381 [ESC]X22,PRINT DATE [ESC]H350[ESC]V381 [ESC]X22,[Print_Date_ToReplace][ESC]H70[ESC]V420 [ESC]X22,QUANTITY [ESC]H350[ESC]V420 [ESC]X22,[Quantity_ToReplace][ESC]H70[ESC]V450 [ESC]X22,UOM [ESC]H450[ESC]V450 [ESC]X22,[Uom_ToReplace][ESC]H600[ESC]V130[ESC]2D30,L,06,0,0[ESC]DS2,[Qrcode_ToReplace][ESC]Z";
-        private string testlabel = @"[ESC]A[ESC]H60[ESC]V10 [ESC]X22,IDENTIFICATION CARD[ESC]H70[ESC]V48 [ESC]X22,ITEM [ESC]H350[ESC]V48 [ESC]X22,10000120653[ESC]H70[ESC]V86 [ESC]X22,ITEM NAME [ESC]H350[ESC]V86 [ESC]X22,FE-FMG834+A[ESC]H70[ESC]V189 [ESC]X22,PLANT CODE [ESC]H350[ESC]V189 [ESC]X22,MM01[ESC]H70[ESC]V227 [ESC]X22,STORAGE LOCATION [ESC]H350[ESC]V227 [ESC]X22,W001[ESC]H70[ESC]V266 [ESC]X22,VENDOR CODE [ESC]H350[ESC]V266 [ESC]X22,1000011647[ESC]H70[ESC]V304 [ESC]X22,VENDOR LOT NO [ESC]H350[ESC]V304 [ESC]X22,20243-0184 [ESC]H70[ESC]V343 [ESC]X22,MAMM LOT NO [ESC]H350[ESC]V343[ESC]X22,1005533271[ESC]H70[ESC]V381 [ESC]X22,PRINT DATE [ESC]H350[ESC]V381 [ESC]X22,2024/05/31102342250[ESC]H70[ESC]V420 [ESC]X22,QUANTITY [ESC]H350[ESC]V420 [ESC]X22,4435.000[ESC]H70[ESC]V450 [ESC]X22,UOM [ESC]H450[ESC]V450 [ESC]X22,PC[ESC]H600[ESC]V130[ESC]2D30,L,06,0,0[ESC]DS2,0000100734ZZZ1[HT]392PCZMM01B003N917P3O4MM01D131202309182117205[ESC]Z";
+        private string testlabel = @"[ESC]A[ESC]H60[ESC]V10[ESC]X22,IDENTIFICATION CARD[ESC]H70[ESC]V40[ESC]X22,ITEM[ESC]H350[ESC]V40[ESC]X22,10000120653[ESC]H70[ESC]V70[ESC]X22,ITEM NAME[ESC]H350[ESC]V70[ESC]X22,FE-FMG834+A[ESC]H70[ESC]V150[ESC]X22,PLANT CODE[ESC]H350[ESC]V150[ESC]X22,MM01[ESC]H70[ESC]V180[ESC]X22,STORAGE LOCATION[ESC]H350[ESC]V180[ESC]X22,W001[ESC]H70[ESC]V210[ESC]X22,VENDOR CODE[ESC]H350[ESC]V210[ESC]X22,1000011647[ESC]H600[ESC]V160[ESC]2D30, 1,05,0,0[ESC]DS1,012345[ESC]H70[ESC]V240[ESC]X22,VENDOR LOT NO[ESC]H350[ESC]V240[ESC]X22,20243-0184[ESC]H70[ESC]V270[ESC]X22,MAMM LOT NO[ESC]H350[ESC]V270[ESC]X22,1005533271[ESC]H70[ESC]V300[ESC]X22,PRINT DATE[ESC]H350[ESC]V300[ESC]X22,2024/05/31102342250[ESC]H70[ESC]V330[ESC]X22,QUANTITY[ESC]H350[ESC]V330[ESC]X22,4435.000[ESC]H70[ESC]V450[ESC]X22,UOM[ESC]H450[ESC]V450[ESC]X22,PC[ESC]H600[ESC]V130[ESC]2D30,L,06,0,0[ESC]DS2,0000100734ZZZ1[HT]392PCZMM01B003N917P3O4MM01D131202309182117205[ESC]Z";
+
+        private string testLabel1 = "[ESC]A[ESC]H60[ESC]V10 [ESC]X22,IDENTIFICATION CARD[ESC]H70[ESC]V48 [ESC]X22,ITEM [ESC]H350[ESC]V48 [ESC]X22,10000100734[ESC]H70[ESC]V86 [ESC]X22,ITEM NAME [ESC]H350[ESC]V86 [ESC]X22,FE-AEA370[ESC]H70[ESC]V189 [ESC]X22,PLANT CODE [ESC]H350[ESC]V189 [ESC]X22,MYMA01[ESC]H70[ESC]V227 [ESC]X22,STORAGE LOCATION [ESC]H350[ESC]V227 [ESC]X22,131.0000[ESC]H70[ESC]V266 [ESC]X22,VENDOR CODE [ESC]H350[ESC]V266 [ESC]X22,ZMM01B003[ESC]H70[ESC]V304 [ESC]X22,VENDOR LOT NO [ESC]H350[ESC]V304 [ESC]X22,N917P3O4[ESC]H70[ESC]V343 [ESC]X22,MAMM LOT NO [ESC]H350[ESC]V343[ESC]X22,ZZZ[ESC]H70[ESC]V381 [ESC]X22,PRINT DATE [ESC]H350[ESC]V381 [ESC]X22,18/9/2023 9:17:20 PM[ESC]H70[ESC]V420 [ESC]X22,QUANTITY [ESC]H350[ESC]V420 [ESC]X22,1392[ESC]H70[ESC]V450 [ESC]X22,UOM [ESC]H450[ESC]V450 [ESC]X22,PC[ESC]H600[ESC]V130[ESC]2D30,L,06,0,0[ESC]DS2,10000100734 ZZZ 1392 PC ZMM01B003 N917P3O4 MM01 D131 202309182117205[ESC]Z";
+
+
         PrintingDAL dAL = new PrintingDAL();
         public Form1()
         {
+
             InitializeComponent();
             SATOPrinter = new Printer();
             SATODriver = new Driver();
             AddCmbItems();
+
         }
 
 
@@ -37,28 +44,31 @@ namespace Printing
                 "Specific Items",
 
             };
-            comboBox1.Items.AddRange(items.ToArray());
+            //  comboBox1.Items.AddRange(items.ToArray());
         }
 
-        private async void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            keepPrinting = true;
-            SATOPrinter.Interface = Printer.InterfaceType.TCPIP;
-            SATOPrinter.TCPIPAddress = textBox1.Text;
-            SATOPrinter.TCPIPPort = textBox2.Text;
-
-            List<TrxLabelTag> trxLabelTags = new List<TrxLabelTag>();
-
-
-            if (comboBox1.SelectedIndex == 1)
+            DialogResult result = MessageBox.Show("Are you sure you want to print?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
             {
-                trxLabelTags = dAL.GetLabels(textBoxCode.Text);
+                return;
             }
-            else
+            this.Invoke((Action)(() =>
             {
-                trxLabelTags = dAL.GetLabels();
-            }
-            await Task.Run(() => Print(trxLabelTags));
+
+                keepPrinting = true;
+                SATOPrinter.Interface = Printer.InterfaceType.TCPIP;
+
+                while (keepPrinting)
+                {
+                    List<TrxLabelTag> trxLabelTags = new List<TrxLabelTag>();
+                    trxLabelTags = dAL.GetLabels(radAll.Checked, txtCode.Text, txtLotNumber.Text);
+                    Print(trxLabelTags);
+                    Thread.Sleep(5000);
+                }
+            }));
+
         }
         private void Print(List<TrxLabelTag> trxLabelTags, bool testLabel = false)
         {
@@ -182,6 +192,11 @@ namespace Printing
 
         private void button3_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want stop printing?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                return;
+            }
             keepPrinting = false;
         }
 
@@ -192,17 +207,17 @@ namespace Printing
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            keepPrinting = false;
-            if (comboBox1.SelectedIndex == 1)
-            {
-                lblCode.Visible = true;
-                textBoxCode.Visible = true;
-            }
-            else
-            {
-                lblCode.Visible = false;
-                textBoxCode.Visible = false;
-            }
+            //keepPrinting = false;
+            //if (comboBox1.SelectedIndex == 1)
+            //{
+            //    lblCode.Visible = true;
+            //    textBoxCode.Visible = true;
+            //}
+            //else
+            //{
+            //    lblCode.Visible = false;
+            //    textBoxCode.Visible = false;
+            //}
 
         }
 
@@ -211,18 +226,55 @@ namespace Printing
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
+
+        }
+
+
+        private void btnTestLabel_Click(object sender, EventArgs e)
+        {
+            try
             {
-                log("Ip and Port cant be empty for test label");
-                return;
+                if (string.IsNullOrEmpty(txtIp.Text))
+                {
+                    log("Ip cant be empty for test label");
+                    return;
+                }
+                byte[] cmddata = Utils.StringToByteArray(ControlCharReplace(testlabel), "utf8");
+                SATOPrinter.Interface = Printer.InterfaceType.TCPIP;
+                SATOPrinter.TCPIPAddress = txtIp.Text;
+                SATOPrinter.TCPIPPort = "9100";
+                SATOPrinter.Send(cmddata);
             }
-            byte[] cmddata = Utils.StringToByteArray(ControlCharReplace(testlabel), "utf8");
-            SATOPrinter.Interface = Printer.InterfaceType.TCPIP;
-            SATOPrinter.TCPIPAddress = textBox1.Text;
-            SATOPrinter.TCPIPPort = textBox2.Text;
-            SATOPrinter.Send(cmddata);
+            catch (Exception ex)
+            {
+                log("Error: Test Label orginal " + "Message : " + ex.Message);
+            }
+
+        }
+
+        private void btnTest2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtIp.Text))
+                {
+                    log("Ip cant be empty for test label");
+                    return;
+                }
+                byte[] cmddata = Utils.StringToByteArray(ControlCharReplace(testLabel1), "utf8");
+                SATOPrinter.Interface = Printer.InterfaceType.TCPIP;
+                SATOPrinter.TCPIPAddress = txtIp.Text;
+                SATOPrinter.TCPIPPort = "9100";
+                SATOPrinter.Send(cmddata);
+            }
+            catch (Exception ex)
+            {
+                log("Error: Test Label orginal " + "Message : " + ex.Message);
+            }
 
         }
     }
