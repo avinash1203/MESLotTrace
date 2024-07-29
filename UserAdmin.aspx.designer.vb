@@ -545,6 +545,15 @@ Partial Public Class UserAdmin
           Protected WithEvents cb41 As Global.System.Web.UI.WebControls.CheckBox
 
           '''<summary>
+          '''cb46 control.
+          '''</summary>
+          '''<remarks>
+          '''Auto-generated field.
+          '''To modify move field declaration from designer file to code-behind file.
+          '''</remarks>
+          Protected WithEvents cb46 As Global.System.Web.UI.WebControls.CheckBox
+
+          '''<summary>
           '''cb42 control.
           '''</summary>
           '''<remarks>

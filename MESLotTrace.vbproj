@@ -145,7 +145,6 @@
     <Content Include="MasterMaintFunction.aspx" />
     <Content Include="OperationFunction.aspx" />
     <Content Include="ImportFunction.aspx" />
-    <Content Include="MainPage.aspx" />
     <Content Include="AppLogin.aspx">
       <BrowseToURL>~/Login.aspx</BrowseToURL>
     </Content>
@@ -499,13 +498,6 @@
     </Compile>
     <Compile Include="ImportFunction.aspx.vb">
       <DependentUpon>ImportFunction.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="MainPage.aspx.designer.vb">
-      <DependentUpon>MainPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MainPage.aspx.vb">
-      <DependentUpon>MainPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="AppLogin.aspx.designer.vb">

@@ -5,14 +5,14 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Publish\MESLotTrace</_PublishTargetUrl>
-    <History>True|2024-07-04T00:39:35.1064874Z;True|2024-07-03T09:02:36.5161198+08:00;True|2024-07-02T10:57:21.2140907+08:00;True|2024-07-02T10:15:17.4110336+08:00;True|2024-06-24T08:51:12.8775598+08:00;True|2024-04-29T09:59:20.0324376+08:00;True|2024-04-12T13:52:02.0298640+08:00;False|2024-04-12T13:50:56.8805585+08:00;</History>
+    <History>True|2024-07-26T08:05:24.6164380Z;True|2024-07-04T08:39:35.1064874+08:00;True|2024-07-03T09:02:36.5161198+08:00;True|2024-07-02T10:57:21.2140907+08:00;True|2024-07-02T10:15:17.4110336+08:00;True|2024-06-24T08:51:12.8775598+08:00;True|2024-04-29T09:59:20.0324376+08:00;True|2024-04-12T13:52:02.0298640+08:00;False|2024-04-12T13:50:56.8805585+08:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="AppLogin.aspx">
       <publishTime>06/16/2024 20:56:36</publishTime>
     </File>
     <File Include="AppMainPage.aspx">
-      <publishTime>07/02/2024 12:51:31</publishTime>
+      <publishTime>07/26/2024 08:50:35</publishTime>
     </File>
     <File Include="AppMainPage00.aspx">
       <publishTime>06/16/2024 20:56:36</publishTime>
@@ -30,13 +30,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:36</publishTime>
     </File>
     <File Include="bin/MESLotTrace.dll">
-      <publishTime>07/04/2024 08:39:17</publishTime>
+      <publishTime>07/26/2024 09:03:06</publishTime>
     </File>
     <File Include="bin/MESLotTrace.pdb">
-      <publishTime>07/04/2024 08:39:17</publishTime>
+      <publishTime>07/26/2024 09:03:06</publishTime>
     </File>
     <File Include="bin/MESLotTrace.xml">
-      <publishTime>07/04/2024 08:39:17</publishTime>
+      <publishTime>07/26/2024 09:03:06</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/16/2024 20:56:41</publishTime>
@@ -303,7 +303,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:37</publishTime>
     </File>
     <File Include="LotMaint.aspx">
-      <publishTime>06/16/2024 20:56:37</publishTime>
+      <publishTime>07/16/2024 10:00:25</publishTime>
     </File>
     <File Include="MainPage.aspx">
       <publishTime>06/16/2024 20:56:37</publishTime>
@@ -312,7 +312,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/28/2024 09:47:50</publishTime>
     </File>
     <File Include="MastCompanyCodeMaint.aspx">
-      <publishTime>07/02/2024 10:49:55</publishTime>
+      <publishTime>07/22/2024 09:13:49</publishTime>
     </File>
     <File Include="MastEquip.aspx">
       <publishTime>07/02/2024 13:02:40</publishTime>
@@ -642,13 +642,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:43</publishTime>
     </File>
     <File Include="PartsAdj.aspx">
-      <publishTime>06/16/2024 20:56:38</publishTime>
+      <publishTime>07/26/2024 08:41:04</publishTime>
     </File>
     <File Include="ReportDiv.aspx">
       <publishTime>06/16/2024 20:56:38</publishTime>
     </File>
     <File Include="ReportingFunction.aspx">
       <publishTime>06/16/2024 20:56:38</publishTime>
+    </File>
+    <File Include="ScanByProcess.aspx">
+      <publishTime>07/22/2024 09:13:50</publishTime>
     </File>
     <File Include="ScrapMaint.aspx">
       <publishTime>06/16/2024 20:56:38</publishTime>
@@ -675,10 +678,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:39</publishTime>
     </File>
     <File Include="UserAccess.aspx">
-      <publishTime>07/02/2024 12:55:26</publishTime>
+      <publishTime>07/26/2024 08:52:04</publishTime>
     </File>
     <File Include="UserAdmin.aspx">
-      <publishTime>07/02/2024 13:00:49</publishTime>
+      <publishTime>07/26/2024 08:55:31</publishTime>
     </File>
     <File Include="UserMaint.aspx">
       <publishTime>06/16/2024 20:56:39</publishTime>

@@ -281,4 +281,8 @@ Public Class AppMainPage
           Protected Sub btnMMProcess3_Click(sender As Object, e As EventArgs) Handles btnMMProcess3.Click
                     Response.Redirect("MastProc3.aspx?LogonID=" & LogonID)
           End Sub
+
+          Protected Sub btnPartAdj_Click(sender As Object, e As EventArgs) Handles btnPartAdj.Click
+                    Response.Redirect("PartsAdj.aspx?LogonID=" & LogonID)
+          End Sub
 End Class

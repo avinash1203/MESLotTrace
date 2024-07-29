@@ -229,6 +229,6 @@ Public Class PartsAdj
         BindGrid()
     End Sub
     Protected Sub ImageButton3_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton3.Click
-        Response.Redirect("Mainpage.aspx?LoginID=" & LogonID & "&Op=3")
-    End Sub
+                    Response.Redirect("AppMainpage.aspx?LogonID=" & LogonID & "&Op=3")
+          End Sub
 End Class

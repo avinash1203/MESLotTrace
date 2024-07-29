@@ -51,10 +51,11 @@
 
             <asp:CheckBox ID="CheckBox22" runat="server" Style="z-index: 1; left: 452px; top: 170px; position: absolute" Text="Operations" Font-Bold="True" Font-Size="12pt" />
             <asp:CheckBox ID="CheckBox23" runat="server" Style="z-index: 1; left: 470px; top: 200px; position: absolute" Text="Lot Management" />
-            <asp:CheckBox ID="CheckBox24" runat="server" Style="z-index: 1; left: 470px; top: 230px; position: absolute" Text="Rework" />
-            <asp:CheckBox ID="CheckBox25" runat="server" Style="z-index: 1; left: 470px; top: 260px; position: absolute" Text="Scrap Item" />
-            <asp:CheckBox ID="CheckBox26" runat="server" Style="z-index: 1; left: 470px; top: 290px; position: absolute" Text="Print Tag" />
-            <asp:CheckBox ID="CheckBox27" runat="server" Style="z-index: 1; left: 470px; top: 320px; position: absolute" Text="PLC Data Amend" />
+                <asp:CheckBox ID="CheckBox47" runat="server" Style="z-index: 1; left: 470px; top: 230px; position: absolute" Text="Part Adj." />
+            <asp:CheckBox ID="CheckBox24" runat="server" Style="z-index: 1; left: 470px; top: 260px; position: absolute" Text="Rework" />
+            <asp:CheckBox ID="CheckBox25" runat="server" Style="z-index: 1; left: 470px; top: 290px; position: absolute" Text="Scrap Item" />
+            <asp:CheckBox ID="CheckBox26" runat="server" Style="z-index: 1; left: 470px; top: 320px; position: absolute" Text="Print Tag" />
+            <asp:CheckBox ID="CheckBox27" runat="server" Style="z-index: 1; left: 470px; top: 350px; position: absolute" Text="PLC Data Amend" />
 
 
 

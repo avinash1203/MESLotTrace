@@ -1,0 +1,5 @@
+C:\Applications\Github\MineBea\MESLotTrace\Printing\obj\Debug\Printing.csproj.AssemblyReference.cache
+C:\Applications\Github\MineBea\MESLotTrace\Printing\obj\Debug\Printing.Form1.resources
+C:\Applications\Github\MineBea\MESLotTrace\Printing\obj\Debug\Printing.Properties.Resources.resources
+C:\Applications\Github\MineBea\MESLotTrace\Printing\obj\Debug\Printing.csproj.GenerateResource.cache
+C:\Applications\Github\MineBea\MESLotTrace\Printing\obj\Debug\Printing.csproj.CoreCompileInputs.cache

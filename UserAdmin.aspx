@@ -28,7 +28,7 @@
                 <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                     <asp:HiddenField ID="hfNewFlg" runat="server" />
                     <asp:GridView ID="gvContent" runat="server"
-                        Font-Size="Large" AllowPaging="true" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
+                        Font-Size="Large" AllowPaging="true" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging"
                         ShowFooter="True" top="550px" left="30px"
                         EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="USERMasterSDA" Width="100%">
                         <Columns>
@@ -50,7 +50,7 @@
                             <asp:BoundField DataField="Label Printer" HeaderText="Label Printer" SortExpression="Label Printer">
                                 <ItemStyle Width="20%" />
                             </asp:BoundField>
-                            <asp:ButtonField  CommandName="Access" Text="Access">
+                            <asp:ButtonField CommandName="Access" Text="Access">
                                 <ItemStyle Font-Names="Arial Rounded MT Bold" ForeColor="#FF99CC" />
                             </asp:ButtonField>
                         </Columns>
@@ -140,7 +140,7 @@
             <asp:CheckBox ID="cb24" runat="server" Style="z-index: 1; left: 272px; top: 290px; position: absolute" Text="Prod. Capa. By shift" data-key="Prod_Capa_shift" />
             <asp:CheckBox ID="cb25" runat="server" Style="z-index: 1; left: 272px; top: 320px; position: absolute" Text="Line" data-key="Line" />
             <asp:CheckBox ID="cb26" runat="server" Style="z-index: 1; left: 272px; top: 350px; position: absolute" Text="Process" data-key="Process" />
-             <asp:CheckBox ID="cb35" runat="server" Style="z-index: 1; left: 272px; top: 380px; position: absolute" Text="Process 3" data-key="Process3" />
+            <asp:CheckBox ID="cb35" runat="server" Style="z-index: 1; left: 272px; top: 380px; position: absolute" Text="Process 3" data-key="Process3" />
 
             <asp:CheckBox ID="cb27" runat="server" Style="z-index: 1; left: 272px; top: 410px; position: absolute" Text="Company Code" data-key="Company_Code" />
             <asp:CheckBox ID="cb28" runat="server" Style="z-index: 1; left: 272px; top: 440px; position: absolute" Text="Equipment" data-key="Equipment" />
@@ -154,10 +154,11 @@
 
             <asp:CheckBox ID="cb4" runat="server" AutoPostBack="true" Checked="false" Style="z-index: 1; left: 452px; top: 170px; position: absolute" Text="Operations" Font-Bold="True" Font-Size="12pt" />
             <asp:CheckBox ID="cb41" runat="server" Style="z-index: 1; left: 470px; top: 200px; position: absolute" Text="Lot Management" data-key="Lot_Management" />
-            <asp:CheckBox ID="cb42" runat="server" Style="z-index: 1; left: 470px; top: 230px; position: absolute" Text="Rework" data-key="Rework" />
-            <asp:CheckBox ID="cb43" runat="server" Style="z-index: 1; left: 470px; top: 260px; position: absolute" Text="Scrap Item" data-key="Scrap_Item" />
-            <asp:CheckBox ID="cb44" runat="server" Style="z-index: 1; left: 470px; top: 290px; position: absolute" Text="Print Tag" data-key="Print_Tag" />
-            <asp:CheckBox ID="cb45" runat="server" Style="z-index: 1; left: 470px; top: 320px; position: absolute" Text="PLC Data Amend" data-key="PLC_Data_Amend" />
+            <asp:CheckBox ID="cb46" runat="server" Style="z-index: 1; left: 470px; top: 230px; position: absolute" Text="Part Adj" data-key="Part_Adj" />
+            <asp:CheckBox ID="cb42" runat="server" Style="z-index: 1; left: 470px; top: 260px; position: absolute" Text="Rework" data-key="Rework" />
+            <asp:CheckBox ID="cb43" runat="server" Style="z-index: 1; left: 470px; top: 290px; position: absolute" Text="Scrap Item" data-key="Scrap_Item" />
+            <asp:CheckBox ID="cb44" runat="server" Style="z-index: 1; left: 470px; top: 320px; position: absolute" Text="Print Tag" data-key="Print_Tag" />
+            <asp:CheckBox ID="cb45" runat="server" Style="z-index: 1; left: 470px; top: 350px; position: absolute" Text="PLC Data Amend" data-key="PLC_Data_Amend" />
 
 
 
@@ -186,7 +187,7 @@
             <asp:CheckBox ID="cb73" runat="server" Style="z-index: 1; left: 1034px; top: 260px; position: absolute" Text="Scrap Informationt" data-key="Scrap_Informationt" />
 
         </div>
-       
+
         <asp:SqlDataSource ID="USERMasterSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT a.EmpNo as [Employee No], a.username as [Name], b.roledesc as Role , c.UserStatusDesc as Status, 
 case when a.PRINTIP is NULL OR a.printip ='' THEN 'Not Defined'
 else a.printip

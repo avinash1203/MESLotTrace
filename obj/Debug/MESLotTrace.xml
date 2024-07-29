@@ -676,6 +676,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:MESLotTrace.AppMainPage._btnPartAdj">
+<summary>
+btnPartAdj control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:MESLotTrace.AppMainPage._btnOFRework">
 <summary>
 btnOFRework control.
@@ -2494,6 +2503,213 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:MESLotTrace.ScanByProcess._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label11">
+<summary>
+Label11 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label3">
+<summary>
+Label3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._txtOprID">
+<summary>
+txtOprID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._txtLineID">
+<summary>
+txtLineID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label2">
+<summary>
+Label2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._txtProcCd">
+<summary>
+txtProcCd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label4">
+<summary>
+Label4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._txtStepCd">
+<summary>
+txtStepCd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label5">
+<summary>
+Label5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._txtShiftcd">
+<summary>
+txtShiftcd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label6">
+<summary>
+Label6 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._txtStatus">
+<summary>
+txtStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label7">
+<summary>
+Label7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._txtManuLotNo">
+<summary>
+txtManuLotNo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._Label8">
+<summary>
+Label8 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._txtInTime">
+<summary>
+txtInTime control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._btnF1">
+<summary>
+btnF1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._btnF1a">
+<summary>
+btnF1a control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._btnF2">
+<summary>
+btnF2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._btnF3">
+<summary>
+btnF3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.ScanByProcess._btnF4">
+<summary>
+btnF4 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:MESLotTrace.UserAdmin._form1">
 <summary>
 form1 control.
@@ -3019,6 +3235,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:MESLotTrace.UserAdmin._cb41">
 <summary>
 cb41 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.UserAdmin._cb46">
+<summary>
+cb46 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -8200,9 +8425,117 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.PartsAdj._LoginUser">
+<member name="F:MESLotTrace.PartsAdj._DataEntryScr">
 <summary>
-LoginUser control.
+DataEntryScr control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._Label12">
+<summary>
+Label12 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._hfTagSeq">
+<summary>
+hfTagSeq control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._Label5">
+<summary>
+Label5 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._Label7">
+<summary>
+Label7 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._Label11">
+<summary>
+Label11 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._txtCqty">
+<summary>
+txtCqty control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._txtAty">
+<summary>
+txtAty control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._ddlReason">
+<summary>
+ddlReason control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._btnSave">
+<summary>
+btnSave control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._btnCancel">
+<summary>
+btnCancel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._ddlReasonSda">
+<summary>
+ddlReasonSda control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.PartsAdj._User">
+<summary>
+User control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -8542,9 +8875,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.LotMaint._Button1">
+<member name="F:MESLotTrace.LotMaint._btnCal">
 <summary>
-Button1 control.
+btnCal control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -9022,6 +9355,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:MESLotTrace.MastCompanyCodeMaint._hfNewFlg">
 <summary>
 hfNewFlg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.MastCompanyCodeMaint._btnF1">
+<summary>
+btnF1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -10063,447 +10405,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:MESLotTrace.MainPage._form1">
-<summary>
-form1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Image3">
-<summary>
-Image3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._ImportData">
-<summary>
-ImportData control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Label1">
-<summary>
-Label1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnImpMaterialMaster">
-<summary>
-btnImpMaterialMaster control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnImpProdOrder">
-<summary>
-btnImpProdOrder control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnImpProdOrderCom">
-<summary>
-btnImpProdOrderCom control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnVendBom">
-<summary>
-btnVendBom control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._MasterMaint">
-<summary>
-MasterMaint control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Label2">
-<summary>
-Label2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMStdUOM">
-<summary>
-btnMStdUOM control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMShift">
-<summary>
-btnMShift control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMProdCapa">
-<summary>
-btnMProdCapa control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMLine">
-<summary>
-btnMLine control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMProcess">
-<summary>
-btnMProcess control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMStep">
-<summary>
-btnMStep control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMEquip">
-<summary>
-btnMEquip control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnStepEquip">
-<summary>
-btnStepEquip control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMTrace">
-<summary>
-btnMTrace control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMBOM">
-<summary>
-btnMBOM control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMReason">
-<summary>
-btnMReason control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnWorkerReg">
-<summary>
-btnWorkerReg control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnMCompCd">
-<summary>
-btnMCompCd control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnPltCd">
-<summary>
-btnPltCd control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Operation">
-<summary>
-Operation control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Label3">
-<summary>
-Label3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnLotOp1">
-<summary>
-btnLotOp1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnLotOp2">
-<summary>
-btnLotOp2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnPartMgmt">
-<summary>
-btnPartMgmt control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._btnPrintTag">
-<summary>
-btnPrintTag control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button15">
-<summary>
-Button15 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Report">
-<summary>
-Report control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Label4">
-<summary>
-Label4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button1">
-<summary>
-Button1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button2">
-<summary>
-Button2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button3">
-<summary>
-Button3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button4">
-<summary>
-Button4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button5">
-<summary>
-Button5 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button6">
-<summary>
-Button6 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button7">
-<summary>
-Button7 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button8">
-<summary>
-Button8 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button9">
-<summary>
-Button9 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button10">
-<summary>
-Button10 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button14">
-<summary>
-Button14 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._ExportData">
-<summary>
-ExportData control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Label5">
-<summary>
-Label5 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button11">
-<summary>
-Button11 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button12">
-<summary>
-Button12 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:MESLotTrace.MainPage._Button13">
-<summary>
-Button13 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:MESLotTrace.AppLogin._form1">
 <summary>
 form1 control.
@@ -10921,6 +10822,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:MESLotTrace.UserAccess._CheckBox23">
 <summary>
 CheckBox23 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.UserAccess._CheckBox47">
+<summary>
+CheckBox47 control.
 </summary>
 <remarks>
 Auto-generated field.
