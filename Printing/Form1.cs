@@ -134,7 +134,7 @@ namespace Printing
                               .Replace("[Vendor_Code_ToReplace]", tag.vendor_cd.ToString())
                               .Replace("[Vendor_Lot_Number_ToReplace]", tag.vendor_lot_no.ToString())
                               .Replace("[Mamm_Lot_No_ToReplace]", tag.mamm_lot_no.ToString())
-                              .Replace("[Print_Date_ToReplace]", tag.print_date.ToString())
+                              .Replace("[Print_Date_ToReplace]", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
                               .Replace("[Quantity_ToReplace]", tag.qty.ToString())
                               .Replace("[Uom_ToReplace]", tag.uom.ToString())
                               .Replace("[Qrcode_ToReplace]", tag.qr_cd.ToString());
