@@ -18,6 +18,7 @@ Public Class DatabaseHelper
 
                     Using adapter As New SqlDataAdapter(command)
                         adapter.Fill(dataTable)
+                        Class1.ConvertDbNullToEmptyString(dataTable)
                     End Using
                 End Using
             End Using
@@ -212,6 +213,8 @@ Public Class Class1
         ' Add condition for current_qty based on isZeroQty
         If isZeroQty Then
             parameters.Add("current_qty = 0")
+        Else
+            parameters.Add("current_qty > 0")
         End If
 
         If parameters.Count > 0 Then
