@@ -103,9 +103,9 @@ Public Class MastStep
         myconnection = New SqlConnection(connstr)
 
         sqlstr = "UPDATE MAST_STEP" +
-            "SET 
+            " SET 
                           cmp_cd=@cmp_cd,
-                          plnt_cd=@plnt_cd
+                          plnt_cd=@plnt_cd,
                           line_id=@line_id,
                           proc_flow_id=@proc_flow_id,
                           step_cd=@step_cd,
@@ -115,7 +115,7 @@ Public Class MastStep
                           serial_no_div=@serial_no_div,
                           cncl_flg=@cncl_flg,
                           upd_utc=@upd_utc,
-                          updr_id=@updr_id,
+                          upd_id=@upd_id,
                           notes=@notes Where proc_flow_id = @proc_flow_id AND line_id = @line_id AND step_cd =@step_cd"
 
         myconnection.Open()
@@ -131,7 +131,7 @@ Public Class MastStep
         cmd.Parameters.AddWithValue("@serial_no_div", Val(txtSCT.Text))
         cmd.Parameters.AddWithValue("@CNCL_FLG", 0)
         cmd.Parameters.AddWithValue("@upd_utc", Format(Now, "yyyy-MM-dd HH:mm:ss"))
-        cmd.Parameters.AddWithValue("@updr_id", Logonid)
+        cmd.Parameters.AddWithValue("@upd_id", Logonid)
         cmd.Parameters.AddWithValue("@notes", txtRe.Text)
         Try
             cmd.ExecuteNonQuery()

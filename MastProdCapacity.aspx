@@ -110,7 +110,7 @@
             <asp:Label ID="Label12" runat="server" Style="z-index: 1; left: 39px; top: 434px; position: absolute" Text="Manufacturing Lot Number code "></asp:Label>
             <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 39px; top: 474px; position: absolute" Text="Remarks"></asp:Label>
 
-            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 317px; top: 70px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_nm" DataValueField="cmp_cd">
+            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 317px; top: 70px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_cd" DataValueField="cmp_cd">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
@@ -128,7 +128,7 @@
 
 
 
-            <asp:DropDownList ID="ddlLineId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 317px; top: 190px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlLINESDA" DataTextField="line_nm" DataValueField="line_id">
+            <asp:DropDownList ID="ddlLineId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 317px; top: 190px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlLINESDA" DataTextField="line_id" DataValueField="line_id">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 

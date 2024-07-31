@@ -91,6 +91,9 @@ namespace Printing
         public string updr_id { get; set; }
         public string upd_pg_id { get; set; }
         public string admin_mnt_notes { get; set; }
+
+        public string tag_seq { get; set; }
+        public string admin_mnt_id { get; }
     }
 
     public class PrintingDAL
@@ -123,9 +126,9 @@ namespace Printing
         //    }
         //}
 
-        public List<TrxLabelTag> UpdateLabel(string code)
+        public List<TrxLabelTag> UpdateLabel(string tag_seq)
         {
-            string sqlstr = @"Update TRX_LABEL_TAG Set proc_status = 1  Where vendor_lot_no = vendor_cd = '" + code + "'";
+            string sqlstr = @"Update TRX_LABEL_TAG Set proc_status = 1  Where tag_seq ='" + tag_seq + "'";
             using (SqlConnection myConnection = new SqlConnection(connectionString))
             {
                 myConnection.Open();
@@ -147,7 +150,16 @@ namespace Printing
 
         public List<TrxLabelTag> GetLabels(bool isRadAllChecked, string code, string lotNumber)
         {
-            string proc_status = isRadAllChecked ? "1" : "0";
+            string proc_status = isRadAllChecked ? "" : "0";
+            //if (isRadAllChecked)
+            //{
+            //    proc_status = string.Empty;
+            //}
+            //else
+            //{
+            //    proc_status = "0";
+            //}
+
             // Base SQL query
             string sqlstr = "SELECT * FROM TRX_LABEL_TAG WHERE 1=1";
 
@@ -164,7 +176,7 @@ namespace Printing
             // Dynamically add conditions and parameters
             if (!string.IsNullOrEmpty(lotNumber))
             {
-                sqlstr += " AND lotNumber = @lotNumber";
+                sqlstr += " AND vendor_lot_no = @lotNumber";
                 parameters.Add(new SqlParameter("@lotNumber", lotNumber));
             }
 

@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTestLabel = new System.Windows.Forms.Button();
             this.btnTest2 = new System.Windows.Forms.Button();
+            this.ChkPrintAdjustedLabel = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button2
@@ -175,11 +176,22 @@
             this.btnTest2.UseVisualStyleBackColor = true;
             this.btnTest2.Click += new System.EventHandler(this.btnTest2_Click);
             // 
+            // ChkPrintAdjustedLabel
+            // 
+            this.ChkPrintAdjustedLabel.AutoSize = true;
+            this.ChkPrintAdjustedLabel.Location = new System.Drawing.Point(155, 208);
+            this.ChkPrintAdjustedLabel.Name = "ChkPrintAdjustedLabel";
+            this.ChkPrintAdjustedLabel.Size = new System.Drawing.Size(177, 24);
+            this.ChkPrintAdjustedLabel.TabIndex = 20;
+            this.ChkPrintAdjustedLabel.Text = "Print Adjusted Label";
+            this.ChkPrintAdjustedLabel.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 471);
+            this.Controls.Add(this.ChkPrintAdjustedLabel);
             this.Controls.Add(this.btnTest2);
             this.Controls.Add(this.btnTestLabel);
             this.Controls.Add(this.label1);
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTestLabel;
         private System.Windows.Forms.Button btnTest2;
+        private System.Windows.Forms.CheckBox ChkPrintAdjustedLabel;
     }
 }
