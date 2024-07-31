@@ -253,6 +253,7 @@ Public Class MastShiftMaint
         da.Fill(dt)
 
         If dt.Rows.Count > 0 Then
+            Class1.ConvertDbNullToEmptyString(dt)
             fillDetails(dt)
         Else
             Class1.ShowMsg("Error during Fetching!", "Continue", "warning")
