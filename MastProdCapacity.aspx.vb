@@ -112,13 +112,13 @@ Public Class MastProdCapacity
         myconnection = New SqlConnection(connstr)
 
         sqlstr = "UPDATE MAST_PROD_CAPACITY" +
-                        "SET 
+                        " SET 
                         [cmp_cd]=@cmp_cd
                        ,[plnt_cd]=@plnt_cd                                        
                        ,[item_cd]=@item_cd
                        ,[proc_flow_id]=@proc_flow_id
                        ,[line_id]=@line_id
-                       ,[shift_num]=@shift_nm
+                       ,[shift_num]=@shift_num
                        ,[production_capacity]=@production_capacity
                        ,[proc_seq]=@proc_seq
                        ,[priority_order]=@priority_order
@@ -144,17 +144,17 @@ Public Class MastProdCapacity
         cmd.Parameters.AddWithValue("@proc_sym", txtPS.Text)
         cmd.Parameters.AddWithValue("@CNCL_FLG", 0)
         cmd.Parameters.AddWithValue("@upd_utc", Format(Now, "yyyy-MM-dd HH:mm:ss"))
-        cmd.Parameters.AddWithValue("@updr_id", Logonid)
+        cmd.Parameters.AddWithValue("@upd_id", Logonid)
         cmd.Parameters.AddWithValue("@notes", txtRe.Text)
         Try
             cmd.ExecuteNonQuery()
             Class1.ShowMsg("Updated Successfully", "Ok", "success")
-            DataEntryScr.Visible = False
+
         Catch ex As Exception
             Class1.ShowMsg("Error during Update!", "Continue", "warning")
-            Exit Sub
-        End Try
 
+        End Try
+        DataEntryScr.Visible = False
     End Sub
 
 
