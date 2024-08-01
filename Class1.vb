@@ -74,6 +74,8 @@ Public Class Class1
                 Return 0.0
             Case GetType(Boolean)
                 Return False
+            Case GetType(Decimal)
+                Return 0.0
             Case GetType(DateTime)
                 Return DateTime.MinValue
             Case Else

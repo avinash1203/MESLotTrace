@@ -231,6 +231,7 @@ Public Class Mast_Trace
         txtDT9.Text = String.Empty
         txtCN10.Text = String.Empty
         txtDT10.Text = String.Empty
+        txtRe.Text = String.Empty
         chkInf.Checked = False
         hfPopUpType.Value = ""
         ddlProcId.Enabled = True

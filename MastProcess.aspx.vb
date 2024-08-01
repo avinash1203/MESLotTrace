@@ -153,8 +153,8 @@ Public Class MastProcess
         cmd1.Parameters.AddWithValue("@proc_flow_nm", txtPFN.Text)
         cmd1.Parameters.AddWithValue("@Parts_bind", txtPTI.Text)
         cmd1.Parameters.AddWithValue("@CNCL_FLG", 0)
-        cmd2.Parameters.AddWithValue("@upd_utc", Format(Now, "yyyy-MM-dd HH:mm:ss"))
-        cmd2.Parameters.AddWithValue("@updr_id", Logonid)
+        cmd1.Parameters.AddWithValue("@upd_utc", Format(Now, "yyyy-MM-dd HH:mm:ss"))
+        cmd1.Parameters.AddWithValue("@updr_id", Logonid)
         cmd1.Parameters.AddWithValue("@notes", txtRe.Text)
 
 
