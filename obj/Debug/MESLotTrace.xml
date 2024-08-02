@@ -4609,6 +4609,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:MESLotTrace.MastEquiplink._ddlPFIDSDA">
+<summary>
+ddlPFIDSDA control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:MESLotTrace.MastLineMaint._form1">
 <summary>
 form1 control.
@@ -6610,6 +6619,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:MESLotTrace.MastStep._ddlLINESDA">
 <summary>
 ddlLINESDA control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:MESLotTrace.MastStep._ddlPFIDSDA">
+<summary>
+ddlPFIDSDA control.
 </summary>
 <remarks>
 Auto-generated field.

@@ -113,7 +113,7 @@ Public Class MastShiftMaint
                     Dim cmd2 As SqlCommand
                     Dim myconnection As New SqlConnection
                     myconnection = New SqlConnection(connstr)
-
+                    ' remarked by Shan
                     'sqlstr = "UPDATE MAST_SHIFT" +
                     '                    " SET 
                     '                       cmp_cd=@cmp_cd,
@@ -140,7 +140,7 @@ Public Class MastShiftMaint
                     '                       CNCL_FLG=@CNCL_FLG
                     '                       WHERE 
                     '                       shift_ptrn_id=@shift_ptrn_id"
-
+                    ' ##############################################################
 
                     sqlstr = "UPDATE MAST_SHIFT" +
                                         " SET 
@@ -376,5 +376,6 @@ Public Class MastShiftMaint
                     gvContent.PageIndex = e.NewPageIndex
                     gvContent.DataBind()
           End Sub
+
 
 End Class

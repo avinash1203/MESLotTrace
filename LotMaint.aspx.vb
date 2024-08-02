@@ -218,12 +218,15 @@ Public Class LotMaint
                     myconnection.Open()
                     cmd1 = New SqlCommand(sqlstr1, myconnection)
                     cmd3 = New SqlCommand(sqlstr3, myconnection)
+
+                    Call TxRows()
+
                     Try
                               cmd1.ExecuteNonQuery()
                               cmd3.ExecuteNonQuery()
-                              Class1.ShowMsg("Lot Suspended", "Ok", "success")
+                              Class1.ShowMsg("Lot Closed", "Ok", "success")
                     Catch ex As Exception
-                              Class1.ShowMsg("Lot Suspend Error:" & Mid(ex.Message, 1, 50), "Continue", "warning")
+                              Class1.ShowMsg("Lot Close Error:" & Mid(ex.Message, 1, 50), "Continue", "warning")
                     Finally
                               myconnection.Close()
                     End Try
