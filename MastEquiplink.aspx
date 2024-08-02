@@ -29,7 +29,7 @@
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                 <asp:GridView ID="gvContent" runat="server"
-                    Font-Size="Medium" AllowPaging="True" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging" 
+                    Font-Size="Medium" AllowPaging="True" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging"
                     ShowFooter="True" OnRowCommand="gvContent_RowCommand"
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastEquipSetupSDA" Width="100%">
                     <Columns>
@@ -86,7 +86,7 @@
             <asp:Label ID="Label7" runat="server" Style="z-index: 1; left: 34px; top: 270px; position: absolute" Text="Equipment ID "></asp:Label>
             <asp:Label ID="Label12" runat="server" Style="z-index: 1; left: 39px; top: 310px; position: absolute" Text="Remarks "></asp:Label>
 
-            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 66px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_nm" DataValueField="cmp_cd">
+            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 66px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_cd" DataValueField="cmp_cd">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
@@ -95,11 +95,11 @@
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
-            <asp:DropDownList ID="ddlLineId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 149px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlLINESDA" DataTextField="line_nm" DataValueField="line_id">
+            <asp:DropDownList ID="ddlLineId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 149px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlLINESDA" DataTextField="line_id" DataValueField="line_id">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
-            <asp:DropDownList ID="ddlLprocId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 190px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlLINESDA" DataTextField="lproc_id" DataValueField="lproc_id">
+            <asp:DropDownList ID="ddlLprocId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 190px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlPFIDSDA" DataTextField="proc_flow_id" DataValueField="proc_flow_id">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
@@ -120,6 +120,8 @@
         <asp:SqlDataSource ID="ddlCCSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [cmp_nm],[cmp_cd], [REGR_ID] FROM [MAST_COMPANYCODE] WHERE CNCL_FLG = 0 ORDER BY [cmp_nm]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="ddlPCSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [pltn_nm],[pltn_cd], [REGR_ID] FROM [MAST_PLANTCODE] WHERE CNCL_FLG = 0 ORDER BY [pltn_nm]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="ddlLINESDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [lproc_id],[line_id], [line_nm] FROM [MAST_LINE] WHERE CNCL_FLG = 0 ORDER BY [line_nm]"></asp:SqlDataSource>
+
+        <asp:SqlDataSource ID="ddlPFIDSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [proc_flow_id] from MAST_PROC WHERE CNCL_FLG = 0"></asp:SqlDataSource>
 
 
     </form>

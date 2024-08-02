@@ -18,6 +18,7 @@ Public Class DatabaseHelper
 
                     Using adapter As New SqlDataAdapter(command)
                         adapter.Fill(dataTable)
+                        Class1.ConvertDbNullToEmptyString(dataTable)
                     End Using
                 End Using
             End Using
@@ -53,6 +54,34 @@ Public Class Class1
     '    conString = System.Configuration.ConfigurationManager.ConnectionStrings("MESLotTraceConnectionString").ConnectionString
     'End Sub
 
+    Public Shared Sub ConvertDbNullToEmptyString(ByRef dt As DataTable)
+        For Each row As DataRow In dt.Rows
+            For Each column As DataColumn In dt.Columns
+                If IsDBNull(row(column)) Then
+                    row(column) = GetDefaultValue(column)
+                End If
+            Next
+        Next
+    End Sub
+
+    Private Shared Function GetDefaultValue(ByVal column As DataColumn) As Object
+        Select Case column.DataType
+            Case GetType(String)
+                Return String.Empty
+            Case GetType(Integer)
+                Return 0
+            Case GetType(Double)
+                Return 0.0
+            Case GetType(Boolean)
+                Return False
+            Case GetType(Decimal)
+                Return 0.0
+            Case GetType(DateTime)
+                Return DateTime.MinValue
+            Case Else
+                Return DBNull.Value ' Use DBNull for unsupported data types
+        End Select
+    End Function
 
     Public Shared Function GetMenuNameByTable(tabelName As String) As String
         Dim result As String = String.Empty
@@ -186,6 +215,8 @@ Public Class Class1
         ' Add condition for current_qty based on isZeroQty
         If isZeroQty Then
             parameters.Add("current_qty = 0")
+        Else
+            parameters.Add("current_qty > 0")
         End If
 
         If parameters.Count > 0 Then
@@ -231,15 +262,8 @@ Public Class Class1
         Return LogonID
     End Function
 
-    Public Shared Sub ConvertDbNullToEmptyString(ByRef dt As DataTable)
-        For Each row As DataRow In dt.Rows
-            For Each column As DataColumn In dt.Columns
-                If IsDBNull(row(column)) Then
-                    row(column) = String.Empty
-                End If
-            Next
-        Next
-    End Sub
+
+
     Public Shared Sub ShowMsgURL(ByVal Msg As String, msgbtn As String, msgtype As String, url As String)
         Dim sMessage As String = ShowMsgURLSetup(Msg, msgbtn, msgtype, url)
 

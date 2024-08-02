@@ -86,7 +86,7 @@
             <asp:ImageButton ID="ImageButton2" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
         </div>
         </div>
-        <asp:SqlDataSource ID="MastCompanyCodeSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [Pltn_Cd], [Pltn_Nm] FROM [MAST_PLANTCODE]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="MastCompanyCodeSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [Pltn_Cd], [Pltn_Nm] FROM [MAST_PLANTCODE] WHERE CNCL_FLG = 0 "></asp:SqlDataSource>
     </form>
 </body>
 </html>

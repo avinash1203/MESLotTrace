@@ -224,6 +224,8 @@ Public Class PartsAdj
     End Sub
 
 
+
+
     Protected Sub gvContent_PageIndexChanging(sender As Object, e As GridViewPageEventArgs)
         GVContent.PageIndex = e.NewPageIndex
         BindGrid()

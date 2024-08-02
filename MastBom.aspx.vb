@@ -232,6 +232,7 @@ Public Class Mast_Bom
         da.Fill(dt)
 
         If dt.Rows.Count > 0 Then
+            Class1.ConvertDbNullToEmptyString(dt)
             fillDetails(dt)
         Else
             Class1.ShowMsg("Error during Fetching!", "Continue", "warning")
@@ -295,7 +296,7 @@ Public Class Mast_Bom
         'Else
         '    DirectCast(DataEntryScr.FindControl("ddlProcId"), DropDownList).SelectedValue = value.Rows(0).Item(3)
         'End If
-        Class1.SetDropDownVale(DataEntryScr, "ddlLineId", value.Rows(0).Item(3))
+        Class1.SetDropDownVale(DataEntryScr, "ddlProcId", value.Rows(0).Item(3))
 
         DirectCast(DataEntryScr.FindControl("txtMC"), TextBox).Text = value.Rows(0).Item(4)
         DirectCast(DataEntryScr.FindControl("txtSC"), TextBox).Text = value.Rows(0).Item(5)

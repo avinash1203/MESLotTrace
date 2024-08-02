@@ -21,30 +21,27 @@
         </div>
         <div id="formtitle" runat="server" style="z-index: 1; position: absolute; top: 86px; left: 1px; width: 100%; height: 50px; text-align: center; border: 1px solid black; background-color: azure;">
             <asp:Label ID="frmtitle" runat="server" Style="z-index: 1;" Text="Process Code Maintenance" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
-   <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
-            </div>
+            <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/BackBlue01v1.png" Style="z-index: 1; left: 95%; top: 8px; position: absolute; width: 50px; height: 38px" Width="25px" />
+        </div>
         <div id="formbody" runat="server" style="z-index: 1; position: absolute; top: 140px; left: 1px; width: 100%; height: 550px; border: 1px black solid;">
             <asp:Label ID="Label1" runat="server" Text="Defined Data" Style="z-index: 1; position: absolute; top: 5px; left: 1px;" Font-Bold="True" Font-Size="X-Large" ForeColor="Blue"></asp:Label>
             <asp:Button ID="btnNew" runat="server" Style="z-index: 1; position: absolute; top: 2px; left: 200px; font-size: large;" Text="Create New" CssClass="button1" />
             <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                 <asp:GridView ID="gvContent" runat="server"
-                    Font-Size="Medium" AllowPaging="True" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging" 
+                    Font-Size="Medium" AllowPaging="True" PageSize="15" OnPageIndexChanging="gvContent_PageIndexChanging"
                     ShowFooter="True" OnRowCommand="gvContent_RowCommand"
                     EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastSetupSDA" Width="100%" DataKeyNames="proc_flow_id">
                     <Columns>
-                         <asp:TemplateField HeaderText="Actions">
+                        <asp:TemplateField HeaderText="Actions">
                             <ItemStyle Width="100px" />
                             <ItemTemplate>
                                 <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("proc_flow_id")  %>' Text="Select" />
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="proc_flow_id" HeaderText="Process Flow ID" SortExpression="proc_flow_id" ReadOnly="True">
-                        </asp:BoundField>
-                        <asp:BoundField DataField="lproc_id" HeaderText="Line Process ID" SortExpression="lproc_id">
-                        </asp:BoundField>
+                        <asp:BoundField DataField="proc_flow_id" HeaderText="Process Flow ID" SortExpression="proc_flow_id" ReadOnly="True"></asp:BoundField>
+                        <asp:BoundField DataField="lproc_id" HeaderText="Line Process ID" SortExpression="lproc_id"></asp:BoundField>
 
-                        <asp:BoundField DataField="proc_flow_nm" HeaderText="Process Flow Name" SortExpression="proc_flow_nm">
-                        </asp:BoundField>
+                        <asp:BoundField DataField="proc_flow_nm" HeaderText="Process Flow Name" SortExpression="proc_flow_nm"></asp:BoundField>
 
                     </Columns>
                     <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />
@@ -87,7 +84,7 @@
             <asp:Label ID="Label13" runat="server" Style="z-index: 1; left: 34px; top: 470px; position: absolute" Text="Parts Binding Indicator "></asp:Label>
             <asp:Label ID="Label14" runat="server" Style="z-index: 1; left: 34px; top: 510px; position: absolute" Text="Remarks "></asp:Label>
 
-            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 250px; top: 70px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_nm" DataValueField="cmp_cd">
+            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 250px; top: 70px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_cd" DataValueField="cmp_cd">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
@@ -114,13 +111,13 @@
             <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
 
 
-            <asp:TextBox ID="txtPflowID" runat="server" BorderStyle="Solid" height="25px" style="z-index: 1; left: 250px; top: 149px; position: absolute" width="168px"></asp:TextBox>
+            <asp:TextBox ID="txtPflowID" runat="server" BorderStyle="Solid" Height="25px" Style="z-index: 1; left: 250px; top: 149px; position: absolute" Width="168px"></asp:TextBox>
 
 
         </div>
         <asp:SqlDataSource ID="ddlCCSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [cmp_nm],[cmp_cd], [REGR_ID] FROM [MAST_COMPANYCODE] WHERE CNCL_FLG = 0 ORDER BY [cmp_nm]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="ddlPCSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [pltn_nm],[pltn_cd], [REGR_ID] FROM [MAST_PLANTCODE] WHERE CNCL_FLG = 0 ORDER BY [pltn_nm]"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="ddlPFIDSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [proc_flow_id] from MAST_PROC3 WHERE CNCL_FLG = 0"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="ddlPFIDSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [proc_flow_id] from MAST_PROC WHERE CNCL_FLG = 0"></asp:SqlDataSource>
 
 
     </form>

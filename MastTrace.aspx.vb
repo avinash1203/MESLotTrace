@@ -231,6 +231,7 @@ Public Class Mast_Trace
         txtDT9.Text = String.Empty
         txtCN10.Text = String.Empty
         txtDT10.Text = String.Empty
+        txtRe.Text = String.Empty
         chkInf.Checked = False
         hfPopUpType.Value = ""
         ddlProcId.Enabled = True
@@ -290,7 +291,9 @@ Public Class Mast_Trace
         da.Fill(dt)
 
         If dt.Rows.Count > 0 Then
+            Class1.ConvertDbNullToEmptyString(dt)
             fillDetails(dt)
+
         Else
             Class1.ShowMsg("Error during Fetching!", "Continue", "warning")
 
@@ -307,10 +310,6 @@ Public Class Mast_Trace
         DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).Items.Clear()
         DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).Items.Add(firstCC)
         DirectCast(DataEntryScr.FindControl("ddlCC"), DropDownList).DataBind()
-
-
-
-
 
         Dim firstPC = DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).Items(0)
         DirectCast(DataEntryScr.FindControl("ddlPC"), DropDownList).Items.Clear()
