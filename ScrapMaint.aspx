@@ -36,7 +36,7 @@
 
                   
 
-                    <asp:FileUpload ID="FileUpload1" runat="server" style="z-index: 1; left: 40%; top: 194px; position: absolute; width: 494px" Font-Size="Large" />
+                    <asp:FileUpload ID="FileUpload1" runat="server" style="z-index: 1; left: 40%; top: 194px; position: absolute; width: 494px" Font-Size="Large" BorderStyle="Solid" />
                <asp:Label ID="Label5" runat="server" Font-Italic="True" Font-Size="Small" ForeColor="#FF0066" style="z-index: 1; left:40%; top: 235px; position: absolute" Text="File in CSV format"></asp:Label>
 
                   <asp:Label ID="Label6" runat="server" Style="position: absolute; z-index: 1; left: 20%; top: 293px" Text="Select Reason Code" Font-Size="X-Large"></asp:Label>

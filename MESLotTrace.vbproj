@@ -121,8 +121,10 @@
     <Content Include="Images\SystemLogo3.png" />
     <Content Include="MastBom.aspx" />
     <Content Include="MastUom.aspx" />
+    <Content Include="Scrap.aspx" />
     <Content Include="ReportDiv.aspx" />
     <Content Include="ScanByProcess.aspx" />
+    <Content Include="SuspendLot.aspx" />
     <Content Include="UserAdmin.aspx" />
     <Content Include="MastEquip.aspx" />
     <Content Include="MastEquiplink.aspx" />
@@ -332,6 +334,13 @@
       <DependentUpon>MastUom.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Scrap.aspx.designer.vb">
+      <DependentUpon>Scrap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Scrap.aspx.vb">
+      <DependentUpon>Scrap.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ReportDiv.aspx.designer.vb">
       <DependentUpon>ReportDiv.aspx</DependentUpon>
     </Compile>
@@ -345,6 +354,13 @@
     <Compile Include="ScanByProcess.aspx.vb">
       <DependentUpon>ScanByProcess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuspendLot.aspx.designer.vb">
+      <DependentUpon>SuspendLot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuspendLot.aspx.vb">
+      <DependentUpon>SuspendLot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="UserAdmin.aspx.designer.vb">
       <DependentUpon>UserAdmin.aspx</DependentUpon>

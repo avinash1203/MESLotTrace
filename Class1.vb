@@ -194,10 +194,36 @@ Public Class Class1
 
         Return query
     End Function
+          Public Shared Function GenerateScrapSqlQuery(lineId As String, procFlowId As String, stepCd As String, itemCd As String, isCompRej As Boolean) As String
+                    Dim query As String = "SELECT line_id, proc_flow_id, step_cd, item_cd  FROM TRX_SERIAL_CLS "
+                    Dim parameters As New List(Of String)()
+
+                    If Not String.IsNullOrEmpty(lineId) Then
+                              parameters.Add("line_id = @lineId")
+                    End If
+                    If Not String.IsNullOrEmpty(procFlowId) Then
+                              parameters.Add("proc_flow_id = @procFlowId")
+                    End If
+                    If Not String.IsNullOrEmpty(stepCd) Then
+                              parameters.Add("step_cd = @stepCd")
+                    End If
+                    If Not String.IsNullOrEmpty(itemCd) Then
+                              parameters.Add("item_cd = @itemCd")
+                    End If
+                    ' Add condition for current_qty based on isCompRej
+                    'If isCompRej Then
+                    '          parameters.Add("current_qty = 0")
+                    'End If
+
+                    If parameters.Count > 0 Then
+                              query &= " WHERE " & String.Join(" AND ", parameters)
+                    End If
+
+                    Return query
+          End Function
 
 
-
-    Public Shared Function GetLoginId(ByVal request As HttpRequest) As String
+          Public Shared Function GetLoginId(ByVal request As HttpRequest) As String
         Dim LogonID As String = request.QueryString("LogonID")
         If LogonID Is Nothing Then
             LogonID = request.QueryString("LoginID")

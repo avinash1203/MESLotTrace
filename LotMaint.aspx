@@ -41,7 +41,7 @@
                         Style="z-index: 1; left: 1065px; top: 298px; position: absolute; height: 40px; width: 252px">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="DSddlShift" runat="server" ConnectionString="<%$ ConnectionStrings:MyDatabase %>" SelectCommand="SELECT [shift_nm], concat(shift_ptrn_id, '#',wrk_shift_seq, '#',strt_time_utc,'#',end_time_utc) as mainkey  FROM [MAST_SHIFT]"></asp:SqlDataSource>
-                    <asp:Label ID="Label13" runat="server" Style="position: absolute; z-index: 1; left: 963px; top: 297px; right: 464px;" Text="Shift" Font-Size="X-Large"></asp:Label>
+                    <asp:Label ID="Label13" runat="server" Style="position: absolute; z-index: 1; left: 963px; top: 297px;" Text="Shift" Font-Size="X-Large"></asp:Label>
                     <asp:TextBox ID="txtMfgLotNo" runat="server" Style="z-index: 1; left: 386px; top: 6px; position: absolute; width: 254px; height: 30px; right: 668px;" BorderStyle="Solid"></asp:TextBox>
                     <asp:TextBox ID="txtModelNo" runat="server" Style="z-index: 1; left: 386px; top: 45px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
                     <asp:TextBox ID="txtProdSchQty" runat="server" Style="z-index: 1; left: 386px; top: 84px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
@@ -53,7 +53,7 @@
                     <asp:TextBox ID="txtAbPassNG" runat="server" Style="z-index: 1; left: 1061px; top: 164px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
                     <asp:TextBox ID="txtRem" runat="server" Style="z-index: 1; left: 386px; top: 204px; position: absolute; width: 930px; height: 82px;" BorderStyle="Solid" TextMode="MultiLine"></asp:TextBox>
                     <asp:TextBox ID="txtProdDt" runat="server" Style="z-index: 1; left: 386px; top: 296px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:Calendar ID="CalProdDt" runat="server" Style="z-index: 99; left: 677px; top: 183px; position: absolute; height: 213px; width: 309px" BackColor="#99FFCC"></asp:Calendar>
+                    <asp:Calendar ID="CalProdDt" runat="server" Style="z-index: 99; left: 679px; top: 259px; position: absolute; height: 213px; width: 309px" BackColor="#99FFCC"></asp:Calendar>
                     <asp:Button ID="btnCal" runat="server"
                         Style="z-index: 1; left: 674px; top: 296px; width: 50px; height: 36px; border-radius: 10px; position: absolute" Text="Cal." BackColor="#CCFFFF" />
 
@@ -75,8 +75,27 @@
 
                     <asp:HiddenField ID="hfLineID" runat="server" />
 
-                </div>
+                    <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 16px; top: 412px; position: absolute" Text="Button" />
 
+                </div>
+                     <%--   <div id="SuspendLotList" runat="server" style="z-index:1;position:absolute;border:1px black solid;width:1033px; background-color: aqua; WIDTH:1043px; top: 83px; left: 346px; height: 394px;">
+
+                       <asp:Label ID="Label15" runat="server" Font-Bold="True" Font-Size="X-Large" style="z-index: 1; left: 272px; top: 27px; position: absolute" Text="List of Active Manufacturing Lots"></asp:Label>
+                       <asp:GridView ID="gvMlot" runat="server" AutoGenerateColumns="False" style="z-index: 1; left: 24px; top: 144px; position: absolute; height: 215px; width: 994px" EmptyDataText="No Data Found" ShowHeaderWhenEmpty="True">
+                           <Columns>
+                               <asp:BoundField DataField="manu_lot_no" HeaderText="Manu. Lot No" />
+                               <asp:BoundField DataField="item_cd" HeaderText="Item Code" />
+                               <asp:BoundField DataField="proc_flow_id" HeaderText="Process Flow ID" />
+                           </Columns>
+                           <EmptyDataRowStyle Height="10px" />
+                           <HeaderStyle Height="10px" />
+                           <RowStyle Height="10px" />
+                       </asp:GridView>
+                       <asp:Label ID="Label16" runat="server" style="z-index: 1; left: 26px; top: 97px; position: absolute" Text="Process Flow ID"></asp:Label>
+                       <asp:DropDownList ID="ddlProcID" runat="server" DataMember="proc_flow_id" Font-Size="Large" style="z-index: 1; left: 221px; top: 92px; position: absolute; width: 299px; right: 513px" AutoPostBack="True">
+                       </asp:DropDownList>
+
+                </div>--%>
             </div>
         </div>
         <div id="formfoot" style="z-index: 1; position: absolute; top: 663px; left: 1px; width: 99%; height: 50px; border: 1px black; background-color: aqua">
