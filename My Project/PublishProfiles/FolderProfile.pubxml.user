@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Publish\MESLotTrace</_PublishTargetUrl>
-    <History>True|2024-08-02T02:03:14.1305087Z;True|2024-07-26T16:05:24.6164380+08:00;True|2024-07-04T08:39:35.1064874+08:00;True|2024-07-03T09:02:36.5161198+08:00;True|2024-07-02T10:57:21.2140907+08:00;True|2024-07-02T10:15:17.4110336+08:00;True|2024-06-24T08:51:12.8775598+08:00;True|2024-04-29T09:59:20.0324376+08:00;True|2024-04-12T13:52:02.0298640+08:00;False|2024-04-12T13:50:56.8805585+08:00;</History>
+    <History>True|2024-08-19T08:01:40.3608679Z;True|2024-08-07T07:41:27.4843698+08:00;True|2024-08-06T17:10:22.6407748+08:00;True|2024-08-06T17:09:36.6557931+08:00;True|2024-08-06T16:41:45.0050650+08:00;True|2024-08-06T15:57:13.3886192+08:00;True|2024-08-02T10:03:14.1305087+08:00;True|2024-07-26T16:05:24.6164380+08:00;True|2024-07-04T08:39:35.1064874+08:00;True|2024-07-03T09:02:36.5161198+08:00;True|2024-07-02T10:57:21.2140907+08:00;True|2024-07-02T10:15:17.4110336+08:00;True|2024-06-24T08:51:12.8775598+08:00;True|2024-04-29T09:59:20.0324376+08:00;True|2024-04-12T13:52:02.0298640+08:00;False|2024-04-12T13:50:56.8805585+08:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="AppLogin.aspx">
@@ -30,13 +30,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:36</publishTime>
     </File>
     <File Include="bin/MESLotTrace.dll">
-      <publishTime>08/02/2024 10:02:38</publishTime>
+      <publishTime>08/19/2024 15:58:55</publishTime>
     </File>
     <File Include="bin/MESLotTrace.pdb">
-      <publishTime>08/02/2024 10:02:38</publishTime>
+      <publishTime>08/19/2024 15:58:55</publishTime>
     </File>
     <File Include="bin/MESLotTrace.xml">
-      <publishTime>08/02/2024 10:02:38</publishTime>
+      <publishTime>08/19/2024 15:58:55</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/16/2024 20:56:41</publishTime>
@@ -245,6 +245,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Images/button_user-management.png">
       <publishTime>06/16/2024 20:56:37</publishTime>
     </File>
+    <File Include="Images/calendar01.JPG">
+      <publishTime>08/06/2024 14:46:08</publishTime>
+    </File>
     <File Include="Images/delete01.PNG">
       <publishTime>06/16/2024 20:56:37</publishTime>
     </File>
@@ -302,14 +305,23 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="ImportFunction.aspx">
       <publishTime>06/16/2024 20:56:37</publishTime>
     </File>
+    <File Include="LineMasterDE.aspx">
+      <publishTime>08/06/2024 10:13:58</publishTime>
+    </File>
+    <File Include="LotMainSel.aspx">
+      <publishTime>08/07/2024 06:51:24</publishTime>
+    </File>
     <File Include="LotMaint.aspx">
-      <publishTime>08/02/2024 09:30:45</publishTime>
+      <publishTime>08/06/2024 17:16:43</publishTime>
+    </File>
+    <File Include="LotSelection.aspx">
+      <publishTime>08/06/2024 10:57:19</publishTime>
     </File>
     <File Include="MainPage.aspx">
       <publishTime>06/16/2024 20:56:37</publishTime>
     </File>
     <File Include="MastBom.aspx">
-      <publishTime>08/02/2024 09:31:59</publishTime>
+      <publishTime>08/06/2024 10:29:44</publishTime>
     </File>
     <File Include="MastCompanyCodeMaint.aspx">
       <publishTime>07/22/2024 09:13:49</publishTime>
@@ -324,7 +336,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:38</publishTime>
     </File>
     <File Include="MastLineMaint.aspx">
-      <publishTime>07/02/2024 10:47:38</publishTime>
+      <publishTime>08/06/2024 10:19:29</publishTime>
     </File>
     <File Include="MastMaintScr.aspx">
       <publishTime>06/28/2024 09:14:14</publishTime>
@@ -348,7 +360,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/02/2024 09:31:59</publishTime>
     </File>
     <File Include="MastReasonMaint.aspx">
-      <publishTime>07/02/2024 10:45:50</publishTime>
+      <publishTime>08/06/2024 09:34:15</publishTime>
     </File>
     <File Include="MastShiftMaint.aspx">
       <publishTime>06/28/2024 09:14:14</publishTime>
@@ -657,7 +669,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/30/2024 08:03:58</publishTime>
     </File>
     <File Include="ScrapMaint.aspx">
-      <publishTime>07/30/2024 10:24:39</publishTime>
+      <publishTime>08/05/2024 12:01:59</publishTime>
     </File>
     <File Include="Scripts/dndod-popup.min.css">
       <publishTime>06/16/2024 20:56:39</publishTime>
@@ -693,7 +705,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/02/2024 10:03:11</publishTime>
+      <publishTime>08/19/2024 16:01:38</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -389,7 +389,7 @@ Public Class MastLineMaint
         Response.Redirect("AppMainpage.aspx?LoginID=" & Logonid & "&Op=2")
     End Sub
 
-    Protected Sub gvContent_PageIndexChanging(sender As Object, e As GridViewPageEventArgs)
+    Protected Sub gvContent_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles gvContent.PageIndexChanging
         gvContent.PageIndex = e.NewPageIndex
         gvContent.DataBind()
     End Sub

@@ -114,11 +114,15 @@
     <Content Include="Images\button_rework.png" />
     <Content Include="Images\button_scrap-item.png" />
     <Content Include="Images\button_user-management.png" />
+    <Content Include="Images\calendar01.JPG" />
     <Content Include="Images\FormHeader01.png" />
     <Content Include="Images\SystemLogo.jpg" />
     <Content Include="ExportFunction.aspx" />
     <Content Include="Images\SystemLogo2.png" />
     <Content Include="Images\SystemLogo3.png" />
+    <Content Include="LineMasterDE.aspx" />
+    <Content Include="LotSelection.aspx" />
+    <Content Include="LotMainSel.aspx" />
     <Content Include="MastBom.aspx" />
     <Content Include="MastUom.aspx" />
     <Content Include="Scrap.aspx" />
@@ -319,6 +323,27 @@
     <Compile Include="ExportFunction.aspx.vb">
       <DependentUpon>ExportFunction.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LineMasterDE.aspx.designer.vb">
+      <DependentUpon>LineMasterDE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineMasterDE.aspx.vb">
+      <DependentUpon>LineMasterDE.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LotSelection.aspx.designer.vb">
+      <DependentUpon>LotSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LotSelection.aspx.vb">
+      <DependentUpon>LotSelection.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LotMainSel.aspx.designer.vb">
+      <DependentUpon>LotMainSel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LotMainSel.aspx.vb">
+      <DependentUpon>LotMainSel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MastBom.aspx.designer.vb">
       <DependentUpon>MastBom.aspx</DependentUpon>

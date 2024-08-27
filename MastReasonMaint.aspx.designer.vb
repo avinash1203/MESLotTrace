@@ -149,6 +149,15 @@ Partial Public Class MastReasonMaint
           Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
 
           '''<summary>
+          '''Label8 control.
+          '''</summary>
+          '''<remarks>
+          '''Auto-generated field.
+          '''To modify move field declaration from designer file to code-behind file.
+          '''</remarks>
+          Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
+
+          '''<summary>
           '''Label4 control.
           '''</summary>
           '''<remarks>
@@ -167,49 +176,13 @@ Partial Public Class MastReasonMaint
           Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
 
           '''<summary>
-          '''Label8 control.
+          '''Label32 control.
           '''</summary>
           '''<remarks>
           '''Auto-generated field.
           '''To modify move field declaration from designer file to code-behind file.
           '''</remarks>
-          Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
-
-          '''<summary>
-          '''Label9 control.
-          '''</summary>
-          '''<remarks>
-          '''Auto-generated field.
-          '''To modify move field declaration from designer file to code-behind file.
-          '''</remarks>
-          Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
-
-          '''<summary>
-          '''Label6 control.
-          '''</summary>
-          '''<remarks>
-          '''Auto-generated field.
-          '''To modify move field declaration from designer file to code-behind file.
-          '''</remarks>
-          Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-
-          '''<summary>
-          '''Label7 control.
-          '''</summary>
-          '''<remarks>
-          '''Auto-generated field.
-          '''To modify move field declaration from designer file to code-behind file.
-          '''</remarks>
-          Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
-
-          '''<summary>
-          '''Label10 control.
-          '''</summary>
-          '''<remarks>
-          '''Auto-generated field.
-          '''To modify move field declaration from designer file to code-behind file.
-          '''</remarks>
-          Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+          Protected WithEvents Label32 As Global.System.Web.UI.WebControls.Label
 
           '''<summary>
           '''Label11 control.
@@ -248,40 +221,13 @@ Partial Public Class MastReasonMaint
           Protected WithEvents txtRSNDiv As Global.System.Web.UI.WebControls.TextBox
 
           '''<summary>
-          '''txtRSNGrpCd control.
+          '''txtDispSeq control.
           '''</summary>
           '''<remarks>
           '''Auto-generated field.
           '''To modify move field declaration from designer file to code-behind file.
           '''</remarks>
-          Protected WithEvents txtRSNGrpCd As Global.System.Web.UI.WebControls.TextBox
-
-          '''<summary>
-          '''txtSAPCostCntr control.
-          '''</summary>
-          '''<remarks>
-          '''Auto-generated field.
-          '''To modify move field declaration from designer file to code-behind file.
-          '''</remarks>
-          Protected WithEvents txtSAPCostCntr As Global.System.Web.UI.WebControls.TextBox
-
-          '''<summary>
-          '''txtSAPTrnCd control.
-          '''</summary>
-          '''<remarks>
-          '''Auto-generated field.
-          '''To modify move field declaration from designer file to code-behind file.
-          '''</remarks>
-          Protected WithEvents txtSAPTrnCd As Global.System.Web.UI.WebControls.TextBox
-
-          '''<summary>
-          '''txtSAPMovCd control.
-          '''</summary>
-          '''<remarks>
-          '''Auto-generated field.
-          '''To modify move field declaration from designer file to code-behind file.
-          '''</remarks>
-          Protected WithEvents txtSAPMovCd As Global.System.Web.UI.WebControls.TextBox
+          Protected WithEvents txtDispSeq As Global.System.Web.UI.WebControls.TextBox
 
           '''<summary>
           '''txtRem control.
@@ -338,13 +284,13 @@ Partial Public Class MastReasonMaint
           Protected WithEvents ConfirmDelete As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
           '''<summary>
-          '''Label2 control.
+          '''Label28 control.
           '''</summary>
           '''<remarks>
           '''Auto-generated field.
           '''To modify move field declaration from designer file to code-behind file.
           '''</remarks>
-          Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+          Protected WithEvents Label28 As Global.System.Web.UI.WebControls.Label
 
           '''<summary>
           '''Label12 control.

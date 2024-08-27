@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="DECompanyCode.aspx.vb" Inherits="MESLotTrace.DECompanyCode" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="CompanyCodeDE.aspx.vb" Inherits="MESLotTrace.CompanyCodeDE" %>
 
 <!DOCTYPE html>
 

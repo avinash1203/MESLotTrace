@@ -78,63 +78,63 @@
         </div>
 
         <div id="DataEntryScr" runat="server"
-            style="z-index: 9999; position: absolute; top: 60%; left: 50%; transform: translate(-50%,-50%); width: 599px; height: 620px; border: 1px solid black; background-color: azure;">
+            style="z-index: 9999; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 599px; height: 566px; border: 1px solid black; background-color: azure;">
             <asp:Label ID="Label3" runat="server" Text="Component Consumption By Step" Font-Bold="True"
                 Style="z-index: 1; left: 10px; top: 24px; position: absolute; width: 582px; text-align: center"></asp:Label>
             <asp:HiddenField ID="hfPopUpType" Value="" runat="server" />
             <asp:Label ID="Label4" runat="server" Style="z-index: 1; left: 34px; top: 70px; position: absolute" Text="Company Code "></asp:Label>
-            <asp:Label ID="Label5" runat="server" Style="z-index: 1; left: 34px; top: 110px; position: absolute" Text="Plant Code "></asp:Label>
-            <asp:Label ID="Label8" runat="server" Style="z-index: 1; left: 34px; top: 150px; position: absolute" Text="Line ID "></asp:Label>
-            <asp:Label ID="Label9" runat="server" Style="z-index: 1; left: 34px; top: 190px; position: absolute" Text="Process ID "></asp:Label>
-            <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 34px; top: 230px; position: absolute" Text="Main Item code"></asp:Label>
-            <asp:Label ID="Label7" runat="server" Style="z-index: 1; left: 34px; top: 270px; position: absolute" Text="Step code "></asp:Label>
-            <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 34px; top: 310px; position: absolute" Text="Equipment ID "></asp:Label>
-            <asp:Label ID="Label11" runat="server" Style="z-index: 1; left: 36px; top: 350px; position: absolute" Text="Item code"></asp:Label>
-            <asp:Label ID="Label2" runat="server" Style="z-index: 1; left: 37px; top: 390px; position: absolute" Text="Usage Quantity "></asp:Label>
-            <asp:Label ID="Label12" runat="server" Style="z-index: 1; left: 39px; top: 430px; position: absolute" Text="Usage Start Date "></asp:Label>
-            <asp:Label ID="Label13" runat="server" Style="z-index: 1; left: 39px; top: 470px; position: absolute" Text="Usage End Date "></asp:Label>
-            <asp:Label ID="Label14" runat="server" Style="z-index: 1; left: 39px; top: 510px; position: absolute" Text="Remarks "></asp:Label>
+            <asp:Label ID="Label5" runat="server" Style="z-index: 1; left: 34px; top: 105px; position: absolute" Text="Plant Code "></asp:Label>
+            <asp:Label ID="Label8" runat="server" Style="z-index: 1; left: 34px; top: 140px; position: absolute" Text="Line ID "></asp:Label>
+            <asp:Label ID="Label9" runat="server" Style="z-index: 1; left: 34px; top: 175px; position: absolute" Text="Process ID "></asp:Label>
+            <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 34px; top: 210px; position: absolute" Text="Main Item code"></asp:Label>
+            <asp:Label ID="Label7" runat="server" Style="z-index: 1; left: 34px; top: 245px; position: absolute" Text="Step code "></asp:Label>
+            <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 34px; top: 280px; position: absolute" Text="Equipment ID "></asp:Label>
+            <asp:Label ID="Label11" runat="server" Style="z-index: 1; left: 36px; top: 315px; position: absolute" Text="Item code"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Style="z-index: 1; left: 37px; top: 350px; position: absolute" Text="Usage Quantity "></asp:Label>
+            <asp:Label ID="Label12" runat="server" Style="z-index: 1; left: 39px; top: 385px; position: absolute" Text="Usage Start Date "></asp:Label>
+            <asp:Label ID="Label13" runat="server" Style="z-index: 1; left: 39px; top: 420px; position: absolute" Text="Usage End Date "></asp:Label>
+            <asp:Label ID="Label14" runat="server" Style="z-index: 1; left: 39px; top: 455px; position: absolute" Text="Remarks "></asp:Label>
 
 
 
-            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 66px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_nm" DataValueField="cmp_cd">
+            <asp:DropDownList ID="ddlCC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 69px; width: 168px; height: 25px; position: absolute" DataSourceID="ddlCCSDA" DataTextField="cmp_nm" DataValueField="cmp_cd">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
 
-            <asp:DropDownList ID="ddlPC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 110px; width: 168px; height: 25px; position: absolute;" DataSourceID="ddlPCSDA" DataTextField="pltn_nm" DataValueField="pltn_cd">
+            <asp:DropDownList ID="ddlPC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 104px; width: 168px; height: 25px; position: absolute;" DataSourceID="ddlPCSDA" DataTextField="pltn_nm" DataValueField="pltn_cd">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
-            <asp:DropDownList ID="ddlLineId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 150px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlLINESDA" DataTextField="line_nm" DataValueField="line_id">
+            <asp:DropDownList ID="ddlLineId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 139px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlLINESDA" DataTextField="line_nm" DataValueField="line_id">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
-            <asp:DropDownList ID="ddlProcId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 190px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlPFIDSDA" DataTextField="proc_flow_id" DataValueField="proc_flow_id">
+            <asp:DropDownList ID="ddlProcId" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 174px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlPFIDSDA" DataTextField="proc_flow_id" DataValueField="proc_flow_id">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
 
 
-            <asp:TextBox ID="txtMC" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 230px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtMC" ClientIDMode="Static" type="text" runat="server" Style="z-index: 1; left: 267px; top: 206px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
 
-            <asp:TextBox ID="txtSC" type="text" runat="server" Style="z-index: 1; left: 267px; top: 270px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+            <asp:TextBox ID="txtSC" type="text" runat="server" Style="z-index: 1; left: 267px; top: 241px; width: 168px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
 
-            <asp:TextBox ID="txtEID" runat="server" Style="z-index: 1; left: 267px; top: 310px; width: 168px; height: 25px; position: absolute"></asp:TextBox>
+            <asp:TextBox ID="txtEID" runat="server" Style="z-index: 1; left: 267px; top: 276px; width: 168px; height: 25px; position: absolute"></asp:TextBox>
 
-            <asp:DropDownList ID="ddlIC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 350px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlICSDA" DataTextField="item_nm" DataValueField="item_nm">
+            <asp:DropDownList ID="ddlIC" runat="server" AppendDataBoundItems="True" Style="z-index: 1; left: 267px; top: 314px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px" DataSourceID="ddlICSDA" DataTextField="item_nm" DataValueField="item_nm">
                 <asp:ListItem Text="-- Select Option --" Value="" />
             </asp:DropDownList>
 
-            <asp:TextBox ID="txtUQ" runat="server" Style="z-index: 1; left: 267px; top: 390px; width: 168px; height: 25px; position: absolute"></asp:TextBox>
-            <asp:TextBox ID="txtUSD" runat="server" Style="z-index: 1; left: 267px; top: 430px; width: 168px; height: 25px; position: absolute" TextMode="Date"></asp:TextBox>
+            <asp:TextBox ID="txtUQ" runat="server" Style="z-index: 1; left: 267px; top: 346px; width: 168px; height: 25px; position: absolute"></asp:TextBox>
+            <asp:TextBox ID="txtUSD" runat="server" Style="z-index: 1; left: 267px; top: 381px; width: 168px; height: 25px; position: absolute" TextMode="Date"></asp:TextBox>
 
-            <asp:TextBox ID="txtUED" runat="server" Style="z-index: 1; left: 267px; top: 470px; width: 168px; height: 25px; position: absolute" TextMode="Date"></asp:TextBox>
-            <asp:TextBox ID="txtRe" runat="server" Style="z-index: 1; left: 267px; top: 510px; width: 168px; height: 25px; position: absolute"></asp:TextBox>
+            <asp:TextBox ID="txtUED" runat="server" Style="z-index: 1; left: 267px; top: 416px; width: 168px; height: 25px; position: absolute" TextMode="Date"></asp:TextBox>
+            <asp:TextBox ID="txtRe" runat="server" Style="z-index: 1; left: 267px; top: 451px; width: 168px; height: 25px; position: absolute"></asp:TextBox>
 
-            <asp:Button ID="btnSave" runat="server" Style="z-index: 1; left: 36px; top: 567px; width: 99px; height: 30px; position: absolute; font-size: medium; font-weight: 600;" Text="Save" CssClass="button1" />
-            <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; left: 250px; top: 567px; position: absolute; font-size: medium; font-weight: 600;" Text="Delete" Height="30px" Width="99px" CssClass="button1" />
-            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1; left: 450px; top: 567px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" Height="30px" Width="99px" CssClass="button1" />
+            <asp:Button ID="btnSave" runat="server" Style="z-index: 1; left: 36px; top: 510px; width: 99px; height: 30px; position: absolute; font-size: medium; font-weight: 600;" Text="Save" CssClass="button1" />
+            <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; left: 250px; top: 510px; position: absolute; font-size: medium; font-weight: 600;" Text="Delete" Height="30px" Width="99px" CssClass="button1" />
+            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1; left: 450px; top: 510px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" Height="30px" Width="99px" CssClass="button1" />
             <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
 
 

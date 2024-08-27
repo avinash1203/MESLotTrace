@@ -28,27 +28,24 @@
                 <div id="formcontent" runat="server" style="z-index: 1; position: absolute; width: 99%; height: 491px; border: 1px black solid; top: 55px; left: 4px;">
                     <asp:GridView ID="gvContent" runat="server"
                         Font-Size="Large"
-                        ShowFooter="True" AllowPaging="True" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging" 
-                        EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastReasonSDA" Width="100%">
+                        ShowFooter="True" AllowPaging="True" PageSize="20" OnPageIndexChanging="gvContent_PageIndexChanging"
+                        EmptyDataText="No Data Defined" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataSourceID="MastReasonSDA" Width="100%" Style="margin-right: 1px">
                         <Columns>
                             <asp:TemplateField HeaderText="Actions">
                                 <ItemStyle Width="10%" />
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("RSN_CD") & "_" & Eval("RSN_DIV") & "_" & Eval("RSN_GRP_CD") %>' Text="Select" />
+                                    <asp:LinkButton ID="detailsLnkView" runat="server" CommandName="Select" CommandArgument='<%# Eval("RSN_CD") & "_" & Eval("RSN_DIV")  %>' Text="Select" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="RSN_DIV" HeaderText="Reason Div">
-                            <ItemStyle Width="60%" />
-                            <ItemStyle Width="10%" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="rsn_grp_cd" HeaderText="Reason Grp Cd">
-                            <ItemStyle Width="10%" />
+                                <ItemStyle Width="60%" />
+                                <ItemStyle Width="10%" />
                             </asp:BoundField>
                             <asp:BoundField DataField="RSN_CD" HeaderText="Reason Code" SortExpression="RSN_CD">
                                 <ItemStyle Width="10%" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="RSN_NM" HeaderText="Reason Description" SortExpression="RSN_NM">
-                            </asp:BoundField>
+                            <asp:BoundField DataField="RESN_NM" HeaderText="Reason Description" SortExpression="RESN_NM"></asp:BoundField>
+                            <asp:BoundField DataField="notes" HeaderText="Notes" SortExpression="notes" />
                         </Columns>
                         <EmptyDataRowStyle BorderStyle="Solid" BorderWidth="1px" Height="20px" HorizontalAlign="Center" />
                         <FooterStyle BackColor="#24292" ForeColor="White" BorderWidth="1px" Font-Size="Smaller"
@@ -70,41 +67,46 @@
                 style="z-index: 9999; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 599px; height: 500px; border: 1px solid black; background-color: #9999FF;">
                 <asp:Label ID="Label3" runat="server" Text="REASON CODE Data Entry" Font-Bold="True"
                     Style="z-index: 1; left: 10px; top: 14px; position: absolute; width: 582px; text-align: center"></asp:Label>
-                <asp:Label ID="Label4" runat="server" Style="z-index: 1; left: 34px; top: 70px; position: absolute; right: 442px;" Text="Reason code "></asp:Label>
-                <asp:Label ID="Label5" runat="server" Style="z-index: 1; left: 34px; top: 110px; position: absolute" Text="Reason Description "></asp:Label>
-                <asp:Label ID="Label8" runat="server" Style="z-index: 1; left: 34px; top: 150px; position: absolute" Text="Reason Div Code "></asp:Label>
-                <asp:Label ID="Label9" runat="server" Style="z-index: 1; left: 34px; top: 190px; position: absolute" Text="Reason Group Code "></asp:Label>
-                <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 34px; top: 230px; position: absolute" Text="SAP Cost Center "></asp:Label>
+
+                <asp:Label ID="Label8" runat="server" Style="z-index: 1; left: 34px; top: 70px; position: absolute" Text="Reason Div Code "></asp:Label>
+                <asp:Label ID="Label4" runat="server" Style="z-index: 1; left: 34px; top: 140px; position: absolute; right: 442px;" Text="Reason code "></asp:Label>
+                <asp:Label ID="Label5" runat="server" Style="z-index: 1; left: 34px; top: 210px; position: absolute" Text="Reason Description "></asp:Label>
+                <asp:Label ID="Label32" runat="server" Style="z-index: 1; left: 34px; top: 280px; position: absolute" Text="Disp Seq "></asp:Label>
+               <asp:Label ID="Label11" runat="server" Style="z-index: 1; left: 36px; top: 350px; position: absolute" Text="Remarks"></asp:Label>
+
+
+                <%--<asp:Label ID="Label9" runat="server" Style="z-index: 1; left: 34px; top: 190px; position: absolute" Text="Reason Group Code "></asp:Label>--%>                <%-- <asp:Label ID="Label6" runat="server" Style="z-index: 1; left: 34px; top: 230px; position: absolute" Text="SAP Cost Center "></asp:Label>
                 <asp:Label ID="Label7" runat="server" Style="z-index: 1; left: 34px; top: 270px; position: absolute" Text="SAP Transfer Code "></asp:Label>
-                <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 34px; top: 310px; position: absolute" Text="SAP Movement Code"></asp:Label>
-                <asp:Label ID="Label11" runat="server" Style="z-index: 1; left: 36px; top: 350px; position: absolute" Text="Remarks"></asp:Label>
+                <asp:Label ID="Label10" runat="server" Style="z-index: 1; left: 34px; top: 310px; position: absolute" Text="SAP Movement Code"></asp:Label>--%>
+ 
+                <asp:TextBox ID="txtRSNcd" runat="server" Style="z-index: 1; left: 218px; top: 136px; width: 100px; height: 25px; position: absolute"></asp:TextBox>
+                <asp:TextBox ID="txtRSNNM" runat="server" Style="z-index: 1; left: 218px; top: 206px; width: 250px; height: 25px; position: absolute; width: 245px"></asp:TextBox>
+                <asp:TextBox ID="txtRSNDiv" runat="server" Style="z-index: 1; left: 218px; top: 66px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
+                <asp:TextBox ID="txtDispSeq" runat="server" Height="25px" Style="z-index: 1; left: 218px; top: 274px; position: absolute" Width="245px"></asp:TextBox>
+                <asp:TextBox ID="txtRem" runat="server" Style="z-index: 1; left: 218px; top: 346px; width: 292px; height: 25px; position: absolute"></asp:TextBox>
 
-                <asp:TextBox ID="txtRSNcd" runat="server" Style="z-index: 1; left: 217px; top: 68px; width: 100px; height: 25px; position: absolute"></asp:TextBox>
-                <asp:TextBox ID="txtRSNNM" runat="server" Style="z-index: 1; left: 218px; top: 109px; width: 250px; height: 25px; position: absolute; width: 245px"></asp:TextBox>
-                <asp:TextBox ID="txtRSNDiv" runat="server" Style="z-index: 1; left: 218px; top: 149px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
-                <asp:TextBox ID="txtRSNGrpCd" runat="server" Style="z-index: 1; left: 218px; top: 190px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>
-                <asp:TextBox ID="txtSAPCostCntr" runat="server" Style="z-index: 1; left: 218px; top: 229px; width: 100px; height: 25px; position: absolute"></asp:TextBox>
-                <asp:TextBox ID="txtSAPTrnCd" runat="server" Style="z-index: 1; left: 218px; top: 268px; width: 100px; height: 25px; position: absolute"></asp:TextBox>
+
+                <%--<asp:TextBox ID="txtRSNGrpCd" runat="server" Style="z-index: 1; left: 218px; top: 190px; width: 100px; height: 25px; position: absolute; width: 168px" Height="25px"></asp:TextBox>--%>   <%--             <asp:TextBox ID="txtSAPCostCntr" runat="server" Style="z-index: 1; left: 218px; top: 229px; width: 100px; height: 25px; position: absolute"></asp:TextBox>
+                <asp:TextBox ID="txtSAPTrnCd" runat="server" Style="z-index: 1; left: 218px; top: 268px; width: 100px; height: 25px; position: absolute; bottom: 201px;"></asp:TextBox>
                 <asp:TextBox ID="txtSAPMovCd" runat="server" Style="z-index: 1; left: 218px; top: 309px; width: 100px; height: 25px; position: absolute"></asp:TextBox>
-                <asp:TextBox ID="txtRem" runat="server" Style="z-index: 1; left: 218px; top: 349px; width: 292px; height: 25px; position: absolute"></asp:TextBox>
-
-                <asp:Button ID="btnSave" runat="server" Style="z-index: 1; left: 35px; top: 427px; width: 121px; height: 44px; position: absolute; font-size: medium; font-weight: 600;" Text="Save" CssClass="button1" Font-Size="X-Large" />
+                --%>
+                <asp:Button ID="btnSave" runat="server" Style="z-index: 1; left: 34px; top: 429px; width: 121px; height: 44px; position: absolute; font-size: medium; font-weight: 600;" Text="Save" CssClass="button1" Font-Size="X-Large" />
                 <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; left: 250px; top: 427px; position: absolute; font-size: medium; font-weight: 600;" Text="Delete" Height="44px" Width="121px" CssClass="button1" Font-Size="X-Large" />
                 <asp:Button ID="btnCancel" runat="server" Style="z-index: 1; left: 450px; top: 427px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" Height="44px" Width="121px" CssClass="button1" Font-Size="X-Large" />
                 <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
             </div>
 
-            <div id="ConfirmDelete" runat="server"
+             <div id="ConfirmDelete" runat="server"
                 style="z-index: 9999; position: absolute; top: 50%; left: 886px; transform: translate(-50%,-50%); width: 599px; height: 353px; border: 1px solid black; background-color: #FFCC00;">
-                <asp:Label ID="Label2" runat="server" Text="Delete confirmation" Font-Bold="True"
+                <asp:Label ID="Label28" runat="server" Text="Delete confirmation" Font-Bold="True"
                     Style="z-index: 1; left: 10px; top: 14px; position: absolute; width: 582px; text-align: center"></asp:Label>
                 <asp:Label ID="Label12" runat="server" Style="z-index: 1; left: 154px; top: 122px; position: absolute" Text="Please confirm Deletion" Font-Size="X-Large"></asp:Label>
                 <asp:Button ID="btnConfirmDelete" runat="server" Style="z-index: 1; left: 77px; top: 248px; width: 201px; height: 60px; position: absolute; font-size: medium; font-weight: 600;" Text="Confirm" CssClass="button1" />
-                <asp:Button ID="btnCanceldelete" runat="server" Style="z-index: 1; left: 356px; top: 256px; width: 201px; height: 60px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" CssClass="button1" />
+                <asp:Button ID="btnCanceldelete" runat="server" Style="z-index: 1; left: 356px; top: 248px; width: 201px; height: 60px; position: absolute; font-size: medium; font-weight: 600;" Text="Cancel" CssClass="button1" />
                 <asp:ImageButton ID="ImageButton2" runat="server" Height="30px" ImageUrl="~/Images/icon_del_canc_reject.png" Style="z-index: 1; left: 559px; top: 29px; position: absolute" Width="30px" />
             </div>
         </div>
-        <asp:SqlDataSource ID="MastReasonSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT [RSN_CD],RSN_DIV,RSN_GRP_CD, [RSN_NM] FROM [MAST_REASON]  WHERE CNCL_FLG = 0 ORDER BY [RSN_CD]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="MastReasonSDA" runat="server" ConnectionString="<%$ ConnectionStrings:MESLotTraceConnectionString %>" SelectCommand="SELECT RSN_CD,RSN_DIV, RESN_NM, notes FROM [MAST_REASON]  WHERE CNCL_FLG = 0 ORDER BY [RSN_CD]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

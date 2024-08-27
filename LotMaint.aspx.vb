@@ -4,12 +4,16 @@ Imports System.Configuration
 Public Class LotMaint
     Inherits System.Web.UI.Page
     Public LogonID As String
+          Public MLotno As String
+          Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+                    LogonID = Request.QueryString("LogonID")
+                    MLotno = Request.QueryString("MLotNo")
+                    txtMfgLotNo.Text = MLotno
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        LogonID = Request.QueryString("LogonID")
                     If Not IsPostBack Then
                               hfLineID.Value = " "
                               CalProdDt.Visible = False
+                              GetLotInfo()
                     End If
                     'Call FillddlProcID()
                     'If Not IsPostBack Then
@@ -19,8 +23,9 @@ Public Class LotMaint
           End Sub
 
     Protected Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Response.Redirect("AppMainpage.aspx?LogonID=" & LogonID & "&Op=3")
-    End Sub
+                    '   Response.Redirect("AppMainpage.aspx?LogonID=" & LogonID & "&Op=3")
+                    Response.Redirect("LotMainSel.aspx?LogonID=" & LogonID)
+          End Sub
 
 
           Protected Function CheckLotStartStatus() As Integer
@@ -51,8 +56,8 @@ Public Class LotMaint
         Dim ans As Integer
         myconnection = New SqlConnection(connstr)
 
-        sqlstr = "SELECT COUNT(*) FROM TRX_LINE WHERE PROC_FLOW_ID ='" & txtProcFlowID.Text & "'"
-        myconnection.Open()
+                    sqlstr = "SELECT COUNT(*) FROM TRX_LINE WHERE PROC_FLOW_ID ='" & txtProcFlowID.Text & "'  and rtrim(ltrim(strt_dt_utc)) <> ''"
+                    myconnection.Open()
         cmd = New SqlCommand(sqlstr, myconnection)
         Try
             ans = cmd.ExecuteScalar()
@@ -114,8 +119,55 @@ Public Class LotMaint
         End If
 
     End Sub
+          Protected Sub GetLotInfo()
+                    Dim connstr As String = System.Configuration.ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
+                    Dim sqlstr As String
+                    Dim cmd As SqlCommand
+                    Dim myconnection As New SqlConnection
 
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCal.Click
+                    Dim da As New SqlDataAdapter
+                    Dim dt As New DataTable
+                    Dim wst As Integer
+                    myconnection = New SqlConnection(connstr)
+                    sqlstr = "SELECT proc_flow_id,prod_plan_qty,item_cd,ltst_opr_act_div, plan_manu_line_id FROM MAST_MFGLOT2 WHERE MANU_LOT_NO = '" & txtMfgLotNo.Text & "'"
+                    myconnection.Open()
+                    cmd = New SqlCommand(sqlstr, myconnection)
+                    da = New SqlDataAdapter(cmd)
+                    da.Fill(dt)
+                    myconnection.Close()
+                    If dt.Rows.Count() > 0 Then
+                              txtProcFlowID.Text = dt.Rows(0).Item(0)
+                              txtProdSchQty.Text = dt.Rows(0).Item(1)
+                              txtModelNo.Text = dt.Rows(0).Item(2)
+                              wst = Val(dt.Rows(0).Item(3))
+                              Select Case wst
+                                        Case 0
+                                                  txtWorkSt.Text = "Not Started"
+                                                  btnStartLot.Enabled = True
+                                        Case 1
+                                                  txtWorkSt.Text = "First Start"
+                                                  btnStartLot.Enabled = False
+                                        Case 2
+                                                  txtWorkSt.Text = "Suspend"
+                                                  btnStartLot.Enabled = True
+                                        Case 3
+                                                  txtWorkSt.Text = "Progress"
+                                                  txtWorkSt.Enabled = False
+                                        Case 6
+                                                  txtWorkSt.Text = "Complete"
+                                                  txtWorkSt.Enabled = False
+                                        Case 7
+                                                  txtWorkSt.Text = "Force Close"
+                                        Case Else
+                                                  txtWorkSt.Text = "Not defined"
+                              End Select
+
+                              hfLineID.Value = dt.Rows(0).Item(4)
+                    Else
+                              Class1.ShowMsg("Manufacturing Lot Not found", "Ok", "success")
+                    End If
+          End Sub
+          Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCal.Click
         CalProdDt.Visible = True
     End Sub
 
@@ -128,6 +180,17 @@ Public Class LotMaint
                     Class1.ShowMsg("In progress", "Continue", "warning")
           End Sub
           Protected Sub btnStartLot_Click(sender As Object, e As EventArgs) Handles btnStartLot.Click
+
+                    If CheckLotStartStatus() <> "00" Then
+                              Class1.ShowMsg("Lot Already Started", "Ok", "critical")
+                              Exit Sub
+                    End If
+                    If CheckLineStatus() > 0 Then
+                              Class1.ShowMsg("Line has already been assigned", "Ok", "critical")
+                              Exit Sub
+                    End If
+
+
                     Dim connstr As String = ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
                     Dim myconnection As New SqlConnection(connstr)
                     Dim cmd As New SqlCommand
@@ -149,17 +212,23 @@ Public Class LotMaint
                     Dim sqlstr3 As String = "UPDATE MAST_MFGLOT2 set LTST_OPR_ACT_DIV='1',OPR_STRT_ACTL_DT_UTC='" & td & "'," +
                                                      "shift_ptrn_id='" & sftcd & "',wrk_shift_seq=" & wss & " " +
                                                      "WHERE MANU_LOT_NO='" & txtMfgLotNo.Text & "' "
-                    myconnection.Open()
-                    'insert into TRX LINE
-                    cmd = New SqlCommand(sqlstr1, myconnection)
-                    cmd.ExecuteNonQuery()
-                    'update MAST MFGLOT
-                    cmd = New SqlCommand(sqlstr2, myconnection)
-                    cmd.ExecuteNonQuery()
-                    'update MAST MFGLOT2
-                    cmd = New SqlCommand(sqlstr3, myconnection)
-                    cmd.ExecuteNonQuery()
-                    myconnection.Close()
+                    Try
+                              myconnection.Open()
+                              'insert into TRX LINE
+                              cmd = New SqlCommand(sqlstr1, myconnection)
+                              cmd.ExecuteNonQuery()
+                              'update MAST MFGLOT
+                              cmd = New SqlCommand(sqlstr2, myconnection)
+                              cmd.ExecuteNonQuery()
+                              'update MAST MFGLOT2
+                              cmd = New SqlCommand(sqlstr3, myconnection)
+                              cmd.ExecuteNonQuery()
+                              Class1.ShowMsg("Lot Started", "OK", "success")
+                    Catch EX As Exception
+                              Class1.ShowMsg(Mid(EX.Message, 1, 100), "OK", "critical")
+                    Finally
+                              myconnection.Close()
+                    End Try
 
           End Sub
           Protected Sub btnSuspendLot_Click(sender As Object, e As EventArgs) Handles btnSuspendLot.Click
@@ -239,8 +308,8 @@ Public Class LotMaint
                     Dim td As String
                     td = Format(Now, "yyyy-MM-dd HH:mm:ss")
 
-                    Dim sqlstr1 As String = "INSERT INTO TRX_SERIAL_CLS SELECT * FROM TRX_SERIAL_OPEN WHERE MANU_LOT_NO='" & txtMfgLotNo.Text & "' "
-                    Dim sqlstr2 As String = "DELETE FROM TRX_SERIAL_OPEN where MANU_LOT_NO='" & txtMfgLotNo.Text & "' "
+                    Dim sqlstr1 As String = "INSERT INTO TRX_SERIAL_CLS SELECT * FROM TRX_SERIAL_OPEN WHERE MANU_LOT_NO='" & txtMfgLotNo.Text & "' AND CMP_STATUS = '2' "
+                    Dim sqlstr2 As String = "DELETE FROM TRX_SERIAL_OPEN where MANU_LOT_NO='" & txtMfgLotNo.Text & "' AND CMP_STATUS ='2' "
                     Dim sqlstr3 As String = "UPDATE TRX_SERIAL_CLS SET CMP_STATUS=2 where MANU_LOT_NO='" & txtMfgLotNo.Text & "' "
                     cmd1 = New SqlCommand(sqlstr1, myconnection)
                     cmd2 = New SqlCommand(sqlstr2, myconnection)
@@ -262,14 +331,14 @@ Public Class LotMaint
                     Return ans
           End Function
 
-          Protected Sub Button1_Click1(sender As Object, e As EventArgs) Handles Button1.Click
-                    Dim ans As Boolean
-                    ans = TxRows()
-                    If ans = True Then
-                              Class1.ShowMsg("TX done", "Ok", "success")
-                    Else
-                              Class1.ShowMsg("TX Fail", "Ok", "critical")
-                    End If
+          'Protected Sub Button1_Click1(sender As Object, e As EventArgs) Handles Button1.Click
+          '          Dim ans As Boolean
+          '          ans = TxRows()
+          '          If ans = True Then
+          '                    Class1.ShowMsg("TX done", "Ok", "success")
+          '          Else
+          '                    Class1.ShowMsg("TX Fail", "Ok", "critical")
+          '          End If
 
-          End Sub
+          'End Sub
 End Class

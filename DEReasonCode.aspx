@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="DEReasonCode.aspx.vb" Inherits="MESLotTrace.DEReasonCode" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ReasonCodeDE.aspx.vb" Inherits="MESLotTrace.ReasonCodeDE" %>
 
 <!DOCTYPE html>
 

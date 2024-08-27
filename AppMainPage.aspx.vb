@@ -225,8 +225,9 @@ Public Class AppMainPage
         hfSelItem.Value = 2
     End Sub
     Protected Sub btnLotMgt_Click(sender As Object, e As EventArgs) Handles btnOFLotMgt.Click
-        Response.Redirect("LotMaint.aspx?LogonID=" & LogonID)
-    End Sub
+                    '    Response.Redirect("LotMaint.aspx?LogonID=" & LogonID)
+                    Response.Redirect("LotMainSel.aspx?LogonID=" & LogonID)
+          End Sub
     Protected Sub btnUserAdmin_Click(sender As Object, e As EventArgs) Handles btnAFUserAdmin.Click
         Response.Redirect("UserAdmin.aspx?LogonID=" & LogonID)
     End Sub
@@ -284,5 +285,9 @@ Public Class AppMainPage
 
           Protected Sub btnPartAdj_Click(sender As Object, e As EventArgs) Handles btnPartAdj.Click
                     Response.Redirect("PartsAdj.aspx?LogonID=" & LogonID)
+          End Sub
+
+          Protected Sub btnOFScrap_Click(sender As Object, e As EventArgs) Handles btnOFScrap.Click
+                    Response.Redirect("ScrapMaint.aspx?LogonID=" & LogonID)
           End Sub
 End Class

@@ -71,11 +71,12 @@
                     <asp:RadioButton ID="rb1" runat="server" GroupName="cb" Style="z-index: 1; left: 1059px; top: 92px; position: absolute" Text="Yes" />
                     <asp:RadioButton ID="rb2" runat="server" GroupName="cb" Style="z-index: 1; left: 1133px; top: 93px; position: absolute" Text="No" Checked="True" />
 
-                    <asp:Button ID="btnSelect" runat="server" Style="z-index: 1; left: 662px; top: 9px; position: absolute" Text="SELECT" />
+                    <asp:Button ID="btnSelect" runat="server" Style="z-index: 1; left: 662px; top: 9px; position: absolute" Text="SELECT" Visible="False" />
 
                     <asp:HiddenField ID="hfLineID" runat="server" />
 
-                    <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 16px; top: 412px; position: absolute" Text="Button" />
+                    <asp:Button ID="btnTRXOpen" runat="server" style="z-index: 1; left: 14px; top: 404px; position: absolute; width: 108px; height: 25px;" Text="TRXopen" Visible="False" />
+                     <asp:Button ID="btnTRXClose" runat="server" style="z-index: 1; left: 14px; top: 437px; position: absolute; width: 108px; height: 25px;" Text="TRXclose" Visible="False" />
 
                 </div>
                      <%--   <div id="SuspendLotList" runat="server" style="z-index:1;position:absolute;border:1px black solid;width:1033px; background-color: aqua; WIDTH:1043px; top: 83px; left: 346px; height: 394px;">

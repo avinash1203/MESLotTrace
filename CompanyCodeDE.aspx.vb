@@ -1,7 +1,7 @@
 ﻿Imports System.Configuration
 Imports System.Data.SqlClient
 'Imports class1
-Public Class DECompanyCode
+Public Class CompanyCodeDE
 
           Inherits System.Web.UI.Page
           Public connstr As String
