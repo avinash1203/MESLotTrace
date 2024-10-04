@@ -53,7 +53,7 @@
                     <asp:TextBox ID="txtAbPassNG" runat="server" Style="z-index: 1; left: 1061px; top: 164px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
                     <asp:TextBox ID="txtRem" runat="server" Style="z-index: 1; left: 386px; top: 204px; position: absolute; width: 930px; height: 82px;" BorderStyle="Solid" TextMode="MultiLine"></asp:TextBox>
                     <asp:TextBox ID="txtProdDt" runat="server" Style="z-index: 1; left: 386px; top: 296px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
-                    <asp:Calendar ID="CalProdDt" runat="server" Style="z-index: 99; left: 679px; top: 259px; position: absolute; height: 213px; width: 309px" BackColor="#99FFCC"></asp:Calendar>
+                    <asp:Calendar ID="CalProdDt" runat="server" Style="z-index: 99; left: 730px; top: 289px; position: absolute; height: 213px; width: 309px" BackColor="#99FFCC"></asp:Calendar>
                     <asp:Button ID="btnCal" runat="server"
                         Style="z-index: 1; left: 674px; top: 296px; width: 50px; height: 36px; border-radius: 10px; position: absolute" Text="Cal." BackColor="#CCFFFF" />
 
@@ -62,7 +62,7 @@
                     <asp:TextBox ID="txtMAMMLot" runat="server" Style="z-index: 1; left: 386px; top: 336px; position: absolute; width: 254px; height: 30px;" BorderStyle="Solid"></asp:TextBox>
 
                     <asp:Button ID="btnStartLot" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 250px; top: 401px; position: absolute; width: 230px; height: 50px" Text="START LOT" />
-                    <asp:Button ID="btnSuspendLot" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 550px; top: 403px; position: absolute; width: 230px; height: 50px" Text="SUSPEND LOT" />
+                    <asp:Button ID="btnSuspendLot" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 550px; top: 403px; position: absolute; width: 230px; height: 50px; right: 510px;" Text="SUSPEND LOT" />
                     <asp:Button ID="btnCloseLot" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 850px; top: 401px; position: absolute; width: 230px; height: 50px" Text="CLOSE LOT" />
                     <asp:Button ID="btnExit" runat="server" CssClass="button1" Font-Bold="True" Font-Size="X-Large" Style="z-index: 1; left: 1150px; top: 401px; position: absolute; width: 230px; height: 50px" Text="EXIT" />
 

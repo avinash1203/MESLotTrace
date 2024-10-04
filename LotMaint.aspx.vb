@@ -201,17 +201,42 @@ Public Class LotMaint
                     Dim sftcd As String = sft(0)
                     Dim wss As Integer = Val(sft(1))
                     Dim wtime As String = sft(2)
-                    Dim td As String
-                    td = Format(CDate(txtProdDt.Text), "yyyy-MM-dd") & " " & wtime
-                    Dim sqlstr1 As String = "INSERT INTO TRX_LINE (line_id,proc_flow_id,manu_lot_no,shift_ptrn_id,wrk_shift_seq,strt_dt_utc,end_dt_utc) " +
-                                                    "VALUES ('" & hfLineID.Value & "','" & txtProcFlowID.Text & "','" & txtMfgLotNo.Text & "','" & sftcd & "','" & wss & "','" & td & "',' ')"
+                    Dim shift_start_td As String = String.Empty
+                    Dim shift_end_td As String = String.Empty
+                    Dim actual_start_td As String = Format(Now, "yyyyMMddHHmmssfff")
+                    shift_start_td = Format(CDate(txtProdDt.Text), "yyyyMMdd") & sft(2)
+                    shift_end_td = Format(CDate(txtProdDt.Text), "yyyyMMdd") & sft(3)
 
-                    Dim sqlstr2 As String = "UPDATE MAST_MFGLOT set lot_sts_div='1', plod_strt_actl_dt_utc='" & td & "' " +
+
+                    Dim sqlstr1 As String = String.Empty
+                    If CheckLineExist() Then
+                              sqlstr1 = "UPDATE TRX_LINE " +
+                                              "set " +
+                                              "manu_lot_no='" & txtMfgLotNo.Text & "'," +
+                                              "shift_ptrn_id='" & sftcd & "'," +
+                                              "wrk_shift_seq = '" & wss & "'," +
+                                              "strt_dt_utc='" & shift_start_td & "'," +
+                                              "end_dt_utc='" & shift_end_td & "' " +
+                                              "WHERE proc_flow_id='" & txtProcFlowID.Text & "' "
+
+                    Else
+                              sqlstr1 = "INSERT INTO TRX_LINE (line_id,proc_flow_id,manu_lot_no,shift_ptrn_id,wrk_shift_seq,strt_dt_utc,end_dt_utc) " +
+                                                                                "VALUES ('" & hfLineID.Value & "','" & txtProcFlowID.Text & "','" & txtMfgLotNo.Text & "','" & sftcd & "','" & wss & "','" & shift_start_td & "','" & shift_end_td & "')"
+                    End If
+
+
+
+                    Dim sqlstr2 As String = "UPDATE MAST_MFGLOT set lot_sts_div='1', plod_strt_actl_dt_utc='" & actual_start_td & "', plod_end_actl_dt_utc=''  " +
                                                      "WHERE MANU_LOT_NO='" & txtMfgLotNo.Text & "' "
 
-                    Dim sqlstr3 As String = "UPDATE MAST_MFGLOT2 set LTST_OPR_ACT_DIV='1',OPR_STRT_ACTL_DT_UTC='" & td & "'," +
-                                                     "shift_ptrn_id='" & sftcd & "',wrk_shift_seq=" & wss & " " +
-                                                     "WHERE MANU_LOT_NO='" & txtMfgLotNo.Text & "' "
+                    Dim sqlstr3 As String = "UPDATE MAST_MFGLOT2 " +
+                                                                  "set " +
+                                                                  "LTST_OPR_ACT_DIV='1'," +
+                                                                  "opr_strt_plan_dt_utc='" + shift_start_td & "'," +
+                                                                  "opr_strt_actl_dt_utc='" & actual_start_td & "'," +
+                                                                  "opr_end_actl_dt_utc='' , " +
+                                                                  "shift_ptrn_id='" & sftcd & "',wrk_shift_seq=" & wss & " " +
+                                                                  "WHERE MANU_LOT_NO='" & txtMfgLotNo.Text & "' "
                     Try
                               myconnection.Open()
                               'insert into TRX LINE
@@ -260,6 +285,22 @@ Public Class LotMaint
 
 
           End Sub
+          Protected Function CheckLineExist() As String
+                    Dim sqlstr As String = "Select count(*)  from TRX_LINE WHERE PROC_FLOW_ID = '" & txtProcFlowID.Text & "' "
+                    Dim connstr As String = ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
+                    Dim myConnection As New SqlConnection(connstr)
+                    Dim cmd As New SqlCommand(sqlstr, myConnection)
+                    Dim ans As Integer
+                    myConnection.Open()
+                    ans = cmd.ExecuteScalar
+                    myConnection.Close()
+                    If ans > 0 Then
+                              Return True
+                    Else
+                              Return False
+                    End If
+
+          End Function
           Protected Function GetLotStatus() As String
                     Dim sqlstr As String = "Select lot_sts_div from MAST_MFGLOT WHERE manu_lot_no='" & txtMfgLotNo.Text & "' "
                     Dim connstr As String = ConfigurationManager.ConnectionStrings("MyDatabase").ConnectionString
@@ -331,14 +372,5 @@ Public Class LotMaint
                     Return ans
           End Function
 
-          'Protected Sub Button1_Click1(sender As Object, e As EventArgs) Handles Button1.Click
-          '          Dim ans As Boolean
-          '          ans = TxRows()
-          '          If ans = True Then
-          '                    Class1.ShowMsg("TX done", "Ok", "success")
-          '          Else
-          '                    Class1.ShowMsg("TX Fail", "Ok", "critical")
-          '          End If
 
-          'End Sub
 End Class

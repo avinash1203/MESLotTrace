@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Publish\MESLotTrace</_PublishTargetUrl>
-    <History>True|2024-08-19T08:01:40.3608679Z;True|2024-08-07T07:41:27.4843698+08:00;True|2024-08-06T17:10:22.6407748+08:00;True|2024-08-06T17:09:36.6557931+08:00;True|2024-08-06T16:41:45.0050650+08:00;True|2024-08-06T15:57:13.3886192+08:00;True|2024-08-02T10:03:14.1305087+08:00;True|2024-07-26T16:05:24.6164380+08:00;True|2024-07-04T08:39:35.1064874+08:00;True|2024-07-03T09:02:36.5161198+08:00;True|2024-07-02T10:57:21.2140907+08:00;True|2024-07-02T10:15:17.4110336+08:00;True|2024-06-24T08:51:12.8775598+08:00;True|2024-04-29T09:59:20.0324376+08:00;True|2024-04-12T13:52:02.0298640+08:00;False|2024-04-12T13:50:56.8805585+08:00;</History>
+    <History>True|2024-10-04T06:46:51.1667320Z;True|2024-09-24T11:20:43.5509377+08:00;True|2024-08-19T16:01:40.3608679+08:00;True|2024-08-07T07:41:27.4843698+08:00;True|2024-08-06T17:10:22.6407748+08:00;True|2024-08-06T17:09:36.6557931+08:00;True|2024-08-06T16:41:45.0050650+08:00;True|2024-08-06T15:57:13.3886192+08:00;True|2024-08-02T10:03:14.1305087+08:00;True|2024-07-26T16:05:24.6164380+08:00;True|2024-07-04T08:39:35.1064874+08:00;True|2024-07-03T09:02:36.5161198+08:00;True|2024-07-02T10:57:21.2140907+08:00;True|2024-07-02T10:15:17.4110336+08:00;True|2024-06-24T08:51:12.8775598+08:00;True|2024-04-29T09:59:20.0324376+08:00;True|2024-04-12T13:52:02.0298640+08:00;False|2024-04-12T13:50:56.8805585+08:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="AppLogin.aspx">
@@ -30,13 +30,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:36</publishTime>
     </File>
     <File Include="bin/MESLotTrace.dll">
-      <publishTime>08/19/2024 15:58:55</publishTime>
+      <publishTime>10/04/2024 14:46:29</publishTime>
     </File>
     <File Include="bin/MESLotTrace.pdb">
-      <publishTime>08/19/2024 15:58:55</publishTime>
+      <publishTime>10/04/2024 14:46:29</publishTime>
     </File>
     <File Include="bin/MESLotTrace.xml">
-      <publishTime>08/19/2024 15:58:55</publishTime>
+      <publishTime>10/04/2024 14:46:29</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/16/2024 20:56:41</publishTime>
@@ -312,7 +312,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/07/2024 06:51:24</publishTime>
     </File>
     <File Include="LotMaint.aspx">
-      <publishTime>08/06/2024 17:16:43</publishTime>
+      <publishTime>10/04/2024 11:11:48</publishTime>
     </File>
     <File Include="LotSelection.aspx">
       <publishTime>08/06/2024 10:57:19</publishTime>
@@ -705,7 +705,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/16/2024 20:56:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/19/2024 16:01:38</publishTime>
+      <publishTime>10/04/2024 14:46:48</publishTime>
     </File>
   </ItemGroup>
 </Project>
